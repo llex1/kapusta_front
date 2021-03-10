@@ -1,10 +1,10 @@
-import './App.css';
-
+import "./App.css";
+import Modal from "./modal/modal";
 
 function App() {
   return (
     <div className="App">
-      <h1>hi there</h1>
+      <Modal />
     </div>
   );
 }
