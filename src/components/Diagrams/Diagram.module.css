@@ -1,0 +1,92 @@
+.wrapperDiagram{
+    width: 280px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.count{}
+
+.expenditure{}
+
+.income{}
+
+.switch{}
+
+.listCategory{
+    display: flex;
+    justify-content: center;
+    margin: 0 -7px;
+    padding: 0;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.itemCategory{
+    position: relative;
+    margin: 0 7px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    width: 84px;
+}
+
+.itemCategory:nth-child(3n+1):before{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: -200%;
+    height: 1px;
+    width: 1282px;
+    border-bottom: 1px solid #E0E5EB;
+}
+
+.categoryImg{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 56px;
+}
+
+.categorySvg{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 84px;
+    height:56px;
+}
+
+.shadowCategory{
+    width: 59px;
+    height: 46px;
+    background: #F5F6FB;
+    border-radius: 20px;
+}
+
+.itemCategory:hover .shadowCategory,
+.itemCategory:focus .shadowCategory {
+    background: #FFDAC0;
+}
+
+.itemCategory:hover .categorySvg,
+.itemCategory:focus .categorySvg {
+    fill: #FF751D;
+}
+
+.categoryTotal{
+    margin-bottom: 5px;
+    font-size: 12px;
+    line-height: 14.06px;
+    text-align: center;
+    color: #52555F;
+}
+
+.categoryName{
+    margin-bottom: 5px;
+    font-size: 12px;
+    line-height: 14.06px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #52555F;
+}
