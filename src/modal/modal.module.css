@@ -21,7 +21,7 @@
 }
 .googleWrapper {
   margin-top: 40px;
-  text-align: left;
+  text-align: center;
 }
 .googleBtn {
   width: 125px;
@@ -120,9 +120,22 @@
   .regisrLabel {
     display: flex;
   }
-  /* .modalText {
+  .modalText {
     font-weight: normal;
     font-size: 12px;
     line-height: 1.1666;
-  } */
+  }
+  .googleWrapper {
+    text-align: left;
+  }
+  .googleBtnWrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modalWrapper {
+    left: 734px;
+    top: 173px;
+  }
 }

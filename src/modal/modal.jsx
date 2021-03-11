@@ -28,16 +28,18 @@ class modal extends Component {
                     <p className={styles.modalText}>
                       Вы можете авторизироваться с помощью Google Account:
                     </p>
-                    <button type="button" className={styles.googleBtn}>
-                      <svg
-                        width="18"
-                        height="18"
-                        className={styles.googleBtnSvg}
-                      >
-                        <use href={sprite + "#google"}></use>
-                      </svg>
-                      <span className={styles.googleBtnText}>Google</span>
-                    </button>
+                    <div className={styles.googleBtnWrapper}>
+                      <button type="button" className={styles.googleBtn}>
+                        <svg
+                          width="18"
+                          height="18"
+                          className={styles.googleBtnSvg}
+                        >
+                          <use href={sprite + "#google"}></use>
+                        </svg>
+                        <span className={styles.googleBtnText}>Google</span>
+                      </button>
+                    </div>
                   </div>
                   <p className={styles.modalText}>
                     Или зайти с помощью e-mail и пароля, предварительно
