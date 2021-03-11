@@ -1,5 +1,6 @@
 import './App.css';
 import Background from './pages/Background/Background.jsx';
+import BackgroundAuth from './pages/BackgroundAuth/BackgroundAuth.jsx';
 
 function App() {
   return (

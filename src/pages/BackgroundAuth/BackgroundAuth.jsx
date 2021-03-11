@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
-import styles from './Background.module.css';
+import styles from './BackgroundAuth.module.css';
 import sprite from '../../assets/img/sprite.svg';
 
-class Background extends Component {
+class BackgroundAuth extends Component {
   // state = {};
   render() {
-    const logoPage = (
-      <h1 className={styles.logoPage}>
-        Kapusta <span className={styles.subLogoPage}>Smart Finance</span>
-      </h1>
-    );
-
     return (
       <>
         <div className={styles.backgroundFon}>
           <div className={styles.backgroundPage}>
             <div className="container">
-              {/* <div className={styles.containerr}> */}
-              {logoPage}
-
               <svg
                 width="83px"
                 height="89px"
@@ -46,4 +37,4 @@ class Background extends Component {
     );
   }
 }
-export default Background;
+export default BackgroundAuth;
