@@ -29,7 +29,7 @@ class modal extends Component {
                       Вы можете авторизироваться с помощью Google Account:
                     </p>
                     <div className={styles.googleBtnWrapper}>
-                      <button type="button" className={styles.googleBtn}>
+                      <button onClick={this.props.signIn} type="button" className={styles.googleBtn}>
                         <svg
                           width="18"
                           height="18"
