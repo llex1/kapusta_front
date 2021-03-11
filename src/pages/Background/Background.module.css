@@ -1,0 +1,151 @@
+.backgroundFon {
+  padding-top: 28px;
+  width: 100%;
+  height: 286px;
+  background-color: #f5f6fb;
+  border-bottom-left-radius: 110px;
+}
+
+.logoPage {
+  margin-left: 37px;
+  padding-top: 0px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 62px;
+}
+.logoPage::before {
+  display: block;
+  content: '';
+  width: 5px;
+  height: 6px;
+  background-color: black;
+  margin-left: 120px;
+  margin-bottom: -53px;
+}
+.logoPage::after {
+  display: block;
+  content: '';
+  width: 5px;
+  height: 6px;
+  background-color: #0e0f0f;
+  margin-left: 120px;
+  margin-top: -59px;
+  border-radius: 0px;
+}
+
+.subLogoPage {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 1.15;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #52555f;
+  padding-left: 10px;
+}
+
+.svgKapustaMobileTop {
+  top: 92px;
+  right: 0px;
+  position: absolute;
+}
+.svgKapustaMobileBottom {
+  position: absolute;
+  bottom: 0px;
+  left: 25px;
+}
+@media screen and (max-width: 767px) {
+  .svgKapusta svg {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .svgKapustaMobileTop {
+    display: none;
+  }
+  .svgKapustaMobileBottom {
+    display: none;
+  }
+  .logoPage {
+    margin-left: 147px;
+    padding-top: 80px;
+    margin-top: 0px;
+    font-size: 91px;
+    line-height: 120px;
+  }
+  .logoPage::before {
+    width: 7px;
+    height: 13px;
+    margin-left: 228px;
+    margin-bottom: -45px;
+  }
+  .logoPage::after {
+    width: 7px;
+    height: 13px;
+    margin-left: 228px;
+    margin-top: -45px;
+  }
+  .subLogoPage {
+    font-size: 16px;
+    line-height: 1.1;
+    letter-spacing: 0.18em;
+    padding-left: 74px;
+  }
+
+  .backgroundFon {
+    padding-top: 28px;
+    height: 525px;
+    border-bottom-left-radius: 200px;
+  }
+  .backgroundPage {
+    display: block;
+    text-indent: -10px;
+    height: 232px;
+    background-image: url(../../assets/img/kapustaFons.svg);
+    background-size: 1334px 232px;
+  }
+  .svgKapusta {
+    position: absolute;
+    bottom: 56px;
+    left: 70px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .svgKapusta {
+    position: absolute;
+    bottom: 55px;
+    left: 220px;
+  }
+  .logoPage {
+    margin-left: 230px;
+    padding-top: 285px;
+    margin-top: 0px;
+    font-size: 102px;
+    line-height: 120px;
+  }
+  .logoPage::before {
+    width: 7px;
+    height: 13px;
+    margin-left: 256px;
+    margin-bottom: -41px;
+  }
+  .logoPage::after {
+    width: 7px;
+    height: 13px;
+    margin-left: 256px;
+    margin-top: -45px;
+  }
+  .subLogoPage {
+    line-height: 1.3;
+    padding-left: 80px;
+  }
+  .backgroundFon {
+    height: 590px;
+  }
+}
