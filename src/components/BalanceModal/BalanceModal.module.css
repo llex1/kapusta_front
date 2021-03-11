@@ -17,12 +17,14 @@
 }
 
 .mainContainer::before {
-  content: url("../../assets/img/triangle.png");
-  width: 30px;
-  height: 16px;
-  position: relative;
+  content: "";
+  background-color: #172d5e;
+  width: 20px;
+  height: 20px;
+  position: absolute;
   left: 88px;
-  top: 20px;
+  top: -8px;
+  transform: rotate(45deg);
 }
 
 .greeting {
@@ -38,13 +40,22 @@
   font-size: 12px;
   line-height: 1.33;
 }
-@media screen and (min-width: 1280px) {
+
+@media screen and (min-width: 768px) {
   .container {
     width: 292px;
-    left: 546px;
-    /* top: 158px; */
+    left: 186px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+  .mainContainer::before {
+    left: 233px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    left: 546px;
   }
   .mainContainer::before {
     left: 593px;
