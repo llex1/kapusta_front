@@ -8,30 +8,15 @@ class BackgroundAuth extends Component {
     return (
       <>
         <div className={styles.backgroundFon}>
-          <div className={styles.backgroundPage}>
+          <div className={styles.backgroundPage}></div>
             <div className="container">
-              <svg
-                width="83px"
-                height="89px"
-                className={styles.svgKapustaMobileTop}
-              >
-                <use href={sprite + '#icon-KapustaTopMobile'} />
-              </svg>
-              <svg
-                width="83px"
-                height="89px"
-                className={styles.svgKapustaMobileBottom}
-              >
-                <use href={sprite + '#icon-KapustaBottomMobile'} />
-              </svg>
-
               <div className={styles.svgKapusta}>
                 <svg>
                   <use href={sprite + '#icon-kapusta2'} />
                 </svg>
               </div>
             </div>
-          </div>
+
         </div>
       </>
     );
