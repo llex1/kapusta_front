@@ -1,13 +1,15 @@
+import { Fragment } from 'react';
+
+import Main from "./pages/Main";
+
 import "./App.css";
-import Modal from "./modal/modal";
-import GoogleLogin from "./components/GoogleLogin"
+
 
 function App() {
   return (
-    <div className="App">
-      <Modal />
-      <GoogleLogin/>
-    </div>
+    <Fragment>
+      <Main/>
+    </Fragment>
   );
 }
 export default App;

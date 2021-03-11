@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import styles from "./modal.module.css";
-import sprite from "../assets/img/sprite.svg";
+import sprite from "../../assets/img/sprite.svg";
 
 const RegisterSchema = Yup.object().shape({
   email: Yup.string()
