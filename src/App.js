@@ -1,9 +1,12 @@
 import "./App.css";
-
-import Profit from "./components/profit/profit";
+import Modal from "./modal/modal";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Modal />
+    </div>
+  );
 }
 
 export default App;
