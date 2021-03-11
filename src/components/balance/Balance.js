@@ -9,10 +9,10 @@ function Balance (){
     <div className={styles.container}>
   <div className={styles.tabletBox}>
   <div className={styles.reportsBox}>
-  <NavLink className={styles.reportsLink} activeClassName={styles.activeReportsLink} to="/daily-rate">
+  <p className={styles.reportsLink} >
     {" "}
     Перейти к отчетам
-  </NavLink>
+  </p>
   <svg width="14" height="14">
   <use href={sprite+"#icon-schedule"}/>
   </svg>
