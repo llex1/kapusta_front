@@ -1,0 +1,37 @@
+.currentPeriod{
+  margin: 0 auto;
+width: 150px;
+}
+.currentBox{
+  display: flex;
+  align-items: center;
+}
+.title{
+  margin: 0px 0px 5px 0px;
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 1.16;
+text-align: center;
+letter-spacing: 0.04em;
+color: rgba(82, 85, 95, 0.7);
+}
+.previous{
+  margin-right: 15px;
+}
+.currentDate{
+  margin: 0;
+  width: 110px;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-right: 15px;
+}
