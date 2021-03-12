@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import Modal from "../../components/Modal";
-import Header from "../../components/Header";
-import Background from "../../components/Background";
+import Modal from '../../components/modal';
+import Header from '../../components/Header';
+import Background from '../../components/Background';
+import UniversalModal from '../../components/UniversalModal/UniversalModal';
 
 class Main extends Component {
   render() {
@@ -10,7 +11,8 @@ class Main extends Component {
       <Fragment>
         <Header />
         <Modal />
-        <Background/>
+        {/* <UniversalModal /> */}
+        <Background />
       </Fragment>
     );
   }
