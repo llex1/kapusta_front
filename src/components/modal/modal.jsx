@@ -12,7 +12,7 @@ const RegisterSchema = Yup.object().shape({
   password: Yup.string().required("это обязательное поле").min(6, "Too short!"),
 });
 
-class modal extends Component {
+class Modal extends Component {
   render() {
     return (
       <div id="overlay" className={styles.overlay}>
@@ -93,4 +93,4 @@ class modal extends Component {
   }
 }
 
-export default modal;
+export default Modal;
