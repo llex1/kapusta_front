@@ -2,7 +2,7 @@
   height: 56px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between; 
 }
 .logo{
   position: relative;
@@ -60,8 +60,36 @@
   width: 2px;
   height: 4px;
   background: black;
+  text-align: end;
 }
 
+/* 
+.logoInfo{
+align-items: flex-end;
+right: -100px;
+} */
+
+.userName{
+  width: 32px;
+  font-size: 12px;
+  
+}
+
+
+
+.logout{
+  width: 64px;
+  font-size: 12px;
+
+}
+
+
+
+.exit{
+  width: 64px;
+  font-size: 12px;
+
+}
 
 @media (min-width: 768px) {
  

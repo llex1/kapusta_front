@@ -17,10 +17,14 @@ class Header extends Component {
               <span className={styles.logoImg}></span>
               <span className={styles.logoText}>Kapusta</span>
             </div>
-        <div className={styles.userName}>U</div>
-        <div className={styles.logout}>User Name</div>
-        <div className={styles.exit}>Выйти</div>
 
+         <div className="logoInfo">
+
+         <p className={styles.userName}>U</p>
+         <p className={styles.logout}>User Name</p>
+         <button className={styles.exit}>Выйти</button>
+
+         </div>   
 
 
         </header>
@@ -32,6 +36,8 @@ class Header extends Component {
 }
 
 export default Header;
+
+
 // export default UserName;
 
 // class UserName extends React.Component {
