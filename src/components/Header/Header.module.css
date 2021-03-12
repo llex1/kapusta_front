@@ -63,6 +63,21 @@
 }
 
 
+@media (min-width: 768px) {
+ 
+
+}
+
+@media (min-width: 320px) {
+  .header {
+    margin: 0 auto;
+  }
+}
+
+
+
+
+
 
 
 
@@ -92,3 +107,4 @@
   margin-top: 0px;
   border-radius: 0px;
 }
+
