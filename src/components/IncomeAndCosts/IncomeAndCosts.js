@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { IncomeForm } from "../IncomeAndCostsEnter/IncomeAndCostsEnter"
-import {Table} from "../Table/Table"
+import { IncomeForm } from "../IncomeForm/IncomeForm"
+import {IncomeTable} from "../IncomeTable/IncomeTable"
 import styles from "./IncomeAndCosts.module.css";
 
 class IncomeAndCosts extends Component {
@@ -48,7 +48,7 @@ class IncomeAndCosts extends Component {
           </NavLink>
                 <div className={styles.incomeWrapper}>
                     <IncomeForm onAddCosts={this.handleAddCosts} />
-                    <Table costs={this.state.costs} />
+                    <IncomeTable costs={this.state.costs} />
           </div>
         </div>
       </div>

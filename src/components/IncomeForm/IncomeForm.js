@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./IncomeAndCostsEnter.module.css"
+import styles from "./IncomeForm.module.css"
 
 export class IncomeForm extends Component {
 

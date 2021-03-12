@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./Table.module.css";
-import { TableItem } from "./TableItem";
+import styles from "./IncomeTable.module.css";
+import { IncomeTableItem } from "./IncomeTableItem";
 
-export function Table({ costs }) {
+export function IncomeTable({ costs }) {
     console.log(costs)
   return (
     <table className={styles.costsHistory}>
@@ -18,11 +18,11 @@ export function Table({ costs }) {
 
       <tbody>
         {costs.map((cost) => (
-          <TableItem key={cost.date} item={cost} />
+          <IncomeTableItem key={cost.date} item={cost} />
         ))}
       </tbody>
     </table>
   );
 }
 
-export default Table;
+export default IncomeTable;

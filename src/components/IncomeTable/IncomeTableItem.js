@@ -1,8 +1,8 @@
 import React from "react";
-import sprite from "../../../assets/img/sprite.svg"
+import sprite from "../../assets/img/sprite.svg"
 
 
-export function TableItem({ item }) {
+export function IncomeTableItem({ item }) {
   const { date, description, category, sum } = item;
   console.log(item)
   return (
@@ -16,4 +16,4 @@ export function TableItem({ item }) {
   );
 }
 
-export default TableItem;
+export default IncomeTableItem;
