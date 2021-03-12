@@ -4,11 +4,6 @@ import styles from './Header.module.css';
 
 class Header extends Component {
 
-
-
-
-
-
   render(){
     return(
       <div className="container">
@@ -24,4 +19,15 @@ class Header extends Component {
   }
 }
 
-export default Header 
+export default Header
+
+
+
+
+
+
+
+export default Header;
+
+
+

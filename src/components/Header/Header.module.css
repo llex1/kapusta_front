@@ -12,7 +12,9 @@
   padding-left: 20px;
 }
 .logoImg{
-
+  height: 33px;
+  align-self: center;
+  cursor: pointer;
 }
 .logoImg::before{
   content: "";
