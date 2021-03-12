@@ -1,12 +1,15 @@
+import { Fragment } from 'react';
+
+import Main from "./pages/Main";
+
 import "./App.css";
-import Modal from "./modal/modal";
+
 
 function App() {
   return (
-    <div className="App">
-      <Modal />
-    </div>
+    <Fragment>
+      <Main/>
+    </Fragment>
   );
 }
-
 export default App;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import styles from "./modal.module.css";
-import sprite from "../assets/img/sprite.svg";
+import sprite from "../../assets/img/sprite.svg";
 
 const RegisterSchema = Yup.object().shape({
   email: Yup.string()
@@ -29,7 +29,7 @@ class modal extends Component {
                       Вы можете авторизироваться с помощью Google Account:
                     </p>
                     <div className={styles.googleBtnWrapper}>
-                      <button type="button" className={styles.googleBtn}>
+                      <button onClick={this.props.signIn} type="button" className={styles.googleBtn}>
                         <svg
                           width="18"
                           height="18"
