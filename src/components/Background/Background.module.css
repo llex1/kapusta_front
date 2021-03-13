@@ -110,17 +110,22 @@
     background-size: 1334px 232px;
   }
   .svgKapusta {
-    position: absolute;
+    /* position: absolute;
     bottom: 56px;
-    left: 70px;
+    left: 70px; */
+    margin-top: 590px;
+    margin-left: -175px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .svgKapusta {
-    position: absolute;
+    /* position: absolute;
     bottom: 55px;
-    left: 220px;
+    left: 220px; */
+    margin-bottom: 55px;
+    margin-top: 275px;
+    margin-left: 190px;
   }
   .logoPage {
     margin-left: 230px;
