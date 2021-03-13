@@ -18,15 +18,16 @@ class Header extends Component {
               <span className={styles.logoText}>Kapusta</span>
             </div>
 
-         <div className="logoInfo">
-
+         <div className={styles.logoInfo}>
+            <div className={styles.bgr}>
          <p className={styles.userName}>U</p>
+            </div>
          <p className={styles.logout}>User Name</p>
-         <button className={styles.exit}>Выйти</button>
-
+         <div className={styles.fonVertikal}></div>
+         <button className={styles.exit}><u>Выйти</u></button>
+             
          </div>   
-
-
+          
         </header>
       </div>
  
