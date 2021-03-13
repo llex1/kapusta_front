@@ -1,37 +1,40 @@
-import {createAction, createReducer} from '@reduxjs/toolkit';
+import { createAction, createReducer } from '@reduxjs/toolkit';
 
 const initState = {
   user: {
-    email: "",/* "user@gmail.com" */
-    token: "" /* "JWToken" */
+    email: '' /* "user@gmail.com" */,
+    token: '' /* "JWToken" */,
   },
-  date:{
-    currentDate:"", /* "поточна дата в Unix форматі" */
+  modalVisibility: true,
+  date: {
+    currentDate: '' /* "поточна дата в Unix форматі" */,
     currentPeriod: {
-      from: "", /* "перша секунда місяця який шукаємо" */
-      to: "",   /* "перша секунда НАСТУПНОГО місяця" */
-    }
+      from: '' /* "перша секунда місяця який шукаємо" */,
+      to: '' /* "перша секунда НАСТУПНОГО місяця" */,
+    },
   },
-  db:{
-    balance: 0, /* "integer" */
-    summaryCosts: [/* {
+  db: {
+    balance: 0 /* "integer" */,
+    summaryCosts: [
+      /* {
       month: "перша секунда ПОТОЧНОГО місяця",
       sum: "сумма за місяць"
     },{
       month: "перша секунда ПОПЕРЕДНЬОГО місяця",
       sum: "сумма за місяць"
     } */
-    //.........
-  ],
-    summaryProfit: [/* {
+      //.........
+    ],
+    summaryProfit: [
+      /* {
       month: "перша секунда ПОТОЧНОГО місяця",
       sum: "сумма за місяць"
     },{
       month: "перша секунда ПОПЕРЕДНЬОГО місяця",
       sum: "сумма за місяць"
     } */
-    //...........
-  ],
+      //...........
+    ],
     costs: [
       // {
       //   date: 'дата в юнікс форматі',
@@ -49,13 +52,13 @@ const initState = {
       //   sum: "сума"
       // },
       //.......
-    ]
-  }
-}
+    ],
+  },
+};
 
-const initAction = createAction('init')
+const initAction = createAction('init');
 const initReducer = createReducer(initState, {
-  'init': (state) => state
-})
+  init: state => state,
+});
 
-export {initReducer}
+export { initReducer };

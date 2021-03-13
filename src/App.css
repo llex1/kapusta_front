@@ -39,15 +39,17 @@ button.go {
   background: #ff751d;
   border-radius: 16px;
   border: 1px solid #ff751d;
+  box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
 }
 button.back {
   width: 125px;
   height: 44px;
-  border: 2px solid #f5f6fb;
+  border: 0;
   box-sizing: border-box;
   border-radius: 16px;
   background: border-box;
   margin-left: 15px;
+  box-shadow: 1px 2px 5px rgba(170, 178, 197, 0.4);
 }
 
 /** ------ */
@@ -57,6 +59,24 @@ button.back {
     width: 768px;
     padding: 0 20px;
     margin: 0 auto;
+  }
+  button.go {
+    width: 125px;
+    height: 44px;
+    background: #ff751d;
+    border-radius: 16px;
+    border: 1px solid #ff751d;
+    box-shadow: none;
+  }
+  button.back {
+    width: 125px;
+    height: 44px;
+    border: 2px solid #f5f6fb;
+    box-sizing: border-box;
+    border-radius: 16px;
+    background: border-box;
+    margin-left: 15px;
+    box-shadow: none;
   }
 }
 

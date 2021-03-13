@@ -11,7 +11,9 @@ class Main extends Component {
       <Fragment>
         <Header />
         <Modal />
-        {/* <UniversalModal /> */}
+
+        <UniversalModal />
+
         <Background />
       </Fragment>
     );
