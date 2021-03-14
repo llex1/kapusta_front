@@ -1,20 +1,17 @@
 import React, { Component, Fragment } from "react";
 
-import Modal from "../../components/Modal";
 import Header from "../../components/Header";
-import Background from "../../components/Background";
+import BackgroundAuth from "../../components/BackgroundAuth";
 
-class Main extends Component {
-  
+class Cost extends Component {
   render() {
     return (
       <Fragment>
         <Header />
-        <Modal />
-        <Background/>
+        <BackgroundAuth/>
       </Fragment>
     );
   }
 }
 
-export default Main;
+export default Cost;
