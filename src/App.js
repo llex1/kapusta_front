@@ -6,7 +6,6 @@ import Cost from "./pages/Cost";
 
 import "./App.css";
 
-
 function App() {
   return (
     <Fragment>
