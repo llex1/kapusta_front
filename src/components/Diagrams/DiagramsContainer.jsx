@@ -8,6 +8,7 @@ import Diagrams from "./Diagrams";
 function DiagramsContainer(props) {
 
     const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+    const [pageIncome, setPageIncome] = useState(false)
 
     useEffect(()=>{
         const onchangeViewport =()=> setViewportWidth(window.innerWidth)
@@ -15,8 +16,10 @@ function DiagramsContainer(props) {
         return ()=> window.removeEventListener('resize',onchangeViewport)
     },[])
 
+    const handleChangePage=()=>setPageIncome(prev=>!prev)
+
     return (
-        <Diagrams viewportWidth={viewportWidth}/>
+        <Diagrams viewportWidth={viewportWidth} pageIncome={pageIncome} handleChangePage={handleChangePage}/>
     );
 }
 

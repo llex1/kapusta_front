@@ -5,7 +5,7 @@ import styles from './Diagram.module.css'
 
 import sprite from '../../assets/img/sprite.svg'
 
-const Diagrams = ({viewportWidth}) => {
+const Diagrams = ({viewportWidth, pageIncome, handleChangePage}) => {
 
     return (
         <div className={styles.wrapperDiagram}>
@@ -22,21 +22,22 @@ const Diagrams = ({viewportWidth}) => {
 
             <div className={styles.wrapperListCategory}>
                 <div className={styles.switch}>
-                    <svg className={styles.switchArrowLeft}>
+                    <svg className={styles.switchArrowLeft} onClick={handleChangePage}>
                         <use
                             href={`${sprite}#icon-left2`}
                         ></use>
                     </svg>
 
-                    <span className={styles.switchTitle}> Расходы </span>
-                    <svg className={styles.switchArrowRight}>
+                    <span className={styles.switchTitle}>{pageIncome ? 'Доходы' : 'Расходы'}</span>
+                    <svg className={styles.switchArrowRight} onClick={handleChangePage}>
                         <use
                             href={`${sprite}#icon-right`}
                         ></use>
                     </svg>
                 </div>
 
-                <ul className={styles.listCategory}>
+
+                {!pageIncome && (<ul className={styles.listCategory}>
                     <li className={styles.itemCategory}>
                         <p className={styles.categoryTotal}>5 000.00</p>
                         <div className={styles.categoryImg}>
@@ -157,48 +158,99 @@ const Diagrams = ({viewportWidth}) => {
                         </div>
                         <p className={styles.categoryName}>Продукты</p>
                     </li>
+                </ul>)}
+
+                {pageIncome && (<ul className={styles.listCategory}>
+                    <li className={styles.itemCategory}>
+                        <p className={styles.categoryTotal}>45 000.00</p>
+                        <div className={styles.categoryImg}>
+                            <svg className={styles.categorySvg}>
+                                <use
+                                    href={`${sprite}#icon-salary`}
+                                ></use>
+                            </svg>
+                            <div className={styles.shadowCategory}></div>
+                        </div>
+                        <p className={styles.categoryName}>ЗП</p>
+                    </li>
+                    <li className={styles.itemCategory}>
+                        <p className={styles.categoryTotal}>5 000.00</p>
+                        <div className={styles.categoryImg}>
+                            <svg className={styles.categorySvg}>
+                                <use
+                                    href={`${sprite}#icon-additional`}
+                                ></use>
+                            </svg>
+                            <div className={styles.shadowCategory}></div>
+                        </div>
+                        <p className={styles.categoryName}>Доп. доход</p>
+                    </li>
+                </ul>)
+                }
 
 
-                </ul>
             </div>
 
             <div className={styles.wrapperDiagramList}>
-            <ul className={styles.diagramList}>
-                <li className={styles.diagramItem}>
+                {!pageIncome && (<ul className={styles.diagramList}>
+                    <li className={styles.diagramItem}>
 
-                    <div style={viewportWidth>767 ? {height: '86%'}:{width: '86%'} } className={styles.diagramSubCategory}>
-                        <span className={styles.priceSubCategory}>5 000 грн</span>
-                    </div>
-                    <span className={styles.nameSubCategory}>Свинина</span>
+                        <div style={viewportWidth > 767 ? {height: '86%'} : {width: '86%'}}
+                             className={styles.diagramSubCategory}>
+                            <span className={styles.priceSubCategory}>5 000 грн</span>
+                        </div>
+                        <span className={styles.nameSubCategory}>Свинина</span>
 
-                </li>
-                <li className={styles.diagramItem}>
+                    </li>
+                    <li className={styles.diagramItem}>
 
-                    <div style={viewportWidth>767 ? {height: '76%'}:{width: '76%'} } className={styles.diagramSubCategory}>
-                        <span className={styles.priceSubCategory}>5 000 грн</span>
-                    </div>
-                    <span className={styles.nameSubCategory}>Свинина</span>
+                        <div style={viewportWidth > 767 ? {height: '76%'} : {width: '76%'}}
+                             className={styles.diagramSubCategory}>
+                            <span className={styles.priceSubCategory}>5 000 грн</span>
+                        </div>
+                        <span className={styles.nameSubCategory}>Свинина</span>
 
-                </li>
-                <li className={styles.diagramItem}>
+                    </li>
+                    <li className={styles.diagramItem}>
 
-                    <div style={viewportWidth>767 ? {height: '66%'}:{width: '66%'} } className={styles.diagramSubCategory}>
-                        <span className={styles.priceSubCategory}>5 000 грн</span>
-                    </div>
-                    <span className={styles.nameSubCategory}>Свинина</span>
+                        <div style={viewportWidth > 767 ? {height: '66%'} : {width: '66%'}}
+                             className={styles.diagramSubCategory}>
+                            <span className={styles.priceSubCategory}>5 000 грн</span>
+                        </div>
+                        <span className={styles.nameSubCategory}>Свинина</span>
 
-                </li>
-                <li className={styles.diagramItem}>
+                    </li>
+                    <li className={styles.diagramItem}>
 
-                    <div style={viewportWidth>767 ? {height: '56%'}:{width: '56%'} } className={styles.diagramSubCategory}>
-                        <span className={styles.priceSubCategory}>5 000 грн</span>
-                    </div>
-                    <span className={styles.nameSubCategory}>Свинина</span>
+                        <div style={viewportWidth > 767 ? {height: '56%'} : {width: '56%'}}
+                             className={styles.diagramSubCategory}>
+                            <span className={styles.priceSubCategory}>5 000 грн</span>
+                        </div>
+                        <span className={styles.nameSubCategory}>Свинина</span>
 
-                </li>
+                    </li>
+                </ul>)}
 
+                {pageIncome && (<ul className={styles.diagramList}>
+                    <li className={styles.diagramItem}>
 
-            </ul>
+                        <div style={viewportWidth > 767 ? {height: '86%'} : {width: '86%'}}
+                             className={styles.diagramSubCategory}>
+                            <span className={styles.priceSubCategory}>25 000 грн</span>
+                        </div>
+                        <span className={styles.nameSubCategory}>Моя</span>
+
+                    </li>
+                    <li className={styles.diagramItem}>
+
+                        <div style={viewportWidth > 767 ? {height: '66%'} : {width: '66%'}}
+                             className={styles.diagramSubCategory}>
+                            <span className={styles.priceSubCategory}>20 000 грн</span>
+                        </div>
+                        <span className={styles.nameSubCategory}>Жена</span>
+
+                    </li>
+                </ul>)}
             </div>
         </div>
     )
