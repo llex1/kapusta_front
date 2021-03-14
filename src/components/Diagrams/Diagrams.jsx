@@ -1,22 +1,11 @@
-import React, {useState,useEffect} from 'react';
+// import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Diagram.module.css'
 
 import sprite from '../../assets/img/sprite.svg'
 
-const Diagrams = () => {
-    const [width, setWidth] = useState(window.innerWidth);
-
-    useEffect(()=>{
-        const onchangeViewport =()=> setWidth(window.innerWidth)
-        window.addEventListener('resize',onchangeViewport)
-        return ()=> window.removeEventListener('resize',onchangeViewport)
-    },[])
-
-
-
-
+const Diagrams = ({viewportWidth}) => {
 
     return (
         <div className={styles.wrapperDiagram}>
@@ -177,7 +166,7 @@ const Diagrams = () => {
             <ul className={styles.diagramList}>
                 <li className={styles.diagramItem}>
 
-                    <div style={width>767 ? {height: '86%'}:{width: '86%'} } className={styles.diagramSubCategory}>
+                    <div style={viewportWidth>767 ? {height: '86%'}:{width: '86%'} } className={styles.diagramSubCategory}>
                         <span className={styles.priceSubCategory}>5 000 грн</span>
                     </div>
                     <span className={styles.nameSubCategory}>Свинина</span>
@@ -185,7 +174,7 @@ const Diagrams = () => {
                 </li>
                 <li className={styles.diagramItem}>
 
-                    <div style={width>767 ? {height: '76%'}:{width: '76%'} } className={styles.diagramSubCategory}>
+                    <div style={viewportWidth>767 ? {height: '76%'}:{width: '76%'} } className={styles.diagramSubCategory}>
                         <span className={styles.priceSubCategory}>5 000 грн</span>
                     </div>
                     <span className={styles.nameSubCategory}>Свинина</span>
@@ -193,7 +182,7 @@ const Diagrams = () => {
                 </li>
                 <li className={styles.diagramItem}>
 
-                    <div style={width>767 ? {height: '66%'}:{width: '66%'} } className={styles.diagramSubCategory}>
+                    <div style={viewportWidth>767 ? {height: '66%'}:{width: '66%'} } className={styles.diagramSubCategory}>
                         <span className={styles.priceSubCategory}>5 000 грн</span>
                     </div>
                     <span className={styles.nameSubCategory}>Свинина</span>
@@ -201,7 +190,7 @@ const Diagrams = () => {
                 </li>
                 <li className={styles.diagramItem}>
 
-                    <div style={width>767 ? {height: '56%'}:{width: '56%'} } className={styles.diagramSubCategory}>
+                    <div style={viewportWidth>767 ? {height: '56%'}:{width: '56%'} } className={styles.diagramSubCategory}>
                         <span className={styles.priceSubCategory}>5 000 грн</span>
                     </div>
                     <span className={styles.nameSubCategory}>Свинина</span>
