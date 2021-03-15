@@ -3,35 +3,35 @@ import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import styles from "./modal.module.css";
-import sprite from "../../assets/img/sprite.svg";
+import styles from './modal.module.css';
+import sprite from '../../assets/img/sprite.svg';
 // import {user} from "../../redux/selectors";
-import action from "../../redux/auth/auth.action";
+import action from '../../redux/auth/auth.action';
 
 const RegisterSchema = Yup.object().shape({
   email: Yup.string()
-    .min(2, "Некорректная длинна поля")
-    .max(50, "Превышен лимит символов")
-    .required("это обязательное поле"),
-  password: Yup.string().required("это обязательное поле").min(6, "Too short!"),
+    .min(2, 'Некорректная длинна поля')
+    .max(50, 'Превышен лимит символов')
+    .required('это обязательное поле'),
+  password: Yup.string().required('это обязательное поле').min(6, 'Too short!'),
 });
 
 class Modal extends Component {
   state = {
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   };
-  handleChange = (e) => {
+  handleChange = e => {
     switch (e.target.name) {
-      case "email":
-        this.setState((state) => {
+      case 'email':
+        this.setState(state => {
           return {
             email: e.target.value,
           };
         });
         break;
-      case "password":
-        this.setState((state) => {
+      case 'password':
+        this.setState(state => {
           return {
             password: e.target.value,
           };
@@ -42,11 +42,11 @@ class Modal extends Component {
     }
   };
 
-  login = (e) => {
+  login = e => {
     e.preventDefault();
     this.props.action_login(this.state);
   };
-  register = (e) => {
+  register = e => {
     e.preventDefault();
     this.props.action_register(this.state);
   };
@@ -57,7 +57,7 @@ class Modal extends Component {
           <div className="container">
             <div className={styles.modalWrapper}>
               <Formik
-                initialValues={{ email: "", password: "" }}
+                initialValues={{ email: '', password: '' }}
                 validationSchema={RegisterSchema}
               >
                 {({ errors, touched }) => (
@@ -81,7 +81,7 @@ class Modal extends Component {
                             height="18"
                             className={styles.googleBtnSvg}
                           >
-                            <use href={sprite + "#google"}></use>
+                            <use href={sprite + '#google'}></use>
                           </svg>
                           <span className={styles.googleBtnText}>Google</span>
                         </button>
@@ -146,17 +146,17 @@ class Modal extends Component {
       );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     state: state,
   };
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    action_login: (obj) => {
+    action_login: obj => {
       dispatch(action.login(obj));
     },
-    action_register: (obj) => {
+    action_register: obj => {
       dispatch(action.register(obj));
     },
   };
