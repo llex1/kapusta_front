@@ -1,5 +1,8 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
+//persist
+import { persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 //reducers
 import userReducer from "./auth/user.reducer";
@@ -15,12 +18,21 @@ const rootReducer = combineReducers({
   // db: dbReducer,
 });
 
+const persistConfig = {
+  key: "user",
+  storage: storage,
+  whitelist: ["user"],
+};
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 const store = createStore(
-  rootReducer,
+  persistedReducer,
   compose(
     applyMiddleware(seMiddleware, thunk),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
 
-export default store;
+const persistor = persistStore(store);
+
+export { store, persistor };

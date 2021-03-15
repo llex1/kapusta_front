@@ -1,3 +1,5 @@
+import routes from '../../routes';
+
 const login = (obj) => async function login(dispatch){
   const res = await fetch("http://kapusta.fun/api/auth/login", {
     method: "POST",
@@ -17,6 +19,7 @@ const login = (obj) => async function login(dispatch){
       "db": data.db
     },
   });
+  window.location.pathname = routes.costs
 };
 
 const register = (obj) => async function register(dispatch) {
@@ -29,10 +32,10 @@ const register = (obj) => async function register(dispatch) {
   });
   const data = await res.json()
   console.log(data);
-
-
-
-
+  
+  
+  
+  
   dispatch({
     type: "regitster/ok",
     payload: {
@@ -41,6 +44,7 @@ const register = (obj) => async function register(dispatch) {
       "db": data.db
     },
   });
+  window.location.pathname = '/costs' 
 }
 
 export default { login, register };

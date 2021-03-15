@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -53,9 +52,6 @@ class Modal extends Component {
   };
 
   render() {
-    if (this.props?.state?.user?.jwt) {
-      return <Redirect to="/cost" />;
-    } else {
       return (
         <div id="overlay" className={styles.overlay}>
           <div className="container">
@@ -148,7 +144,6 @@ class Modal extends Component {
           </div>
         </div>
       );
-    }
   }
 }
 const mapStateToProps = (state) => {

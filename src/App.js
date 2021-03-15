@@ -1,16 +1,19 @@
 import { Fragment } from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 import Main from "./pages/Main";
-import Cost from "./pages/Cost";
+import Costs from "./pages/Costs";
 
 import "./App.css";
 
 function App() {
   return (
     <Fragment>
-      <Route exact path="/"><Main/></Route>
-      <Route exact path="/cost"><Cost/></Route>
+      <Switch>
+        <Route exact path="/" component={Main}></Route>
+        <Route exact path="/costs" component={Costs}></Route>
+        {/* <Route component={NotFound}></Route> */}
+      </Switch>
     </Fragment>
   );
 }
