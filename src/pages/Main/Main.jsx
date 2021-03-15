@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import Modal from "../../components/Modal";
+import Modal from "../../components/modal";
 import Header from "../../components/Header";
 import Background from "../../components/Background";
 import IncomeAndCosts from "../../components/IncomeAndCosts"
@@ -11,8 +11,7 @@ class Main extends Component {
       <Fragment>
         <Header />
         <Modal />
-        <IncomeAndCosts />
-        <Background/>
+        <Background />
       </Fragment>
     );
   }
