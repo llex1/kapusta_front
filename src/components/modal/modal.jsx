@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import styles from "./modal.module.css";
+import styles from "./Modal.module.css";
 import sprite from "../../assets/img/sprite.svg";
 // import {user} from "../../redux/selectors";
 import action from "../../redux/auth/auth.action";

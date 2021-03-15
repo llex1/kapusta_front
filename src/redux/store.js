@@ -9,10 +9,14 @@ import userReducer from "./auth/user.reducer";
 //middlewares
 import seMiddleware from "./middlewares/se.middleware";
 
+// costs
+import costsReducer from "./costs/costsReducer";
+
 const rootReducer = combineReducers({
   user: userReducer,
   // date: dateReducer,
   // db: dbReducer,
+  costs: costsReducer,
 });
 
 const store = createStore(
