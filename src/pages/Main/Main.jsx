@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react";
 
-import Modal from "../../components/Modal";
+import Modal from "../../components/modal";
 import Header from "../../components/Header";
 import Background from "../../components/Background";
+
 
 class Main extends Component {
   render() {

@@ -25,6 +25,10 @@
   text-align: center;
 }
 .googleBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   width: 125px;
   height: 40px;
   border: 1px solid transparent;

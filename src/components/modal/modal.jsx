@@ -29,16 +29,14 @@ class modal extends Component {
                       Вы можете авторизироваться с помощью Google Account:
                     </p>
                     <div className={styles.googleBtnWrapper}>
-                      <button onClick={this.props.signIn} type="button" className={styles.googleBtn}>
-                        <svg
+                      <a className={styles.googleBtn} href="http://localhost:8080/auth/google"><svg
                           width="18"
                           height="18"
                           className={styles.googleBtnSvg}
                         >
                           <use href={sprite + "#google"}></use>
                         </svg>
-                        <span className={styles.googleBtnText}>Google</span>
-                      </button>
+                        <span className={styles.googleBtnText}>Google</span></a>
                     </div>
                   </div>
                   <p className={styles.modalText}>
