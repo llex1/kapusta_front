@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import style from './UniversalModal.module.css';
 import sprite from '../../assets/img/sprite.svg';
 import '../../App.css';
+import action from '../../redux/universalModal/universalModal.action';
 
 function UniversalModal(props) {
-  const [isOpen, setIsOpen] = useState(true);
+  const dispatch = useDispatch();
 
-  const modalToggle = e => {
-    console.log(e.target);
+  const modalClose = e => {
+    e.stopPropagation();
 
     if (
       e.target.dataset.id === 'svg' ||
@@ -18,29 +19,34 @@ function UniversalModal(props) {
       e.target.nodeName === 'BUTTON' ||
       e.code === 'Escape'
     ) {
-      setIsOpen(false);
+      dispatch(action.universalModalShowClose);
+    }
+    if (e.target.id === 'go') {
+      dispatch(action.universalModalShowAnswer);
     }
   };
   useEffect(() => {
-    //логіка закриття модалки
-    window.addEventListener('keydown', modalToggle);
-    // document.getElementById('overlay').addEventListener('click', modalToggle);
+    //слухач на клавіатуру
+    window.addEventListener('keydown', modalClose);
   });
-  const modalVisibility = useSelector(state => state.user.modalVisibility);
-  // const modalVisibility = true;
+
+  const modalTitle = useSelector(state => state.universalModal.modalTitle);
+  const modalVisibility = useSelector(
+    state => state.universalModal.modalVisibility,
+  );
 
   return (
     <React.Fragment>
-      {isOpen && (
-        <div id="overlay" className={style.modal} onClick={modalToggle}>
+      {modalVisibility && (
+        <div id="overlay" className={style.modal} onClick={modalClose}>
           <div className={style.modalBody}>
-            <svg data-id="svg" className={style.close} onClick={modalToggle}>
+            <svg data-id="svg" className={style.close} onClick={modalClose}>
               <use data-id="svgUse" href={sprite + '#icon-x'} />
             </svg>
 
             {/*++ варіант є true або false ++*/}
             <p className={style.question}>
-              {modalVisibility === true
+              {modalTitle === true
                 ? 'Вы действительно хотите выйти?'
                 : 'Вы уверены?'}
             </p>
@@ -52,10 +58,10 @@ function UniversalModal(props) {
             {/* пропс при розлогіні ? <p>Вы действительно хотите выйти?</p> :
           <p>Вы уверены?</p> */}
 
-            <button className="go" onClick={modalToggle}>
+            <button id="go" className="go" onClick={modalClose}>
               Да
             </button>
-            <button className="back" onClick={modalToggle}>
+            <button className="back" onClick={modalClose}>
               Нет
             </button>
           </div>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import styles from "../BalanceModal/BalanceModal.module.css";
+import styles from '../BalanceModal/BalanceModal.module.css';
 
 const BalanceModal = () => {
   const [showModal, setShowModal] = useState(true);
@@ -10,7 +10,7 @@ const BalanceModal = () => {
   };
   useEffect(() => {
     //тут буде логіка закриття модалки, якщо баланс більше 0
-    document.getElementById("overlay").addEventListener("click", modalToggle);
+    document.getElementById('overlay').addEventListener('click', modalToggle);
   });
 
   return (

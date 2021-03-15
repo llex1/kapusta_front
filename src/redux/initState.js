@@ -3,7 +3,12 @@ const initState = {
     email: 'user@gmail.com',
     jwt: '',
   },
-  modalVisibility: true,
+  universalModal: {
+    modalTitle: false,
+    modalVisibility: false,
+    answer: false,
+  },
+
   date: {
     currentDate: 'поточна дата в Unix форматі',
     currentPeriod: {
