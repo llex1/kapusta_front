@@ -27,6 +27,7 @@ function UniversalModal(props) {
     // document.getElementById('overlay').addEventListener('click', modalToggle);
   });
   const modalVisibility = useSelector(state => state.kapusta.modalVisibility);
+  // const modalVisibility = true;
 
   return (
     <React.Fragment>
