@@ -49,7 +49,7 @@ const initState = {
       },
       //.......
     ],
-    profit: [
+    profits: [
       {
         date: 'дата в юнікс форматі',
         category: 'категорія',
