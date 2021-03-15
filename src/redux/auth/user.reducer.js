@@ -1,9 +1,6 @@
-const initState = {
-  email: "" /* "user@gmail.com" */,
-  jwt: "" /* "JWToken" */,
-}
+import initState from '../../redux/initState';
 
-const userReducer = (state = initState, {type, payload})=>{
+const userReducer = (state = initState.user, {type, payload})=>{
   switch (type) {
     case "login/ok":
       return {

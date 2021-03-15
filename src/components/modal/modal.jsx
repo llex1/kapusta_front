@@ -7,7 +7,7 @@ import * as Yup from "yup";
 import styles from "./modal.module.css";
 import sprite from "../../assets/img/sprite.svg";
 // import {user} from "../../redux/selectors";
-import action from "./Modal.action";
+import action from "../../redux/auth/auth.action";
 
 const RegisterSchema = Yup.object().shape({
   email: Yup.string()
