@@ -26,7 +26,7 @@ function UniversalModal(props) {
     window.addEventListener('keydown', modalToggle);
     // document.getElementById('overlay').addEventListener('click', modalToggle);
   });
-  const modalVisibility = useSelector(state => state.kapusta.modalVisibility);
+  const modalVisibility = useSelector(state => state.user.modalVisibility);
   // const modalVisibility = true;
 
   return (
