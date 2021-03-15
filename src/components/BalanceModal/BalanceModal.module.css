@@ -1,0 +1,63 @@
+.notShow {
+  display: none;
+}
+.mainContainer {
+  position: absolute;
+}
+
+.container {
+  position: relative;
+  width: 292px;
+  height: 152px;
+  left: 19px;
+  top: 0;
+  padding: 30px 25px;
+  background: linear-gradient(117.84deg, #1d346a 2.84%, #031634 67.28%);
+  border-radius: 30px;
+}
+
+.mainContainer::before {
+  content: "";
+  background-color: #172d5e;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 88px;
+  top: -8px;
+  transform: rotate(45deg);
+}
+
+.greeting {
+  margin: 0 auto 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #ffffff;
+}
+.description {
+  composes: greeting;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 292px;
+    left: 186px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .mainContainer::before {
+    left: 233px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    left: 546px;
+  }
+  .mainContainer::before {
+    left: 593px;
+  }
+}

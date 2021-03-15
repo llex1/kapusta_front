@@ -1,12 +1,17 @@
-import './App.css';
+import { Fragment } from 'react';
+import {Route} from 'react-router-dom';
 
+import Main from "./pages/Main";
+import Cost from "./pages/Cost";
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>hi there</h1>
-    </div>
+    <Fragment>
+      <Route exact path="/"><Main/></Route>
+      <Route exact path="/cost"><Cost/></Route>
+    </Fragment>
   );
 }
-
 export default App;
