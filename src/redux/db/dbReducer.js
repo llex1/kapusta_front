@@ -1,6 +1,6 @@
 import initState from "../../redux/initState";
 
-const userReducer = (state = initState.db, { type, payload }) => {
+const dbReducer = (state = initState.db, { type, payload }) => {
   switch (type) {
     case "":
       return {
@@ -20,4 +20,4 @@ const userReducer = (state = initState.db, { type, payload }) => {
   }
 };
 
-export default userReducer;
+export default dbReducer;

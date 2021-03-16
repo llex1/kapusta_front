@@ -1,10 +1,9 @@
-import initState from "../initState.js";
 import costsTypes from "./costsTypes";
 
-const items = (state = initState.db.costs, { type, payload }) => {
+const costReducer = (state, { type, payload }) => {
   switch (type) {
     case costsTypes.ADD:
-      return [...state, payload.cost];
+      return { ...state, [state.costs]: [...payload.cost] };
 
     case costsTypes.REMOVE:
       return state.filter((cost) => cost.id !== payload.costId);
@@ -15,5 +14,5 @@ const items = (state = initState.db.costs, { type, payload }) => {
 };
 
 export default {
-  items,
+  costReducer,
 };

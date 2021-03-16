@@ -5,22 +5,20 @@ import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 //reducers
-import userReducer from './auth/user.reducer';
-import universalModalreduce from './universalModal/universalModal.reducer';
+import userReducer from "./auth/user.reducer";
+import universalModalreduce from "./universalModal/universalModal.reducer";
 // import dateReducer from "./reducers/date.reducer";
-// import dbReducer from "./reducers/db.reducer";
+import dbReducer from "./db/dbReducer";
+import costsReducer from "./costs/costsReducer";
 
 //middlewares
-import seMiddleware from './middlewares/se.middleware';
-
-// costs
-import costsReducer from "./costs/costsReducer";
+import seMiddleware from "./middlewares/se.middleware";
 
 const rootReducer = combineReducers({
   user: userReducer,
   universalModal: universalModalreduce,
   // date: dateReducer,
-  // db: dbReducer,
+  db: dbReducer,
   costs: costsReducer,
 });
 
@@ -34,10 +32,10 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = createStore(
   persistedReducer,
   compose(
+    // applyMiddleware(thunk),
     applyMiddleware(seMiddleware, thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ &&
-      window.__REDUX_DEVTOOLS_EXTENSION__(),
-  ),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 );
 
 const persistor = persistStore(store);

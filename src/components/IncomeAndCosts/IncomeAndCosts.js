@@ -1,22 +1,10 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { IncomeForm } from "../IncomeForm/IncomeForm";
-import { IncomeTable } from "../IncomeTable/IncomeTable";
+import IncomeForm from "../IncomeForm/IncomeForm";
+import IncomeTable from "../IncomeTable/IncomeTable";
 import styles from "./IncomeAndCosts.module.css";
-import costsActions from "../../redux/costs/costsActions";
-import { connect } from "react-redux";
 
 class IncomeAndCosts extends Component {
-  state = {
-    costs: [],
-  };
-
-  handleAddCosts = () => {
-    this.setState((prev) => ({
-      costs: [...prev.costs],
-    }));
-  };
-
   render() {
     return (
       <div className="container">
@@ -36,17 +24,28 @@ class IncomeAndCosts extends Component {
             ДОХОД
           </NavLink>
           <div className={styles.incomeWrapper}>
-            <IncomeForm onAddCosts={this.handleAddCosts} />
-            <IncomeTable costs={this.state.costs} />
+            <IncomeForm />
+            <IncomeTable />
           </div>
         </div>
       </div>
     );
   }
 }
-
-const mapDispatchToProps = {
-  onAddCosts: costsActions.addCost,
-};
-
-export default connect(null, mapDispatchToProps)(IncomeAndCosts);
+// state = {
+//   costs: [],
+// };
+//  handleAddCosts = () => {
+//     this.setState((prev) => ({
+//       costs: [...prev.costs],
+//     }));
+//   };
+// costs={this.state.costs}
+// import costsActions from "../../redux/costs/costsActions";
+// import { connect } from "react-redux";
+// onAddCosts={this.handleAddCosts}
+// const mapDispatchToProps = {
+//   onAddCosts: costsActions.addCost,
+// };
+// connect(null, mapDispatchToProps)()
+export default IncomeAndCosts;
