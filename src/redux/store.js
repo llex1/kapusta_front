@@ -7,6 +7,7 @@ import storage from "redux-persist/lib/storage";
 //reducers
 import userReducer from './auth/user.reducer';
 import universalModalreduce from './universalModal/universalModal.reducer';
+import calendar from "./calendar/calendarReducer"
 // import dateReducer from "./reducers/date.reducer";
 // import dbReducer from "./reducers/db.reducer";
 
@@ -16,6 +17,7 @@ import seMiddleware from './middlewares/se.middleware';
 const rootReducer = combineReducers({
   user: userReducer,
   universalModal: universalModalreduce,
+  calendar:calendar
   // date: dateReducer,
   // db: dbReducer,
 });
