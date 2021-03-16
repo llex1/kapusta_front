@@ -10,9 +10,9 @@ class Header extends Component {
     }
   };
 
- componentDidMount() {
-   console.log(this.props.state.user.jwt);
- } 
+//  componentDidMount() {
+//    console.log(this.props.state.user.jwt);
+//  } 
 
   render() {
     return (
