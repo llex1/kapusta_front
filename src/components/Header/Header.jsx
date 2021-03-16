@@ -16,20 +16,20 @@ class Header extends Component {
    
   name = ()=> {
    if(this.indexR < 8) {
-    return(this.indexR.slice(0, this.indexR)) }
+    return(this.userName.slice(0, this.indexR)) }
    else {
 
-    return (this.indexR.slice(0, 8+1))
+    return (this.userName.slice(0, 8+1))
    }
  };
 
   //name = this.userName.slice(0, this.index)
 
  componentDidMount= () => {
-   console.log(this.props.state.user.jwt);
-   console.log(this.userName)
-   console.log(this.indexR)
-   console.log(this.name);
+  //  console.log(this.props.state.user.jwt);
+  //  console.log(this.userName.slice(0, this.indexR));
+  //  console.log(this.indexR);
+   console.log(this.name());
 
    
    };
