@@ -1,30 +1,28 @@
-import React from 'react';
+import React from "react";
 import {Redirect} from 'react-router-dom';
 import { useSelector } from 'react-redux'
 
 import routes from '../../routes';
-import Modal from "../../components/Modal";
 import Header from "../../components/Header";
-import Background from "../../components/Background";
+import BackgroundAuth from "../../components/BackgroundAuth";
 
-function Main(props){
+
+function Costs(props){
   const user = useSelector(state => state.user);
   if(user.email && user.jwt) {
-    return (
-      <Redirect to={routes.costs}/>
-    )
-  }else{
     return(
       <React.Fragment>
         <Header />
-        <Modal />
-        <Background />
+        <BackgroundAuth/>
       </React.Fragment>
     )
+  }else {
+    return (
+      <Redirect to={routes.main}/>
+    )
   }
-
-
-
 }
 
-export default Main;
+export default Costs;
+
+
