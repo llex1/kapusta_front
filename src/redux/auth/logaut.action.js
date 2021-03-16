@@ -1,10 +1,10 @@
 // екшин на вихід
-const LogautUser = {
-    type: "action-LogautUser",
-    payload: {
-        email: "",
-        jwt: ""
-    }
-}
+// const LogautUser = {
+//     type: "action-LogautUser",
+//     payload: {
+//         email: "",
+//         jwt: ""
+//     }
+// }
 
-export default LogautUser;
+// export default LogautUser;
