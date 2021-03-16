@@ -11,19 +11,24 @@ class Header extends Component {
   };
 
   userName = this.props.state.user.email;
-  indexR = if(this.userName.search('@')<=12) {
-    this.userName.slice(0, this.userName.)
-  } 
- if (indexR<=12) {indexR.slice(0, indexR+1)}
+  indexR = this.userName.search('@');
+
+   
+  name = ()=> {
+   if(this.indexR < 12) {this.indexR.slice(0, this.indexR+1)}
+   else {
+    this.indexR.slice(0, 12+1 +"...");
+   }
+ };
 
   //name = this.userName.slice(0, this.index)
 
- componentDidMount() {
+ componentDidMount= () => {
    console.log(this.props.state.user.jwt);
    console.log(this.userName)
    console.log(this.indexR)
 
-   ;} 
+   };
 
   render() {
     return (
