@@ -7,6 +7,7 @@ import storage from "redux-persist/lib/storage";
 //reducers
 import userReducer from './auth/user.reducer';
 import universalModalreduce from './universalModal/universalModal.reducer';
+import LogautUserRerucer from './auth/logaut.action.js';
 // import dateReducer from "./reducers/date.reducer";
 // import dbReducer from "./reducers/db.reducer";
 
