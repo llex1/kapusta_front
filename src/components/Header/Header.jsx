@@ -15,9 +15,9 @@ class Header extends Component {
 
   name = this.userName.slice(0, this.index)
 
-//  componentDidMount() {
-//    console.log(this.props.state.user.jwt);
-//  } 
+ componentDidMount() {
+   console.log(this.props.state.user.jwt);
+   console.log(this.name);} 
 
   render() {
     return (
