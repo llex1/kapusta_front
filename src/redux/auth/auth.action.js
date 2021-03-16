@@ -33,8 +33,7 @@ const register = (obj) => async function register(dispatch) {
   const data = await res.json()
   console.log(data);
   
-  
-  
+   
   
   dispatch({
     type: "regitster/ok",
@@ -44,7 +43,7 @@ const register = (obj) => async function register(dispatch) {
       "db": data.db
     },
   });
-  window.location.pathname = '/costs' 
+  window.location.pathname = routes.costs
 }
 
 export default { login, register };
