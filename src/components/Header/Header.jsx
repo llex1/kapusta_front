@@ -42,6 +42,7 @@ class Header extends Component {
             <span className={styles.logoImg}></span>
             <span className={styles.logoText}>Kapusta</span>
           </div>
+          
 
     {this.props.state.user.jwt && <div className={styles.logoInfo}>
       <div className={styles.bgr}>
