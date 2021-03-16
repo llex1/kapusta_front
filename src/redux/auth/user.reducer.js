@@ -8,6 +8,10 @@ const userReducer = (state = initState.user, {type, payload})=>{
         "jwt": payload.jwt,
         "email": payload.email
       }
+      case "action-LogautUser":
+        return {...state,
+                   email: action.payload.email,
+                   jwt: action.payload.jwt};
     default:
       return state
   }
