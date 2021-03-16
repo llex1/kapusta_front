@@ -14,7 +14,7 @@ class Header extends Component {
   indexR = this.userName.search('@');
 
    
-  name = (indexR)=> {
+  name = ()=> {
    if(this.indexR < 8) {
      this.indexR.slice(0, this.indexR)}
    else {
