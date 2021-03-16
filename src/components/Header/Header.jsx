@@ -14,7 +14,7 @@ class Header extends Component {
   indexR = this.userName.search('@');
 
    
-  name = ()=> {
+  name = (indexR)=> {
    if(this.indexR < 8) {
      this.indexR.slice(0, this.indexR)}
    else {
@@ -28,7 +28,7 @@ class Header extends Component {
    console.log(this.props.state.user.jwt);
    console.log(this.userName)
    console.log(this.indexR)
-
+   console.log(this.name);
    };
 
   render() {
