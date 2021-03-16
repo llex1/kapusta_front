@@ -19,23 +19,30 @@ class Header extends Component {
             <span className={styles.logoText}>Kapusta</span>
           </div>
 
-          <div className={styles.logoInfo}>
-            <div className={styles.bgr}>
-              <p className={styles.userName}>U</p>
-            </div>
-            <p className={styles.logout}>User Name</p>
-            <div className={styles.fonVertikal}></div>
-            <button className={styles.exit} onClick={this.modalOpen}>
-              <u>Выйти</u>
-            </button>
-          </div>
+    {<div className={styles.logoInfo}>
+      <div className={styles.bgr}>
+        <p className={styles.userName}>U</p>
+      </div>
+      <p className={styles.logout}>User Name</p>
+      <div className={styles.fonVertikal}></div>
+      <button className={styles.exit} onClick={this.modalOpen}>
+        <u>Выйти</u>
+      </button>
+    </div>}
         </header>
       </div>
     );
   }
 }
 
+const mapStateToProps = (state)=>{
+  return {
+    state: state,
+}
+}
+
 const mapDispatchToProps = dispatch => {
+
   return {
     action_exit: obj => {
       dispatch(action.universalModalShowOpenWithTile);
@@ -43,4 +50,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
