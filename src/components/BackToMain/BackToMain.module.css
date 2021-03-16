@@ -1,0 +1,18 @@
+.backToMainTitle{
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+line-height: 1.16;
+letter-spacing: 0.04em;
+color: rgba(82, 85, 95, 0.7);
+}
+.leftArrow{
+  margin-right: 18px;
+  fill: orange;
+}
+.BackToMainBox{
+  display: flex;
+  align-items: center;
+  width: 172px;
+}
