@@ -10,6 +10,10 @@ class Header extends Component {
     }
   };
 
+ componentDidMount() {
+   console.log(this.props.state.user.jwt);
+ } 
+
   render() {
     return (
       <div className="container">
@@ -19,7 +23,7 @@ class Header extends Component {
             <span className={styles.logoText}>Kapusta</span>
           </div>
 
-    {<div className={styles.logoInfo}>
+    {this.props.state.user.jwt && <div className={styles.logoInfo}>
       <div className={styles.bgr}>
         <p className={styles.userName}>U</p>
       </div>

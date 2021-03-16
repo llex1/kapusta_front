@@ -43,7 +43,7 @@ const register = (obj) => async function register(dispatch) {
       "db": data.db
     },
   });
-  window.location.pathname = '/costs' 
+  window.location.pathname = routes.costs
 }
 
 export default { login, register };
