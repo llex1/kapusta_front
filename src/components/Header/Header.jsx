@@ -11,6 +11,9 @@ class Header extends Component {
   };
 
    userName = this.props.state.user.email;
+  index = this.userName.inexOf('@');
+
+  name = this.userName.slice(0, this.index)
 
 //  componentDidMount() {
 //    console.log(this.props.state.user.jwt);
@@ -40,6 +43,7 @@ class Header extends Component {
     );
   }
 }
+
 
 const mapStateToProps = (state)=>{
   return {
