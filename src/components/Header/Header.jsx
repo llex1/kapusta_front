@@ -10,6 +10,8 @@ class Header extends Component {
     }
   };
 
+   userName = this.props.state.user.email;
+
 //  componentDidMount() {
 //    console.log(this.props.state.user.jwt);
 //  } 
