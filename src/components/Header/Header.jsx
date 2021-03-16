@@ -17,7 +17,7 @@ class Header extends Component {
   name = ()=> {
    if(this.indexR < 12) {this.indexR.slice(0, this.indexR+1)}
    else {
-    this.indexR.slice(0, 12+1 +"...");
+    this.indexR.slice(0, 12+1);
    }
  };
 
