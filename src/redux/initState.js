@@ -1,59 +1,64 @@
 const initState = {
   user: {
-    email: "user@gmail.com",
-    jwt: "",
+    email: 'user@gmail.com',
+    jwt: '',
   },
-  modalVisibility: true,
+  universalModal: {
+    modalTitle: false,
+    modalVisibility: false,
+    answer: false,
+  },
+
   date: {
-    currentDate: "поточна дата в Unix форматі",
+    currentDate: 'поточна дата в Unix форматі',
     currentPeriod: {
-      from: "перша секунда місяця який шукаємо",
-      to: "перша секунда НАСТУПНОГО місяця",
+      from: 'перша секунда місяця який шукаємо',
+      to: 'перша секунда НАСТУПНОГО місяця',
     },
   },
   db: {
-    balance: "integer",
+    balance: 'integer',
     summaryCosts: [
       {
-        month: "перша секунда поточного місяця",
-        sum: "сумма за місяць",
+        month: 'перша секунда поточного місяця',
+        sum: 'сумма за місяць',
       },
       {
-        month: "перша секунда попедернього місяця",
-        sum: "сумма за місяць",
+        month: 'перша секунда попедернього місяця',
+        sum: 'сумма за місяць',
       },
       //.........
     ],
     summaryProfit: [
       {
-        month: "перша секунда поточного місяця",
-        sum: "сумма за місяць",
+        month: 'перша секунда поточного місяця',
+        sum: 'сумма за місяць',
       },
       {
-        month: "перша секунда поточного місяця",
-        sum: "сумма за місяць",
+        month: 'перша секунда поточного місяця',
+        sum: 'сумма за місяць',
       },
       //...........
     ],
     costs: [
       {
-        date: "дата в юнікс форматі",
-        category: "категорія",
-        describe: "опис",
-        sum: "сума",
+        date: 'дата в юнікс форматі',
+        category: 'категорія',
+        describe: 'опис',
+        sum: 'сума',
       },
       //.......
     ],
-    profit: [
+    profits: [
       {
-        date: "дата в юнікс форматі",
-        category: "категорія",
-        describe: "опис",
-        sum: "сума",
+        date: 'дата в юнікс форматі',
+        category: 'категорія',
+        describe: 'опис',
+        sum: 'сума',
       },
       //.......
     ],
   },
-}
+};
 
-export default initState
+export default initState;
