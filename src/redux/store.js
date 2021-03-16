@@ -15,7 +15,7 @@ import LogautUserRerucer from './auth/logaut.reducer.js';
 import seMiddleware from './middlewares/se.middleware';
 
 const rootReducer = combineReducers({
-  user: userReducer,LogautUserRerucer,
+  user: userReducer,
   universalModal: universalModalreduce,
   // date: dateReducer,
   // db: dbReducer,
