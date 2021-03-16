@@ -43,7 +43,7 @@ class Header extends Component {
       <div className={styles.bgr}>
         <p className={styles.userName}>U</p>
       </div>
-      <p className={styles.logout}>{this.userName}</p>
+      <p className={styles.logout}>{this.name}</p>
       <div className={styles.fonVertikal}></div>
       <button className={styles.exit} onClick={this.modalOpen}>
         <u>Выйти</u>
