@@ -7,6 +7,7 @@ import storage from "redux-persist/lib/storage";
 //reducers
 import userReducer from './auth/user.reducer';
 import universalModalreduce from './universalModal/universalModal.reducer';
+import LogautUserRerucer from './auth/logaut.reducer.js';
 // import dateReducer from "./reducers/date.reducer";
 // import dbReducer from "./reducers/db.reducer";
 
@@ -14,7 +15,7 @@ import universalModalreduce from './universalModal/universalModal.reducer';
 import seMiddleware from './middlewares/se.middleware';
 
 const rootReducer = combineReducers({
-  user: userReducer,
+  user: userReducer,LogautUserRerucer,
   universalModal: universalModalreduce,
   // date: dateReducer,
   // db: dbReducer,
