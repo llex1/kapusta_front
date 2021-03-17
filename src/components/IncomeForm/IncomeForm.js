@@ -4,7 +4,6 @@ import styles from "./IncomeForm.module.css"
 import sprite from "../../assets/img/sprite.svg"
 
 import action from "../../redux/db/db.action";
-import styles from "./IncomeForm.module.css";
 
 function IncomeForm() {
   const dispatch = useDispatch();
