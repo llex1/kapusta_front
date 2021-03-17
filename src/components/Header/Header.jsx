@@ -17,27 +17,22 @@ class Header extends Component {
 
   userName = this.props.state.user.email;
   indexR = this.userName.search('@');
-
-   
-  name = ()=> {
-   if(this.indexR < 8) {
-    return(this.userName.slice(0, this.indexR)) }
-   else {
-
-    return (this.userName.slice(0, 8+1))
-   }
- };
+  name = () => {
+    if (this.indexR < 10) {
+      return this.userName.slice(0, this.indexR);
+    } else {
+      return this.userName.slice(0, 10 + 1);
+    }
+  };
 
   //name = this.userName.slice(0, this.index)
 
- componentDidMount= () => {
-  //  console.log(this.props.state.user.jwt);
-  //  console.log(this.userName.slice(0, this.indexR));
-  //  console.log(this.indexR);
-   console.log(this.name());
-
-   
-   };
+  componentDidMount = () => {
+    //  console.log(this.props.state.user.jwt);
+    //  console.log(this.userName.slice(0, this.indexR));
+    //  console.log(this.indexR);
+    console.log(this.name());
+  };
 
   render() {
     return (
@@ -88,15 +83,13 @@ class Header extends Component {
   }
 }
 
-
-const mapStateToProps = (state)=>{
+const mapStateToProps = state => {
   return {
     state: state,
-}
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
-
   return {
     action_exit: obj => {
       dispatch(action.universalModalShowOpenWithTile);

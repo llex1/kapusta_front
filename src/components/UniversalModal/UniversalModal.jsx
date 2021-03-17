@@ -22,7 +22,10 @@ function UniversalModal(props) {
       dispatch(action.universalModalShowClose);
     }
     if (e.target.id === 'go') {
-      dispatch(action.universalModalShowAnswer);
+      dispatch(action.universalModalShowAnswerExit);
+    }
+    if (!modalTitle && e.target.id === 'go') {
+      dispatch(action.universalModalShowAnswerDel);
     }
   };
   useEffect(() => {

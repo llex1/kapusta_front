@@ -5,7 +5,7 @@ import styles from "./IncomeTable.module.css";
 
 export function IncomeTableItem({ item }) {
   const { date, description, category, sum } = item;
-  console.log(item)
+  console.log(item);
   return (
     <tr className={styles.bodyRaw}>
       <td className={styles.date}>{date}</td>

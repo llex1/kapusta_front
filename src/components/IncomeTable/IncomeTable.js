@@ -1,22 +1,40 @@
 import React from "react";
-import {useSelector} from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./IncomeTable.module.css";
-import sprite from "../../assets/img/sprite.svg"
+import sprite from "../../assets/img/sprite.svg";
+// import modalAction from "../../redux/universalModal/universalModal.action";
+import costsOperations from "../../redux/db/db.operations";
 
 export function IncomeTable() {
+  const costs = useSelector((state) => state.db.costs);
+  const dispatch = useDispatch();
+  const jwt = useSelector((store) => store.user.jwt);
 
-  const costs = useSelector(state => state.db.costs)
+  const costDelete = (e) => {
+    e.preventDefault();
+    dispatch(
+      costsOperations.deleteCostOperation({ id: e.target.dataset.id }, jwt)
+    );
+  };
+
   const mapCosts = costs.map((el, index) => {
     return (
       <tr className={styles.bodyRaw} key={index}>
         <td className={styles.date}>{el.date}</td>
-        <td className={styles.description}>{el.describe}</td>
+        <td className={styles.description}>{el.description}</td>
         <td className={styles.category}>{el.category}</td>
         <td className={styles.bodySum}>{el.sum}</td>
-        <td className={styles.delete}><svg width="18" height="18"><use href={sprite+"#icon-basket"}/></svg></td>
+        <td className={styles.delete}>
+          <button type="button" onClick={costDelete} data-id={`${el._id}`}>
+            <svg width="18" height="18" data-id={`${el._id}`}>
+              <use href={sprite + "#icon-basket"} data-id={`${el._id}`} />
+            </svg>
+          </button>
+        </td>
       </tr>
-    )
-  })
+    );
+  });
+
   return (
     <table className={styles.costsHistory}>
       <thead className={styles.header}>
@@ -28,12 +46,7 @@ export function IncomeTable() {
           <th className={styles.delete}> </th>
         </tr>
       </thead>
-      <tbody className={styles.body}>
-        {mapCosts}
-        {/* {costs.map((cost) => (
-          <IncomeTableItem key={cost.date} item={cost} />
-        ))} */}
-      </tbody>
+      <tbody>{mapCosts}</tbody>
     </table>
   );
 }
