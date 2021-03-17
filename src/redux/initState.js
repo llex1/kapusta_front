@@ -42,15 +42,17 @@ const initState = {
     ],
     costs: [
       {
+        id: '',
         date: 'дата в юнікс форматі',
-        category: 'категорія',
         describe: 'опис',
+        category: 'категорія',
         sum: 'сума',
       },
       //.......
     ],
     profits: [
       {
+        id: '',
         date: 'дата в юнікс форматі',
         category: 'категорія',
         describe: 'опис',
