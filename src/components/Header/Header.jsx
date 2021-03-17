@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './Header.module.css';
 import action from '../../redux/universalModal/universalModal.action.js';
-
 import {Link} from 'react-router-dom';
-
+import sprite from '../../assets/img/sprite.svg';
 
 
 
@@ -60,6 +59,24 @@ class Header extends Component {
         <u>Выйти</u>
       </button>
     </div>}
+{/* 
+      <div>
+      <style>
+  rect:hover {
+    fill: #090;
+  }
+</style>
+<svg>
+  <rect fill="#fc0"/>
+</svg>
+      </div> */}
+
+<svg className = {styles.exitMobile} onClick={this.modalOpen} >
+ <use href= {sprite+'#icon-exit'} >
+   
+ </use>
+</svg>
+
         </header>
       </div>
     );

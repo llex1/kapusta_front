@@ -90,27 +90,15 @@ align-items: center;
 
 }
 .logout{
-  width: 64px;
-  font-size: 12px;
- margin-right: 20px;
- display: inline;
-
-}
-
-.fonVertikal {
-  width: 2px; 
-  height: 36px;
-  background: #F5F6FA;
-
-}
-
-
-.exit{
-  width: 64px;
-  font-size: 12px;
-  display: inline;
-  margin-left: 20px;
-}
+  display: none;
+ }
+ .fonVertikal {
+ display: none;
+ }
+ .exit{
+  display: none;
+  }
+ 
 
 .logoPage {
   font-style: normal;
@@ -138,17 +126,37 @@ align-items: center;
   margin-top: 0px;
   border-radius: 0px;
 }
+.exitMobile {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  fill: #CBCCD0;
+}
 
 @media screen and (min-width: 768px) {
-
+  .fonVertikal {
+    width: 2px; 
+    height: 36px;
+    background: #F5F6FA;
+    }
+    .logout{
+      width: 64px;
+      font-size: 12px;
+     margin-right: 20px;
+     display: inline;
+    }
+    .exit{
+      width: 64px;
+      font-size: 12px;
+      display: inline;
+      margin-left: 20px;
+    }
+    .exitMobile {
+      display: none;
+    }
 }
 
 @media screen and (min-width: 1280px) {
-  .logout{
-   display: none;
-  }
-  .fonVertikal {
-  display: none;
-  }
-  
+
 }
+
