@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 //persist
-import { persistReducer, persistStore } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 //reducers
 import userReducer from "./auth/user.reducer";

@@ -11,14 +11,19 @@ const universalModalShowClose = {
   type: "action-universalModal/Close",
   payload: { modalTitle: false, modalVisibility: false },
 };
-const universalModalShowAnswer = {
-  type: "action-universalModal/Answer",
-  payload: { answer: true, email: "", jwt: "" },
+const universalModalShowAnswerExit = {
+  type: 'action-universalModal/AnswerExit',
+  payload: { email: '', jwt: '' },
+};
+const universalModalShowAnswerDel = {
+  type: 'action-universalModal/AnswerDel',
+  payload: { answer: true },
 };
 
 export default {
   universalModalShowOpen,
   universalModalShowClose,
   universalModalShowOpenWithTile,
-  universalModalShowAnswer,
+  universalModalShowAnswerExit,
+  universalModalShowAnswerDel,
 };

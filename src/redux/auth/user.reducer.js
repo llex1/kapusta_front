@@ -14,8 +14,8 @@ const userReducer = (state = initState.user, {type, payload})=>{
         "jwt": payload.jwt,
         "email": payload.email
       };
-    case "action-universalModal/Answer":
-      return {...state, 
+    case "action-universalModal/AnswerExit":
+      return {...state,
                   "email": payload.email,
                   "jwt": payload.jwt};
     default:
