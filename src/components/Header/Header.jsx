@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import styles from './Header.module.css';
 import action from '../../redux/universalModal/universalModal.action.js';
 
+import {Link} from 'react-router-dom';
+
+
+
+
 class Header extends Component {
   modalOpen = e => {
     if (e.target.nodeName === 'U') {
@@ -38,11 +43,12 @@ class Header extends Component {
     return (
       <div className="container">
         <header className={styles.header}>
+        <Link to="/costs" alt=" "> 
           <div className={styles.logo}>
             <span className={styles.logoImg}></span>
             <span className={styles.logoText}>Kapusta</span>
           </div>
-          
+          </Link>
 
     {this.props.state.user.jwt && <div className={styles.logoInfo}>
       <div className={styles.bgr}>
