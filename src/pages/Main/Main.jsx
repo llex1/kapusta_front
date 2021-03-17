@@ -11,13 +11,13 @@ function Main(props) {
   // if (user.email && user.jwt) {
   //   props.history.push(routes.costs)
   // } else {
-    return (
-      <React.Fragment>
-        <Header />
-        <Modal />
-        <Background />
-      </React.Fragment>
-    );
+  return (
+    <React.Fragment>
+      <Header />
+      <Modal />
+      <Background />
+    </React.Fragment>
+  );
 }
 
 export default Main;
