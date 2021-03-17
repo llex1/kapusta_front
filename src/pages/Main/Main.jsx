@@ -1,10 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
-import routes from "../../routes";
 import Modal from "../../components/Modal";
 import Header from "../../components/Header";
 import Background from "../../components/Background";
+
 
 function Main(props) {
   // const user = useSelector((state) => state.user);

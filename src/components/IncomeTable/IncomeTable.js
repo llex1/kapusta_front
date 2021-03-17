@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./IncomeTable.module.css";
 import sprite from "../../assets/img/sprite.svg";
-import modalAction from "../../redux/universalModal/universalModal.action";
+// import modalAction from "../../redux/universalModal/universalModal.action";
 import costsOperations from "../../redux/db/db.operations";
 
 export function IncomeTable() {
@@ -19,14 +19,14 @@ export function IncomeTable() {
 
   const mapCosts = costs.map((el, index) => {
     return (
-      <tr key={index}>
-        <td>{el.date}</td>
-        <td>{el.description}</td>
-        <td>{el.category}</td>
-        <td>{el.sum}</td>
-        <td>
+      <tr className={styles.bodyRaw} key={index}>
+        <td className={styles.date}>{el.date}</td>
+        <td className={styles.description}>{el.description}</td>
+        <td className={styles.category}>{el.category}</td>
+        <td className={styles.bodySum}>{el.sum}</td>
+        <td className={styles.delete}>
           <button type="button" onClick={costDelete} data-id={`${el._id}`}>
-            <svg width="14" height="14" data-id={`${el._id}`}>
+            <svg width="18" height="18" data-id={`${el._id}`}>
               <use href={sprite + "#icon-basket"} data-id={`${el._id}`} />
             </svg>
           </button>
@@ -37,13 +37,13 @@ export function IncomeTable() {
 
   return (
     <table className={styles.costsHistory}>
-      <thead>
-        <tr>
-          <th>ДАТА</th>
-          <th>ОПИСАНИЕ</th>
-          <th>КАТЕГОРИЯ</th>
-          <th>СУММА</th>
-          <th>-</th>
+      <thead className={styles.header}>
+        <tr className={styles.headerRaw}>
+          <th className={styles.date}>ДАТА</th>
+          <th className={styles.description}>ОПИСАНИЕ</th>
+          <th className={styles.category}>КАТЕГОРИЯ</th>
+          <th className={styles.sum}>СУММА</th>
+          <th className={styles.delete}> </th>
         </tr>
       </thead>
       <tbody>{mapCosts}</tbody>
