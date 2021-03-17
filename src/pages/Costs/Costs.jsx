@@ -9,6 +9,7 @@ import UniversalModal from "../../components/UniversalModal/UniversalModal";
 import IncomeAndCosts from '../../components/IncomeAndCosts'
 
 
+
 function Costs(props){
   const user = useSelector(state => state.user);
   if(user.email && user.jwt) {

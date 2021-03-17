@@ -13,7 +13,7 @@ const RegisterSchema = Yup.object().shape({
     .min(2, "Некорректная длинна поля")
     .max(50, "Превышен лимит символов")
     .required("это обязательное поле"),
-  password: Yup.string().required("это обязательное поле").min(6, "Too short!"),
+  // password: Yup.string().required("это обязательное поле").min(6, "Too short!"),
 });
 
 class Modal extends Component {

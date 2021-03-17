@@ -11,6 +11,7 @@ import calendar from "./calendar/calendarReducer"
 // import LogautUserRerucer from './auth/logaut.action.js';
 // import dateReducer from "./reducers/date.reducer";
 import dbReducer from "./db/db.reducer";
+import summaryReducer from "./summary/reducerSummery"
 
 //middlewares
 import seMiddleware from './middlewares/se.middleware';
@@ -20,6 +21,8 @@ const rootReducer = combineReducers({
   universalModal: universalModalreduce,
   calendar:calendar,
   db: dbReducer,
+  summary:summaryReducer,
+
   // date: dateReducer,
 });
 

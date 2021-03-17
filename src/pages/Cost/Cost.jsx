@@ -4,6 +4,7 @@ import Header from '../../components/Header';
 import BackgroundAuth from '../../components/BackgroundAuth';
 import CurrentPeriod from '../../components/CurrentPeriod';
 
+
 class Cost extends Component {
 
 
@@ -12,7 +13,7 @@ class Cost extends Component {
       <Fragment>
         <Header />
         <CurrentPeriod />
-
+         
         <BackgroundAuth />
       </Fragment>
     );
