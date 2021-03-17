@@ -6,6 +6,7 @@ import routes from '../../routes';
 import Modal from "../../components/Modal";
 import Header from "../../components/Header";
 import Background from "../../components/Background";
+import IncomeAndCosts from "../../components/IncomeAndCosts"
 
 function Main(props){
   const user = useSelector(state => state.user);
@@ -17,8 +18,9 @@ function Main(props){
     return(
       <React.Fragment>
         <Header />
-        <Modal />
-        <Background />
+        {/* <Modal /> */}
+      <IncomeAndCosts/>
+        {/* <Background /> */}
       </React.Fragment>
     )
   }

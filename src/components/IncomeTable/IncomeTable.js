@@ -6,17 +6,17 @@ export function IncomeTable({ costs }) {
     console.log(costs)
   return (
     <table className={styles.costsHistory}>
-      <thead>
-        <tr>
-          <th>ДАТА</th>
-          <th>ОПИСАНИЕ</th>
-          <th>КАТЕГОРИЯ</th>
-          <th>СУММА</th>
-          <th></th>
+      <thead className={styles.header}>
+        <tr className={styles.headerRaw}>
+          <th className={styles.date}>ДАТА</th>
+          <th className={styles.description}>ОПИСАНИЕ</th>
+          <th className={styles.category}>КАТЕГОРИЯ</th>
+          <th className={styles.sum}>СУММА</th>
+          <th className={styles.delete}> </th>
         </tr>
       </thead>
 
-      <tbody>
+      <tbody className={styles.body}>
         {costs.map((cost) => (
           <IncomeTableItem key={cost.date} item={cost} />
         ))}
