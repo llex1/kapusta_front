@@ -9,9 +9,10 @@ import sprite from '../../assets/img/sprite.svg';
 
 class Header extends Component {
   modalOpen = e => {
-    if (e.target.nodeName === 'U') {
+    if (e.target.nodeName === 'U' || e.target.nodeName === 'svg' || e.target.nodeName === 'use') {
       this.props.action_exit();
     }
+    else {console.log(e.target.nodeName);}
   };
 
   userName = this.props.state.user.email;
@@ -53,11 +54,19 @@ class Header extends Component {
       <div className={styles.bgr}>
         <p className={styles.userName}>U</p>
       </div>
+
       <p className={styles.logout}>{this.name()}</p>
+
       <div className={styles.fonVertikal}></div>
       <button className={styles.exit} onClick={this.modalOpen}>
         <u>Выйти</u>
       </button>
+
+      <svg className = {styles.exitMobile} onClick={this.modalOpen} >
+      <use href= {sprite+'#icon-exit'} >
+   
+      </use>
+      </svg>
     </div>}
 {/* 
       <div>
@@ -71,11 +80,7 @@ class Header extends Component {
 </svg>
       </div> */}
 
-<svg className = {styles.exitMobile} onClick={this.modalOpen} >
- <use href= {sprite+'#icon-exit'} >
-   
- </use>
-</svg>
+
 
         </header>
       </div>
