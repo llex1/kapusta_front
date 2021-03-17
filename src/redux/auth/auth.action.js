@@ -16,7 +16,7 @@ const login = (obj) => async function login(dispatch){
     payload: {
       "jwt": data.jwt,
       "email": obj.email,
-      "db": data.db
+      // "db": data.db
     },
   });
   window.location.pathname = routes.costs
@@ -40,7 +40,7 @@ const register = (obj) => async function register(dispatch) {
     payload: {
       "jwt": data.jwt,
       "email": obj.email,
-      "db": data.db
+      // "db": data.db
     },
   });
   window.location.pathname = routes.costs
