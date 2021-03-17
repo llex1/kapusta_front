@@ -20,7 +20,7 @@ const universalModalreduce = (state = InitState.universalModal, action) => {
         modalTitle: action.payload.modalTitle,
         modalVisibility: action.payload.modalVisibility,
       };
-    case 'action-universalModal/Answer':
+    case 'action-universalModal/AnswerDel':
       return {
         ...state,
         answer: action.payload.answer,
