@@ -23,7 +23,6 @@ const addCostOperation = (data, jwt) => (dispatch) => {
 
 const deleteCostOperation = (data, jwt) => (dispatch) => {
   dispatch(dbActions.deleteCostRequest());
-  console.log(data);
   axios
     .delete(`${url}/${data.id}`, {
       headers: {

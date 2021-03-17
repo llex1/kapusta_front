@@ -1,32 +1,32 @@
-import React from 'react';
-import { Component } from 'react';
-import { connect } from 'react-redux';
-import moment from 'moment';
-import Calendar from './DatePiker.jsx';
-import setDate from '../../redux/calendar/calendarAction';
-import sprite from "../../assets/img/sprite.svg"
-import style from './Calendar.module.css';
+import React from "react";
+import { Component } from "react";
+import { connect } from "react-redux";
+import moment from "moment";
+import Calendar from "./DatePiker.jsx";
+import setDate from "../../redux/calendar/calendarAction";
+import sprite from "../../assets/img/sprite.svg";
+import style from "./Calendar.module.css";
 
 class DateCalendar extends Component {
   state = {
-    date: '',
+    date: "",
   };
   componentDidMount() {
-    this.props.setDate(moment(Date.now()).format('YYYY-MM-DD'));
+    this.props.setDate(moment(Date.now()).format("DD.MM.YYYY"));
   }
   handleTap = (someDate, setSomeDate) => {
     setSomeDate(someDate);
-    const result = someDate ? moment(someDate).format('YYYY-MM-DD') : 0;
+    const result = someDate ? moment(someDate).format("DD.MM.YYYY") : 0;
     this.setState({ date: result });
     this.props.setDate(result);
   };
   render() {
     return (
       <div className={style.calendarContainer}>
-        <svg  className={style.calendarSVG} width="20" height="20">
-  <use href={sprite+"#icon-calendar"}/>
-  </svg>
-        <Calendar onTap={this.handleTap}/>
+        <svg className={style.calendarSVG} width="20" height="20">
+          <use href={sprite + "#icon-calendar"} />
+        </svg>
+        <Calendar onTap={this.handleTap} />
       </div>
     );
   }
