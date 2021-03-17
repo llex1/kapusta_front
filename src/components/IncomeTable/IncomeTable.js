@@ -1,20 +1,42 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import styles from "./IncomeTable.module.css";
-import sprite from "../../assets/img/sprite.svg";
-// import modalAction from "../../redux/universalModal/universalModal.action";
-import costsOperations from "../../redux/db/db.operations";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import styles from './IncomeTable.module.css';
+import sprite from '../../assets/img/sprite.svg';
+import modalAction from '../../redux/universalModal/universalModal.action';
+import costsOperations from '../../redux/db/db.operations';
 
 export function IncomeTable() {
-  const costs = useSelector((state) => state.db.costs);
+  const costs = useSelector(state => state.db.costs);
   const dispatch = useDispatch();
-  const jwt = useSelector((store) => store.user.jwt);
+  const jwt = useSelector(store => store.user.jwt);
+  const answerTrue = useSelector(state => state.universalModal.answer);
 
-  const costDelete = (e) => {
+  const costDelete = e => {
+    console.log('event', e);
     e.preventDefault();
-    dispatch(
-      costsOperations.deleteCostOperation({ id: e.target.dataset.id }, jwt)
-    );
+    const datasetId = e.target.dataset.id;
+    // setTimeout(() => {
+    if (datasetId && !!answerTrue) {
+      dispatch(costsOperations.deleteCostOperation({ id: datasetId }, jwt));
+    }
+    // }, 2000);
+
+    // відкрити модалку
+    // - якщо модалка скаже ОК -  зробити діспатч
+    // - якщо нічого не скаж е - нічого не робимо
+    // dispatch(
+    //   costsOperations.deleteCostOperation({ id: e.target.dataset.id }, jwt),
+    // );
+  };
+  useEffect(() => {
+    //слухач на клавіатуру
+    //  window.addEventListener('keydown', modalClose);
+  });
+
+  const modalOpen = e => {
+    e.preventDefault();
+    dispatch(modalAction.universalModalShowOpen);
+    costDelete(e);
   };
 
   const mapCosts = costs.map((el, index) => {
@@ -25,9 +47,9 @@ export function IncomeTable() {
         <td className={styles.category}>{el.category}</td>
         <td className={styles.bodySum}>{el.sum}</td>
         <td className={styles.delete}>
-          <button type="button" onClick={costDelete} data-id={`${el._id}`}>
+          <button type="button" onClick={modalOpen} data-id={`${el._id}`}>
             <svg width="18" height="18" data-id={`${el._id}`}>
-              <use href={sprite + "#icon-basket"} data-id={`${el._id}`} />
+              <use href={sprite + '#icon-basket'} data-id={`${el._id}`} />
             </svg>
           </button>
         </td>

@@ -12,7 +12,7 @@ class Header extends Component {
     if (e.target.nodeName === 'U' || e.target.nodeName === 'svg' || e.target.nodeName === 'use') {
       this.props.action_exit();
     }
-    else {console.log(e.target.nodeName);}
+    
   };
 
   userName = this.props.state.user.email;
@@ -38,7 +38,7 @@ class Header extends Component {
     return (
       <div className="container">
         <header className={styles.header}>
-        <Link to="/costs" alt=" "> 
+        <Link to="/costs" alt=" ">
           <div className={styles.logo}>
             <span className={styles.logoImg}></span>
             <span className={styles.logoText}>Kapusta</span>
@@ -59,11 +59,11 @@ class Header extends Component {
 
       <svg className = {styles.exitMobile} onClick={this.modalOpen} >
       <use href= {sprite+'#icon-exit'} >
-   
+
       </use>
       </svg>
     </div>}
-{/* 
+{/*
       <div>
       <style>
   rect:hover {
