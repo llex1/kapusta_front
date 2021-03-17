@@ -6,6 +6,7 @@ import routes from '../../routes';
 import Header from '../../components/Header';
 import BackgroundAuth from '../../components/BackgroundAuth';
 import UniversalModal from '../../components/UniversalModal/UniversalModal';
+import IncomeAndCosts from '../../components/IncomeAndCosts';
 
 function Costs(props) {
   const user = useSelector(state => state.user);
@@ -15,6 +16,7 @@ function Costs(props) {
         <Header />
         <UniversalModal />
         <BackgroundAuth />
+        <IncomeAndCosts />
       </React.Fragment>
     );
   } else {
