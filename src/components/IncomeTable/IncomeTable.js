@@ -1,9 +1,20 @@
 import React from "react";
+import {useSelector} from 'react-redux'
 import styles from "./IncomeTable.module.css";
-import { IncomeTableItem } from "./IncomeTableItem";
 
-export function IncomeTable({ costs }) {
-    console.log(costs)
+export function IncomeTable() {
+
+  const costs = useSelector(state => state.db.costs)
+  const mapCosts = costs.map((el, index) => {
+    return (
+      <tr key={index}>
+        <td>{el.date}</td>
+        <td>{el.describe}</td>
+        <td>{el.category}</td>
+        <td>{el.sum}</td>
+      </tr>
+    )
+  })
   return (
     <table className={styles.costsHistory}>
       <thead className={styles.header}>
@@ -15,11 +26,11 @@ export function IncomeTable({ costs }) {
           <th className={styles.delete}> </th>
         </tr>
       </thead>
-
       <tbody className={styles.body}>
-        {costs.map((cost) => (
+        {mapCosts}
+        {/* {costs.map((cost) => (
           <IncomeTableItem key={cost.date} item={cost} />
-        ))}
+        ))} */}
       </tbody>
     </table>
   );

@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/costs" component={Costs}></Route>
         {/* <Route component={NotFound}></Route> */}
       </Switch>
-    </Fragment>
+        </Fragment>
   );
 }
 export default App;

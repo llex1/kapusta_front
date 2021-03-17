@@ -13,7 +13,8 @@ const universalModalShowClose = {
 };
 const universalModalShowAnswer= {
   type: 'action-universalModal/Answer',
-  payload: { answer: true},
+  payload: { answer: true, email: "", jwt: ""},
+
 };
 
 export default {

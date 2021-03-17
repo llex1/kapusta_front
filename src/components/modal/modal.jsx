@@ -54,7 +54,7 @@ class Modal extends Component {
   render() {
     return (
       <div id="overlay" className={styles.overlay}>
-        <div className="container">
+        {/* <div className="container"> */}
           <div className={styles.modalWrapper}>
             <Formik
               initialValues={{ email: "", password: "" }}
@@ -154,7 +154,7 @@ class Modal extends Component {
               )}
             </Formik>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     );
   }

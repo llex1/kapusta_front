@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux'
 import routes from '../../routes';
 import Header from "../../components/Header";
 import BackgroundAuth from "../../components/BackgroundAuth";
+import UniversalModal from "../../components/UniversalModal/UniversalModal";
+import IncomeAndCosts from '../../components/IncomeAndCosts'
 
 
 function Costs(props){
@@ -13,7 +15,9 @@ function Costs(props){
     return(
       <React.Fragment>
         <Header />
+        <UniversalModal/>
         <BackgroundAuth/>
+        <IncomeAndCosts/>
       </React.Fragment>
     )
   }else {
