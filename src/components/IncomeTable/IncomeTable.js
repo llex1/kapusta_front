@@ -9,7 +9,6 @@ export function IncomeTable() {
   const costs = useSelector((state) => state.db.costs);
   const dispatch = useDispatch();
   const jwt = useSelector((store) => store.user.jwt);
-  console.log(costs);
 
   const costDelete = (e) => {
     e.preventDefault();
@@ -25,7 +24,7 @@ export function IncomeTable() {
           <td className={styles.date}>{el.date}</td>
           <td className={styles.description}>{el.description}</td>
           <td className={styles.category}>{el.category}</td>
-          <td className={styles.bodySum}>{el.sum}</td>
+          <td className={styles.bodySum}>{"- " + el.sum + " грн."}</td>
           <td className={styles.delete}>
             <button type="button" onClick={costDelete} data-id={`${el._id}`}>
               <svg width="18" height="18" data-id={`${el._id}`}>

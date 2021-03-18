@@ -37,7 +37,6 @@ const deleteCostOperation = (data, jwt) => (dispatch) => {
 
 const getDateFromCalendar = (data, jwt) => (dispatch) => {
   dispatch(dbActions.getCostByDateRequest());
-  console.log(`${url}/date/${data}`);
   axios
     .get(`${url}/date/${data}`, {
       headers: {
