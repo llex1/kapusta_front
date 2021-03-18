@@ -48,7 +48,7 @@ export function IncomeTable() {
           <th className={styles.delete}> </th>
         </tr>
       </thead>
-      <tbody>{mapCosts}</tbody>
+      <tbody className={styles.body}>{mapCosts}</tbody>
     </table>
   );
 }
