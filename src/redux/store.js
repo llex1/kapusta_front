@@ -1,8 +1,8 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 //persist
-import { persistReducer, persistStore } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import { persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 //reducers
 import userReducer from "./auth/user.reducer";
@@ -11,6 +11,7 @@ import calendar from "./calendar/calendarReducer";
 // import LogautUserRerucer from './auth/logaut.action.js';
 // import dateReducer from "./reducers/date.reducer";
 import dbReducer from "./db/db.reducer";
+import summaryReducer from "./summary/reducerSummery";
 
 //middlewares
 import seMiddleware from "./middlewares/se.middleware";
@@ -21,12 +22,13 @@ const persistConfig = {
   whitelist: ["email", "jwt"],
 };
 
-const reducers = {
+const reducers = combineReducers({
   user: persistReducer(persistConfig, userReducer),
   universalModal: universalModalreduce,
   calendar: calendar,
   db: dbReducer,
-};
+  summary: summaryReducer,
+});
 
 const store = configureStore({
   reducer: reducers,

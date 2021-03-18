@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import styles from "./Summary.module.css";
+import { fetchSummery } from "../../redux/summary/operationSummery";
 
 class Summary extends Component {
+  componentDidMount() {
+    this.props.toFetchProducts();
+  }
+
   render() {
     return (
       <div className={styles.wrapper}>
         <h3 className={styles.title}>Сводка</h3>
         <ul className={`${styles.list} ${styles.scrollbar}`}>
-          {this.props.months &&
-            this.props.months.map((month, summary, id) => (
-              <li key={id} className={styles.listItem}>
-                {month} <span className={styles.listItemSum}>{summary}</span>
+          {this.props.array &&
+            this.props.array.data.map((el) => (
+              <li key={el.month} className={styles.listItem}>
+                {el.month} <span className={styles.listItemSum}>{el.sum}</span>
               </li>
             ))}
         </ul>
@@ -20,8 +25,14 @@ class Summary extends Component {
   }
 }
 
-// const mapStateToProps = (state) => ({
-//   summary: summary(state),
-// });
-// connect(mapStateToProps)();
-export default Summary;
+const mapStateToProps = (state) => ({
+  array: state.summary.payload,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toFetchProducts: (date) => dispatch(fetchSummery()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Summary);

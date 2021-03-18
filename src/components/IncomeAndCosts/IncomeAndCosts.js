@@ -3,32 +3,9 @@ import { NavLink } from "react-router-dom";
 import IncomeForm from "../IncomeForm/IncomeForm";
 import IncomeTable from "../IncomeTable/IncomeTable";
 import styles from "./IncomeAndCosts.module.css";
+import Summary from "../Summary/Summary";
 
 class IncomeAndCosts extends Component {
-  // state = {
-  //   costs: [],
-  // };
-
-  // getDate = () => {
-  //   const today = new Date();
-  //   const time =
-  //     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  //   return time;
-  // };
-
-  // handleAddCosts = (description, category, sum) => {
-  //   const costsObj = {
-  //     date: this.getDate(),
-  //     description: description,
-  //     category: category,
-  //     sum: sum,
-  //   };
-  //   console.log(costsObj);
-  //   this.setState((prev) => ({
-  //     costs: [...prev.costs, costsObj],
-  //   }));
-  // };
-
   render() {
     return (
       <div className="container">
@@ -48,8 +25,9 @@ class IncomeAndCosts extends Component {
             ДОХОД
           </NavLink>
           <div className={styles.incomeWrapper}>
-            <IncomeForm />
-            <IncomeTable />
+            <IncomeForm title={this.props.title} />
+            <IncomeTable title={this.props.title} />
+            <Summary />
           </div>
         </div>
       </div>

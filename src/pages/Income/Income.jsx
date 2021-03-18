@@ -8,7 +8,7 @@ import BackgroundAuth from "../../components/BackgroundAuth";
 import UniversalModal from "../../components/UniversalModal/UniversalModal";
 import IncomeAndCosts from "../../components/IncomeAndCosts";
 
-function Costs(props) {
+function Profit(props) {
   const user = useSelector((state) => state.user);
   if (user.email && user.jwt) {
     return (
@@ -16,7 +16,7 @@ function Costs(props) {
         <Header />
         <UniversalModal />
         <BackgroundAuth />
-        <IncomeAndCosts title="costs" />
+        <IncomeAndCosts title="profit" />
       </React.Fragment>
     );
   } else {
@@ -24,4 +24,4 @@ function Costs(props) {
   }
 }
 
-export default Costs;
+export default Profit;

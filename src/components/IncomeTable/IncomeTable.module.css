@@ -67,6 +67,7 @@
 
   .bodyRaw {
     width: 100%;
+    /* width: 605px; */
     height: 40px;
     border-bottom: 2px solid #f5f6fb;
     display: inline-table;
@@ -78,6 +79,10 @@
     text-align: right;
     color: #e7192e;
     font-weight: bold;
+  }
+  .bodyGreen {
+    composes: bodySum;
+    color: #407946;
   }
 }
 
