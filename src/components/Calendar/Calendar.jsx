@@ -18,7 +18,8 @@ class DateCalendar extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.date !== this.state.date) {
-      this.props.getDateFromCalendar(this.state.date, this.props.jwt);
+      this.props.getDateCostCalendar(this.state.date, this.props.jwt);
+      this.props.getDateProfitCalendar(this.state.date, this.props.jwt);
     }
   }
 
@@ -47,7 +48,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   setDate,
-  getDateFromCalendar: dbOperations.getDateFromCalendar,
+  getDateCostCalendar: dbOperations.getDateCostCalendar,
+  getDateProfitCalendar: dbOperations.getDateProfitCalendar,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DateCalendar);

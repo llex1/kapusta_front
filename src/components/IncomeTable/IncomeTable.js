@@ -5,10 +5,11 @@ import sprite from "../../assets/img/sprite.svg";
 // import modalAction from "../../redux/universalModal/universalModal.action";
 import costsOperations from "../../redux/db/db.operations";
 
-export function IncomeTable() {
-  const costs = useSelector((state) => state.db.costs);
+export function IncomeTable(props) {
   const dispatch = useDispatch();
+  const costs = useSelector((state) => state.db.costs);
   const jwt = useSelector((store) => store.user.jwt);
+  const profits = useSelector((state) => state.profits);
 
   const costDelete = (e) => {
     e.preventDefault();
@@ -16,15 +17,36 @@ export function IncomeTable() {
       costsOperations.deleteCostOperation({ id: e.target.dataset.id }, jwt)
     );
   };
-  let mapCosts;
-  if (costs) {
-    mapCosts = costs.map((el, index) => {
+
+  const profitDelete = (e) => {
+    e.preventDefault();
+    dispatch(
+      costsOperations.deleteProfitOperation({ id: e.target.dataset.id }, jwt)
+    );
+  };
+
+  let mapData;
+  let data;
+  if (props.title === "costs") {
+    data = costs;
+  } else if (props.title === "profit") {
+    data = profits;
+  }
+  if (data) {
+    mapData = data.map((el, index) => {
       return (
         <tr className={styles.bodyRaw} key={index}>
           <td className={styles.date}>{el.date}</td>
           <td className={styles.description}>{el.description}</td>
           <td className={styles.category}>{el.category}</td>
-          <td className={styles.bodySum}>{"- " + el.sum + " грн."}</td>
+          <td
+            className={
+              props.title === "costs" ? styles.bodySum : styles.bodyGreen
+            }
+          >
+            {props.title === "costs" ? <span>- </span> : ""}
+            {+el.sum + " грн."}
+          </td>
           <td className={styles.delete}>
             <button type="button" onClick={costDelete} data-id={`${el._id}`}>
               <svg width="18" height="18" data-id={`${el._id}`}>
@@ -45,10 +67,9 @@ export function IncomeTable() {
           <th className={styles.description}>ОПИСАНИЕ</th>
           <th className={styles.category}>КАТЕГОРИЯ</th>
           <th className={styles.sum}>СУММА</th>
-          <th className={styles.delete}> </th>
         </tr>
       </thead>
-      <tbody className={styles.body}>{mapCosts}</tbody>
+      <tbody className={styles.body}>{mapData}</tbody>
     </table>
   );
 }

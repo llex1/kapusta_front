@@ -80,6 +80,10 @@
     color: #e7192e;
     font-weight: bold;
   }
+  .bodyGreen {
+    composes: bodySum;
+    color: #407946;
+  }
 }
 
 @media screen and (min-width: 1280px) {

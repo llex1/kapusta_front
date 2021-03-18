@@ -16,7 +16,7 @@ function Profit(props) {
         <Header />
         <UniversalModal />
         <BackgroundAuth />
-        <IncomeAndCosts />
+        <IncomeAndCosts title="profit" />
       </React.Fragment>
     );
   } else {
