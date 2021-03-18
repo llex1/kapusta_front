@@ -18,6 +18,7 @@ class DateCalendar extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.date !== this.state.date) {
+      this.props.getDateCostCalendar(this.state.date, this.props.jwt);
       this.props.getDateProfitCalendar(this.state.date, this.props.jwt);
     }
   }

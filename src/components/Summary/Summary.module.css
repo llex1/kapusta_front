@@ -1,3 +1,8 @@
+@media screen and (max-width: 767px) {
+  .wrapper {
+    display: none;
+  }
+}
 @media screen and (min-width: 768px) {
   .wrapper {
     position: absolute;
@@ -5,12 +10,11 @@
     height: 280px;
     max-width: 230px;
     max-height: 280px;
-    left: 81px;
-    top: 904px;
+    left: 30px;
+    top: 665px;
     background: #f5f6fb;
     border: 2px solid #ffffff;
     border-radius: 20px 20px 20px 0;
-
   }
   .title {
     position: relative;
@@ -84,5 +88,11 @@
   }
   .scrollbar::-webkit-scrollbar-thumb:horizontal {
     min-width: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    left: 808px;
+    top: 165px;
   }
 }

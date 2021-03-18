@@ -69,7 +69,7 @@ export function IncomeTable(props) {
           <th className={styles.sum}>СУММА</th>
         </tr>
       </thead>
-      <tbody>{mapData}</tbody>
+      <tbody className={styles.body}>{mapData}</tbody>
     </table>
   );
 }

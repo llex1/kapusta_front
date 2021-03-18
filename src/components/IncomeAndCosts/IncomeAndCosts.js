@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import IncomeForm from "../IncomeForm/IncomeForm";
 import IncomeTable from "../IncomeTable/IncomeTable";
 import styles from "./IncomeAndCosts.module.css";
+import Summary from "../Summary/Summary";
 
 class IncomeAndCosts extends Component {
   render() {
@@ -26,6 +27,7 @@ class IncomeAndCosts extends Component {
           <div className={styles.incomeWrapper}>
             <IncomeForm title={this.props.title} />
             <IncomeTable title={this.props.title} />
+            <Summary />
           </div>
         </div>
       </div>
