@@ -1,27 +1,18 @@
-const costsAdd = (obj, jwt) =>
-  async function costsAdd(dispatch) {
-    const res = await fetch("http://kapusta.fun/api/costs/add/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${jwt}`,
-      },
-      body: JSON.stringify(obj),
-    });
-    const respons = await res.json();
+import { createAction } from "@reduxjs/toolkit";
 
-    dispatch({
-      type: "costsAdd/ok",
-      payload: [
-        {
-          id: respons._id,
-          date: respons.date,
-          describe: respons.description,
-          category: respons.category,
-          sum: respons.sum,
-        },
-      ],
-    });
-  };
+const addCostRequest = createAction("costs/addCostRequest");
+const addCostSuccess = createAction("costs/addCostSuccess");
+const addCostError = createAction("costs/addCostError");
 
-export default { costsAdd };
+const deleteCostRequest = createAction("costs/deleteCostRequest");
+const deleteCostSuccess = createAction("costs/deleteCostSuccess");
+const deleteCostError = createAction("costs/deleteCostError");
+
+export default {
+  addCostRequest,
+  addCostSuccess,
+  addCostError,
+  deleteCostRequest,
+  deleteCostSuccess,
+  deleteCostError,
+};

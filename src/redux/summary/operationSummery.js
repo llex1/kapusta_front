@@ -3,7 +3,7 @@ import actionSummary from "./actionSummary";
 import moment from 'moment';
 
 
-axios.defaults.baseURL = "http://localhost:8080/api/costs/half-year/";
+axios.defaults.baseURL = "http://kapusta.fun/api/costs/half-year/";
 
 export const fetchSummery = (date) => (dispatch, getState) => {
   console.log(moment(Date.now()).format('MM'));

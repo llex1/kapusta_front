@@ -1,26 +1,26 @@
-import InitState from '../initState.js';
+import InitState from "../initState.js";
 
-const universalMdalreduce = (state = InitState.universalModal, action) => {
+const universalModalreduce = (state = InitState.universalModal, action) => {
   switch (action.type) {
-    case 'action-universalModal/Open':
+    case "action-universalModal/Open":
       return {
         ...state,
         modalTitle: action.payload.modalTitle,
         modalVisibility: action.payload.modalVisibility,
       };
-    case 'action-universalModal/Close':
+    case "action-universalModal/Close":
       return {
         ...state,
         modalTitle: action.payload.modalTitle,
         modalVisibility: action.payload.modalVisibility,
       };
-    case 'action-universalModal/Open-with-tile':
+    case "action-universalModal/Open-with-tile":
       return {
         ...state,
         modalTitle: action.payload.modalTitle,
         modalVisibility: action.payload.modalVisibility,
       };
-    case 'action-universalModal/Answer':
+    case 'action-universalModal/AnswerDel':
       return {
         ...state,
         answer: action.payload.answer,
@@ -31,4 +31,4 @@ const universalMdalreduce = (state = InitState.universalModal, action) => {
   }
 };
 
-export default universalMdalreduce;
+export default universalModalreduce;
