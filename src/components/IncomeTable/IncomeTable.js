@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import styles from './IncomeTable.module.css';
 import sprite from '../../assets/img/sprite.svg';
 import modalAction from '../../redux/universalModal/universalModal.action';
-import modalOperation from '../../redux/universalModal/universalModal.operation.js';
 import costsOperations from '../../redux/db/db.operations';
 
 export function IncomeTable(props) {
@@ -11,7 +10,7 @@ export function IncomeTable(props) {
   const dispatch = useDispatch();
   const jwt = useSelector(store => store.user.jwt);
   const answerTrue = useSelector(state => state.universalModal.answer);
-  const delId = useSelector(state => state.universalModal.id);
+  const delId = useSelector(state => state.universalModal.delElementId);
 
 const [eventId, changeEventId]=useState(null);
 
@@ -22,8 +21,7 @@ const [eventId, changeEventId]=useState(null);
 
   useEffect(()=>{
     if(answerTrue && delId===eventId){
-  // console.log('modal answer NOW - ', answerTrue)
-    dispatch(costsOperations.deleteCostOperation({ id: delId}, jwt))
+      dispatch(costsOperations.deleteCostOperation({ id: delId}, jwt))
     dispatch(modalAction.universalModalShowAnswerReset)
   }},[answerTrue, delId]
   );

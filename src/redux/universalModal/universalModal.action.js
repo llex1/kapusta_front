@@ -6,7 +6,7 @@ const universalModalShowOpenWithTile = {
 const universalModalShowOpen = (id)=> {
   return {
   type: 'action-universalModal/Open',
-  payload: { modalTitle: false, modalVisibility: true, answer: false, id:id },
+  payload: { modalTitle: false, modalVisibility: true, answer: false, delElementId:id },
   }
 };
 const universalModalShowClose = {
