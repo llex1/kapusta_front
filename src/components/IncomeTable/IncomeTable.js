@@ -1,29 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./IncomeTable.module.css";
 import sprite from "../../assets/img/sprite.svg";
-// import modalAction from "../../redux/universalModal/universalModal.action";
+import modalAction from "../../redux/universalModal/universalModal.action";
 import costsOperations from "../../redux/db/db.operations";
 
 export function IncomeTable(props) {
-  const dispatch = useDispatch();
   const costs = useSelector((state) => state.db.costs);
+  const profits = useSelector((state) => state.db.profits);
+  const dispatch = useDispatch();
   const jwt = useSelector((store) => store.user.jwt);
-  const profits = useSelector((state) => state.profits);
+  const answerTrue = useSelector((state) => state.universalModal.answer);
+  const delId = useSelector((state) => state.universalModal.delElementId);
+
+  const [eventId, changeEventId] = useState(null);
 
   const costDelete = (e) => {
-    e.preventDefault();
-    dispatch(
-      costsOperations.deleteCostOperation({ id: e.target.dataset.id }, jwt)
-    );
+    changeEventId(e.target.dataset.id);
+    dispatch(modalAction.universalModalShowOpen(e.target.dataset.id));
   };
 
-  const profitDelete = (e) => {
-    e.preventDefault();
-    dispatch(
-      costsOperations.deleteProfitOperation({ id: e.target.dataset.id }, jwt)
-    );
-  };
+  useEffect(() => {
+    if (answerTrue && delId === eventId) {
+      dispatch(costsOperations.deleteCostOperation({ id: delId }, jwt));
+      dispatch(modalAction.universalModalShowAnswerReset);
+    }
+  }, [answerTrue, delId]);
 
   let mapData;
   let data;

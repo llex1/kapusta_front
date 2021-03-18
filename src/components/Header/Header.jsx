@@ -14,7 +14,7 @@ class Header extends Component {
     ) {
       this.props.action_exit();
     }
-    // else {console.log(e.target.nodeName);}
+
   };
 
   userName = this.props.state.user.email;
@@ -27,13 +27,7 @@ class Header extends Component {
     }
   };
 
-  //name = this.userName.slice(0, this.index)
-
   componentDidMount = () => {
-    //  console.log(this.props.state.user.jwt);
-    //  console.log(this.userName.slice(0, this.indexR));
-    //  console.log(this.indexR);
-    // console.log(this.name());
   };
 
   render() {
@@ -65,17 +59,6 @@ class Header extends Component {
               </svg>
             </div>
           )}
-          {/* 
-      <div>
-      <style>
-  rect:hover {
-    fill: #090;
-  }
-</style>
-<svg>
-  <rect fill="#fc0"/>
-</svg>
-      </div> */}
         </header>
       </div>
     );

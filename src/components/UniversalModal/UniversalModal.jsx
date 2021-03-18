@@ -20,8 +20,13 @@ function UniversalModal(props) {
       e.code === 'Escape'
     ) {
       dispatch(action.universalModalShowClose);
+        // setTimeout(()=>{
+       // return
+      //  dispatch(action.universalModalShowAnswerReset)
+    // }, 2000)
+      // if(modalAnswer && !!modalVisibility){dispatch(action.universalModalShowAnswerReset)}
     }
-    if (e.target.id === 'go') {
+    if (modalTitle && e.target.id === 'go') {
       dispatch(action.universalModalShowAnswerExit);
     }
     if (!modalTitle && e.target.id === 'go') {

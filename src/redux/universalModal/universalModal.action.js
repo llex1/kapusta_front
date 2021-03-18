@@ -1,14 +1,16 @@
 const universalModalShowOpenWithTile = {
-  type: "action-universalModal/Open-with-tile",
+  type: 'action-universalModal/Open-with-tile',
   payload: { modalTitle: true, modalVisibility: true, answer: false },
 };
 
-const universalModalShowOpen = {
-  type: "action-universalModal/Open",
-  payload: { modalTitle: false, modalVisibility: true, answer: false },
+const universalModalShowOpen = (id)=> {
+  return {
+  type: 'action-universalModal/Open',
+  payload: { modalTitle: false, modalVisibility: true, answer: false, delElementId:id },
+  }
 };
 const universalModalShowClose = {
-  type: "action-universalModal/Close",
+  type: 'action-universalModal/Close',
   payload: { modalTitle: false, modalVisibility: false },
 };
 const universalModalShowAnswerExit = {
@@ -19,6 +21,10 @@ const universalModalShowAnswerDel = {
   type: 'action-universalModal/AnswerDel',
   payload: { answer: true },
 };
+const universalModalShowAnswerReset = {
+  type: 'action-universalModal/AnswerReset',
+  payload: { answer: false },
+};
 
 export default {
   universalModalShowOpen,
@@ -26,4 +32,7 @@ export default {
   universalModalShowOpenWithTile,
   universalModalShowAnswerExit,
   universalModalShowAnswerDel,
+  universalModalShowAnswerReset
 };
+
+

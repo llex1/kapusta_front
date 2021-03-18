@@ -7,7 +7,8 @@ const initState = {
     modalTitle: false,
     modalVisibility: false,
     answer: false,
-  },
+    delElementId: "",
+    },
 
   date: {
     currentDate: "поточна дата в Unix форматі",
