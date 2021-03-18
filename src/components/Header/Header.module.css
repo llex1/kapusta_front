@@ -14,7 +14,7 @@
   padding-left: 20px;
 }
 .logoImg {
-}
+  }
 .logoImg::before {
   content: '';
   position: absolute;
@@ -62,20 +62,21 @@
   text-align: end;
 }
 
-
 .logoInfo{
   display: flex;
   justify-content: center;
  align-items: center;
 }
 
-
-
  .userName{
  display: flex;
  justify-content: center;
-align-items: center;
+ align-items: center;
+ font-family: Roboto;
+ font-style: normal;
+ font-weight: 700;
 }
+
 .bgr{
   display: flex;
 background-color:#F5F6FA;
@@ -87,8 +88,8 @@ border-radius: 50%;
 margin-right: 10px;
 justify-content: center;
 align-items: center;
-
 }
+
 .logout{
   display: none;
  }
@@ -154,9 +155,39 @@ align-items: center;
     .exitMobile {
       display: none;
     }
+    .userName{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 700;
+     }
+     .logout{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 400;
+     }
+     .exit{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 400;
+      }
 }
 
 @media screen and (min-width: 1280px) {
-
+  .userName{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+   }
+   
+   .logout{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+   }
+   .exit{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    }
 }
 
