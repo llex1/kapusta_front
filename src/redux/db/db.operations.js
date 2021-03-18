@@ -16,14 +16,12 @@ const addCostOperation = (data, jwt) => (dispatch) => {
     })
     .then(({ data }) => dispatch(dbActions.addCostSuccess([data])))
     .catch((error) => {
-      console.log(error);
       dispatch(dbActions.addCostError(error));
     });
 };
 
 const deleteCostOperation = (data, jwt) => (dispatch) => {
   dispatch(dbActions.deleteCostRequest());
-  console.log(data);
   axios
     .delete(`${url}/${data.id}`, {
       headers: {
@@ -33,9 +31,23 @@ const deleteCostOperation = (data, jwt) => (dispatch) => {
     })
     .then(() => dispatch(dbActions.deleteCostSuccess({ id: data.id })))
     .catch((error) => {
-      console.log(error);
       dispatch(dbActions.deleteCostError(error));
     });
 };
 
-export default { addCostOperation, deleteCostOperation };
+const getDateFromCalendar = (data, jwt) => (dispatch) => {
+  dispatch(dbActions.getCostByDateRequest());
+  axios
+    .get(`${url}/date/${data}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwt}`,
+      },
+    })
+    .then((data) => {
+      dispatch(dbActions.getCostByDateSuccess(data));
+    })
+    .catch((error) => dispatch(dbActions.getCostByDateError(error)));
+};
+
+export default { addCostOperation, deleteCostOperation, getDateFromCalendar };

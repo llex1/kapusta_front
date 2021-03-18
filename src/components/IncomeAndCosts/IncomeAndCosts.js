@@ -6,30 +6,6 @@ import styles from "./IncomeAndCosts.module.css";
 
 
 class IncomeAndCosts extends Component {
-  // state = {
-  //   costs: [],
-  // };
-
-  // getDate = () => {
-  //   const today = new Date();
-  //   const time =
-  //     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  //   return time;
-  // };
-
-  // handleAddCosts = (description, category, sum) => {
-  //   const costsObj = {
-  //     date: this.getDate(),
-  //     description: description,
-  //     category: category,
-  //     sum: sum,
-  //   };
-  //   console.log(costsObj);
-  //   this.setState((prev) => ({
-  //     costs: [...prev.costs, costsObj],
-  //   }));
-  // };
-
   render() {
     return (
       <div className="container">
