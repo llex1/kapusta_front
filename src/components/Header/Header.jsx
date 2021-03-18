@@ -12,7 +12,7 @@ class Header extends Component {
     if (e.target.nodeName === 'U' || e.target.nodeName === 'svg' || e.target.nodeName === 'use') {
       this.props.action_exit();
     }
-    
+
   };
 
   userName = this.props.state.user.email;

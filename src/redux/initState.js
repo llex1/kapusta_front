@@ -7,6 +7,8 @@ const initState = {
     modalTitle: false,
     modalVisibility: false,
     answer: false,
+    delElementId: "",
+    // elementDataSetId: "",
   },
 
   date: {

@@ -1,45 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './IncomeTable.module.css';
 import sprite from '../../assets/img/sprite.svg';
 import modalAction from '../../redux/universalModal/universalModal.action';
+import modalOperation from '../../redux/universalModal/universalModal.operation.js';
 import costsOperations from '../../redux/db/db.operations';
 
-export function IncomeTable() {
+export function IncomeTable(props) {
   const costs = useSelector(state => state.db.costs);
   const dispatch = useDispatch();
   const jwt = useSelector(store => store.user.jwt);
   const answerTrue = useSelector(state => state.universalModal.answer);
+  const delId = useSelector(state => state.universalModal.id);
+
+const [eventId, changeEventId]=useState(null);
 
   const costDelete = e => {
-    console.log('event', e);
-    e.preventDefault();
-    const datasetId = e.target.dataset.id;
-    // setTimeout(() => {
-    if (datasetId && !!answerTrue) {
-      dispatch(costsOperations.deleteCostOperation({ id: datasetId }, jwt));
-    }
-    // }, 2000);
+    changeEventId(e.target.dataset.id)
+    dispatch(modalAction.universalModalShowOpen(e.target.dataset.id))
+    };
 
-    // відкрити модалку
-    // - якщо модалка скаже ОК -  зробити діспатч
-    // - якщо нічого не скаж е - нічого не робимо
-    // dispatch(
-    //   costsOperations.deleteCostOperation({ id: e.target.dataset.id }, jwt),
-    // );
-  };
-  useEffect(() => {
-    //слухач на клавіатуру
-    //  window.addEventListener('keydown', modalClose);
-  });
+  useEffect(()=>{
+    if(answerTrue && delId===eventId){
+  // console.log('modal answer NOW - ', answerTrue)
+    dispatch(costsOperations.deleteCostOperation({ id: delId}, jwt))
+    dispatch(modalAction.universalModalShowAnswerReset)
+  }},[answerTrue, delId]
+  );
 
-  const modalOpen = e => {
-    e.preventDefault();
-    dispatch(modalAction.universalModalShowOpen);
-    costDelete(e);
-  };
-
-  const mapCosts = costs.map((el, index) => {
+    const mapCosts = costs.map((el, index) => {
     return (
       <tr className={styles.bodyRaw} key={index}>
         <td className={styles.date}>{el.date}</td>
@@ -47,7 +36,7 @@ export function IncomeTable() {
         <td className={styles.category}>{el.category}</td>
         <td className={styles.bodySum}>{el.sum}</td>
         <td className={styles.delete}>
-          <button type="button" onClick={modalOpen} data-id={`${el._id}`}>
+          <button type="button" onClick={costDelete} data-id={`${el._id}`}>
             <svg width="18" height="18" data-id={`${el._id}`}>
               <use href={sprite + '#icon-basket'} data-id={`${el._id}`} />
             </svg>

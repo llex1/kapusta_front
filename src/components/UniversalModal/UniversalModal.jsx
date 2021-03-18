@@ -20,6 +20,13 @@ function UniversalModal(props) {
       e.code === 'Escape'
     ) {
       dispatch(action.universalModalShowClose);
+     //  dispatch(action.universalModalShowAnswerReset)
+
+    // setTimeout(()=>{
+       // return
+      //  dispatch(action.universalModalShowAnswerReset)
+    // }, 2000)
+      // if(modalAnswer && !!modalVisibility){dispatch(action.universalModalShowAnswerReset)}
     }
     if (modalTitle && e.target.id === 'go') {
       dispatch(action.universalModalShowAnswerExit);
@@ -37,6 +44,7 @@ function UniversalModal(props) {
   const modalVisibility = useSelector(
     state => state.universalModal.modalVisibility,
   );
+  const modalAnswer = useSelector(state => state.universalModal.answer);
 
   return (
     <React.Fragment>

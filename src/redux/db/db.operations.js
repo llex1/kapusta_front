@@ -21,7 +21,7 @@ const addCostOperation = (data, jwt) => (dispatch) => {
     });
 };
 
-const deleteCostOperation = (data, jwt) => (dispatch) => {
+const deleteCostOperation = (data, jwt) => function modal(dispatch){
   dispatch(dbActions.deleteCostRequest());
   console.log(data);
   axios

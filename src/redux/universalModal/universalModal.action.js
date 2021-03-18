@@ -3,13 +3,15 @@ const universalModalShowOpenWithTile = {
   payload: { modalTitle: true, modalVisibility: true, answer: false },
 };
 
-const universalModalShowOpen = {
+const universalModalShowOpen = (id)=> {
+  return {
   type: 'action-universalModal/Open',
-  payload: { modalTitle: false, modalVisibility: true, answer: false },
+  payload: { modalTitle: false, modalVisibility: true, answer: false, id:id },
+  }
 };
 const universalModalShowClose = {
   type: 'action-universalModal/Close',
-  payload: { modalTitle: false, modalVisibility: false, answer: false },
+  payload: { modalTitle: false, modalVisibility: false },
 };
 const universalModalShowAnswerExit = {
   type: 'action-universalModal/AnswerExit',
@@ -19,6 +21,10 @@ const universalModalShowAnswerDel = {
   type: 'action-universalModal/AnswerDel',
   payload: { answer: true },
 };
+const universalModalShowAnswerReset = {
+  type: 'action-universalModal/AnswerReset',
+  payload: { answer: false },
+};
 
 export default {
   universalModalShowOpen,
@@ -26,6 +32,7 @@ export default {
   universalModalShowOpenWithTile,
   universalModalShowAnswerExit,
   universalModalShowAnswerDel,
+  universalModalShowAnswerReset
 };
 
 
