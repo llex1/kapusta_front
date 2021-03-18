@@ -1,14 +1,14 @@
 import axios from "axios";
 import dbActions from "./db.action";
 
-const url = "http://kapusta.fun/api/costs";
+const url = "http://kapusta.fun/api";
 
 axios.default.baseURL = url;
 
 const addCostOperation = (data, jwt) => (dispatch) => {
   dispatch(dbActions.addCostRequest());
   axios
-    .post(`${url}/add`, data, {
+    .post(`${url}/costs/add`, data, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${jwt}`,
@@ -23,7 +23,7 @@ const addCostOperation = (data, jwt) => (dispatch) => {
 const deleteCostOperation = (data, jwt) => (dispatch) => {
   dispatch(dbActions.deleteCostRequest());
   axios
-    .delete(`${url}/${data.id}`, {
+    .delete(`${url}/costs/${data.id}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${jwt}`,
@@ -35,10 +35,10 @@ const deleteCostOperation = (data, jwt) => (dispatch) => {
     });
 };
 
-const getDateFromCalendar = (data, jwt) => (dispatch) => {
+const getDateCostCalendar = (data, jwt) => (dispatch) => {
   dispatch(dbActions.getCostByDateRequest());
   axios
-    .get(`${url}/date/${data}`, {
+    .get(`${url}/costs/date/${data}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${jwt}`,
@@ -50,4 +50,58 @@ const getDateFromCalendar = (data, jwt) => (dispatch) => {
     .catch((error) => dispatch(dbActions.getCostByDateError(error)));
 };
 
-export default { addCostOperation, deleteCostOperation, getDateFromCalendar };
+const addProfitOperation = (data, jwt) => (dispatch) => {
+  dispatch(dbActions.addProfitRequest());
+  axios
+    .post(`${url}/profit/add`, data, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwt}`,
+      },
+    })
+    .then(({ data }) => {
+      dispatch(dbActions.addProfitSuccess([data]));
+    })
+    .catch((error) => {
+      dispatch(dbActions.addProfitError(error));
+    });
+};
+
+const deleteProfitOperation = (data, jwt) => (dispatch) => {
+  dispatch(dbActions.deleteProfitRequest());
+  axios
+    .delete(`${url}/profit/${data.id}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwt}`,
+      },
+    })
+    .then(() => dispatch(dbActions.deleteProfitSuccess({ id: data.id })))
+    .catch((error) => {
+      dispatch(dbActions.deleteProfitError(error));
+    });
+};
+
+const getDateProfitCalendar = (data, jwt) => (dispatch) => {
+  dispatch(dbActions.getProfitByDateRequest());
+  axios
+    .get(`${url}/profit/date/${data}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwt}`,
+      },
+    })
+    .then((data) => {
+      dispatch(dbActions.getProfitByDateSuccess(data));
+    })
+    .catch((error) => dispatch(dbActions.getProfitByDateError(error)));
+};
+
+export default {
+  addCostOperation,
+  deleteCostOperation,
+  getDateCostCalendar,
+  addProfitOperation,
+  deleteProfitOperation,
+  getDateProfitCalendar,
+};
