@@ -12,6 +12,9 @@ const costsReducer = createReducer(initState.db, {
       costs: state.costs.filter(({ _id }) => _id !== payload.id),
     };
   },
+  [dbActions.getCostByDateSuccess]: (state, { payload }) => {
+    return { ...state, costs: payload.data };
+  },
 });
 
 export default costsReducer;

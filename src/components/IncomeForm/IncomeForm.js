@@ -26,6 +26,7 @@ function IncomeForm() {
       )
     );
   };
+
   return (
     <div className={styles.incomeEnterWrapper}>
       <div className={`${styles.date} ${styles.input}`}>

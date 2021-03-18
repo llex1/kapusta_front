@@ -8,6 +8,10 @@ const deleteCostRequest = createAction("costs/deleteCostRequest");
 const deleteCostSuccess = createAction("costs/deleteCostSuccess");
 const deleteCostError = createAction("costs/deleteCostError");
 
+const getCostByDateRequest = createAction("costs/getCostByDateRequest");
+const getCostByDateSuccess = createAction("costs/getCostByDateSuccess");
+const getCostByDateError = createAction("costs/getCostByDateError");
+
 export default {
   addCostRequest,
   addCostSuccess,
@@ -15,4 +19,7 @@ export default {
   deleteCostRequest,
   deleteCostSuccess,
   deleteCostError,
+  getCostByDateRequest,
+  getCostByDateSuccess,
+  getCostByDateError,
 };

@@ -9,6 +9,7 @@ export function IncomeTable() {
   const costs = useSelector((state) => state.db.costs);
   const dispatch = useDispatch();
   const jwt = useSelector((store) => store.user.jwt);
+  console.log(costs);
 
   const costDelete = (e) => {
     e.preventDefault();
@@ -16,24 +17,26 @@ export function IncomeTable() {
       costsOperations.deleteCostOperation({ id: e.target.dataset.id }, jwt)
     );
   };
-
-  const mapCosts = costs.map((el, index) => {
-    return (
-      <tr className={styles.bodyRaw} key={index}>
-        <td className={styles.date}>{el.date}</td>
-        <td className={styles.description}>{el.description}</td>
-        <td className={styles.category}>{el.category}</td>
-        <td className={styles.bodySum}>{el.sum}</td>
-        <td className={styles.delete}>
-          <button type="button" onClick={costDelete} data-id={`${el._id}`}>
-            <svg width="18" height="18" data-id={`${el._id}`}>
-              <use href={sprite + "#icon-basket"} data-id={`${el._id}`} />
-            </svg>
-          </button>
-        </td>
-      </tr>
-    );
-  });
+  let mapCosts;
+  if (costs) {
+    mapCosts = costs.map((el, index) => {
+      return (
+        <tr className={styles.bodyRaw} key={index}>
+          <td className={styles.date}>{el.date}</td>
+          <td className={styles.description}>{el.description}</td>
+          <td className={styles.category}>{el.category}</td>
+          <td className={styles.bodySum}>{el.sum}</td>
+          <td className={styles.delete}>
+            <button type="button" onClick={costDelete} data-id={`${el._id}`}>
+              <svg width="18" height="18" data-id={`${el._id}`}>
+                <use href={sprite + "#icon-basket"} data-id={`${el._id}`} />
+              </svg>
+            </button>
+          </td>
+        </tr>
+      );
+    });
+  }
 
   return (
     <table className={styles.costsHistory}>

@@ -6,6 +6,7 @@ import Calendar from "./DatePiker.jsx";
 import setDate from "../../redux/calendar/calendarAction";
 import sprite from "../../assets/img/sprite.svg";
 import style from "./Calendar.module.css";
+import dbOperations from "../../redux/db/db.operations";
 
 class DateCalendar extends Component {
   state = {
@@ -14,12 +15,20 @@ class DateCalendar extends Component {
   componentDidMount() {
     this.props.setDate(moment(Date.now()).format("DD.MM.YYYY"));
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.date !== this.state.date) {
+      this.props.getDateFromCalendar(this.state.date, this.props.jwt);
+    }
+  }
+
   handleTap = (someDate, setSomeDate) => {
     setSomeDate(someDate);
     const result = someDate ? moment(someDate).format("DD.MM.YYYY") : 0;
     this.setState({ date: result });
     this.props.setDate(result);
   };
+
   render() {
     return (
       <div className={style.calendarContainer}>
@@ -32,8 +41,13 @@ class DateCalendar extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  jwt: state.user.jwt,
+});
+
 const mapDispatchToProps = {
   setDate,
+  getDateFromCalendar: dbOperations.getDateFromCalendar,
 };
 
-export default connect(null, mapDispatchToProps)(DateCalendar);
+export default connect(mapStateToProps, mapDispatchToProps)(DateCalendar);
