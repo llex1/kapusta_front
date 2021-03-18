@@ -27,12 +27,8 @@ const reducers = combineReducers({
   universalModal: universalModalreduce,
   calendar: calendar,
   db: dbReducer,
-<<<<<<< HEAD
-});
-=======
   summary:summaryReducer,
-};
->>>>>>> dev
+});
 
 const store = configureStore({
   reducer: reducers,
