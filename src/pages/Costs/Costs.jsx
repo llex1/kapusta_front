@@ -15,9 +15,9 @@ function Costs(props) {
     return (
       <React.Fragment>
         <Header />
-        <Balance />
         <UniversalModal />
         <BackgroundAuth />
+        <Balance />
         <IncomeAndCosts title="costs" />
       </React.Fragment>
     );
