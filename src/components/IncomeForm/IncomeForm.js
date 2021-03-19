@@ -13,10 +13,12 @@ function IncomeForm(props) {
 
   const costsAdd = (e) => {
     e.preventDefault();
+    const dataToArr = date.split('.')
+    const month = (+dataToArr[2]*12)+(+dataToArr[1])
     dispatch(
       dbOperations.addCostOperation(
         {
-          month: 3,
+          month: month,
           date: date,
           description: e.target.description.value,
           category: e.target.category.value,
@@ -29,10 +31,12 @@ function IncomeForm(props) {
 
   const profitAdd = (e) => {
     e.preventDefault();
+    const dataToArr = date.split('.')
+    const month = (+dataToArr[2]*12)+(+dataToArr[1])
     dispatch(
       dbOperations.addProfitOperation(
         {
-          month: 3,
+          month: month,
           date: date,
           description: e.target.description.value,
           category: e.target.category.value,
