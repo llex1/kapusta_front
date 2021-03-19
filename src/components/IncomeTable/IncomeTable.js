@@ -50,8 +50,18 @@ export function IncomeTable(props) {
             {+el.sum + " грн."}
           </td>
           <td className={styles.delete}>
-            <button type="button" onClick={costDelete} data-id={`${el._id}`}>
-              <svg width="18" height="18" data-id={`${el._id}`}>
+            <button
+              type="button"
+              onClick={costDelete}
+              data-id={`${el._id}`}
+              className={styles.deleteBtn}
+            >
+              <svg
+                width="18"
+                height="18"
+                data-id={`${el._id}`}
+                className={styles.deleteBtnSvg}
+              >
                 <use href={sprite + "#icon-basket"} data-id={`${el._id}`} />
               </svg>
             </button>

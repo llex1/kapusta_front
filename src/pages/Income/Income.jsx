@@ -15,9 +15,9 @@ function Profit(props) {
     return (
       <React.Fragment>
         <Header />
-        <Balance />
         <UniversalModal />
         <BackgroundAuth />
+        <Balance />
         <IncomeAndCosts title="profit" />
       </React.Fragment>
     );

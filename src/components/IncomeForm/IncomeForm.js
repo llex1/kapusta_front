@@ -13,8 +13,8 @@ function IncomeForm(props) {
 
   const costsAdd = (e) => {
     e.preventDefault();
-    const dataToArr = date.split('.')
-    const month = (+dataToArr[2]*12)+(+dataToArr[1])
+    const dataToArr = date.split(".");
+    const month = +dataToArr[2] * 12 + +dataToArr[1];
     dispatch(
       dbOperations.addCostOperation(
         {
@@ -31,8 +31,8 @@ function IncomeForm(props) {
 
   const profitAdd = (e) => {
     e.preventDefault();
-    const dataToArr = date.split('.')
-    const month = (+dataToArr[2]*12)+(+dataToArr[1])
+    const dataToArr = date.split(".");
+    const month = +dataToArr[2] * 12 + +dataToArr[1];
     dispatch(
       dbOperations.addProfitOperation(
         {
@@ -62,23 +62,23 @@ function IncomeForm(props) {
               placeholder="Описание товара"
               required
             />
-            <select
-              className={`${styles.select} ${styles.input}`}
-              name="category"
-            >
-              <option>Категории товаров</option>
-              <option value="Транспорт">Транспорт</option>
-              <option value="Продукты">Продукты</option>
-              <option value="Здоровье">Здоровье</option>
-              <option value="Алкоголь">Алкоголь</option>
-              <option value="Развлечения">Развлечения</option>
-              <option value="Все для дома">Все для дома</option>
-              <option value="Техника">Техника</option>
-              <option value="Коммуналка,связь">Коммуналка,связь</option>
-              <option value="Спорт,хобби">Спорт,хобби</option>
-              <option value="Образование">Образование</option>
-              <option value="Прочее">Прочее</option>
-            </select>
+            <div className={`${styles.selectWrapper} ${styles.input}`}>
+              <select name="category">
+                <option>Категории товаров</option>
+                <option value="Транспорт">Транспорт</option>
+                <option value="Продукты">Продукты</option>
+                <option value="Здоровье">Здоровье</option>
+                <option value="Алкоголь">Алкоголь</option>
+                <option value="Развлечения">Развлечения</option>
+                <option value="Все для дома">Все для дома</option>
+                <option value="Техника">Техника</option>
+                <option value="Коммуналка,связь">Коммуналка,связь</option>
+                <option value="Спорт,хобби">Спорт,хобби</option>
+                <option value="Образование">Образование</option>
+                <option value="Прочее">Прочее</option>
+              </select>
+              <div className={styles.selectArrow}></div>
+            </div>
             <input
               className={`${styles.inputSum} ${styles.input}`}
               type="text"
@@ -116,14 +116,14 @@ function IncomeForm(props) {
                 placeholder="Описание дохода"
                 required
               />
-              <select
-                className={`${styles.select} ${styles.input}`}
-                name="category"
-              >
-                <option>Категории дохода</option>
-                <option value="ЗП">ЗП</option>
-                <option value="Доп. доход">Доп. доход</option>
-              </select>
+              <div className={`${styles.selectWrapper} ${styles.input}`}>
+                <select name="category">
+                  <option>Категории дохода</option>
+                  <option value="ЗП">ЗП</option>
+                  <option value="Доп. доход">Доп. доход</option>
+                </select>
+                <div className={styles.selectArrow}></div>
+              </div>
               <input
                 className={`${styles.inputSum} ${styles.input}`}
                 type="text"
