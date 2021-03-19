@@ -59,6 +59,18 @@
     text-align: center;
   }
 
+  .deleteBtn {
+    width: 35px;
+    height: 35px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: #f5f6fb;
+  }
+
+  .deleteBtnSvg {
+    fill: #52555f;
+  }
+
   .body {
     border-collapse: collapse;
     width: 100%;
