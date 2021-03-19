@@ -1,26 +1,24 @@
-import initState from '../../redux/initState';
+import initState from "../../redux/initState";
 
-const userReducer = (state = initState.user, {type, payload})=>{
+const userReducer = (state = initState.user, { type, payload }) => {
   switch (type) {
     case "login/ok":
       return {
         ...state,
-        "jwt": payload.jwt,
-        "email": payload.email
-      }
+        jwt: payload.jwt,
+        email: payload.email,
+      };
     case "regitster/ok":
-      return{
+      return {
         ...state,
-        "jwt": payload.jwt,
-        "email": payload.email
+        jwt: payload.jwt,
+        email: payload.email,
       };
     case "action-universalModal/AnswerExit":
-      return {...state,
-                  "email": payload.email,
-                  "jwt": payload.jwt};
+      return { ...state, email: payload.email, jwt: payload.jwt };
     default:
-      return state
+      return state;
   }
-}
+};
 
 export default userReducer;

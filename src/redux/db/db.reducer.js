@@ -27,6 +27,12 @@ const dbReducer = createReducer(initState.db, {
   [dbActions.getProfitByDateSuccess]: (state, { payload }) => {
     return { ...state, profits: payload.data };
   },
+  [dbActions.addBalanceSuccess]: (state, { payload }) => {
+    return { ...state, balance: +payload };
+  },
+  [dbActions.getBalanceSuccess]: (state, { payload }) => {
+    return { ...state, balance: +payload };
+  },
 });
 
 export default dbReducer;
