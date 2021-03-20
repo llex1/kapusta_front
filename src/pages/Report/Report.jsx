@@ -11,12 +11,12 @@ export default function Report() {
   return (
     <React.Fragment>
       <Header />
+      <Background />
       <div className={ styles.wrapper}>
         <BackToMain />
         <CurrentPeriod />
       </div>
       <DiagramsContainer />
-      <Background />
     </React.Fragment>
   );
 }
