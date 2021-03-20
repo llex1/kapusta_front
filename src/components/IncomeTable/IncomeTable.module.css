@@ -59,18 +59,59 @@
     text-align: center;
   }
 
+  .deleteBtn {
+    width: 35px;
+    height: 35px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: #f5f6fb;
+  }
+
+  .deleteBtnSvg {
+    fill: #52555f;
+  }
+
   .body {
+    height: 346px;
     border-collapse: collapse;
     width: 100%;
     border: 2px solid #f5f6fb;
+    overflow-y: scroll;
   }
+
+  /* Scroll-bar customisation */
+  .scrollbar {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    scrollbar-width: thin;
+    scrollbar-color: #ff751d #f5f6fb;
+  }
+  .scrollbar::-webkit-scrollbar {
+    width: 2px;
+  }
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: #f0f1f3;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #ff751d;
+    -webkit-border-radius: 10px;
+  }
+  .scrollbar::-webkit-scrollbar-thumb:vertical {
+    min-height: 1.5rem;
+  }
+  .scrollbar::-webkit-scrollbar-thumb:horizontal {
+    min-width: 1.5rem;
+  }
+  /* Scroll-bar customisation */
 
   .bodyRaw {
     width: 100%;
-    /* width: 605px; */
-    height: 40px;
+    height: 43px;
     border-bottom: 2px solid #f5f6fb;
     display: inline-table;
+    color: #52555f;
   }
 
   .bodySum {

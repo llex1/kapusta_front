@@ -58,15 +58,39 @@
     margin-left: 20px;
   }
 
-  .select {
+  .selectWrapper {
     width: 40%;
-    border: 2px solid #f5f6fb;
     box-sizing: border-box;
-    border-bottom: none;
-    border-top: none;
-    border-radius: 0px;
+    border: 1px solid #f5f6fb;
+    border-radius: 3px;
+  }
+
+  .selectWrapper select {
     color: #c7ccdc;
-    padding-left: 17px;
+    padding: 0 5px 0 7px;
+    background: transparent;
+    border: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  .selectWrapper select::-ms-expand {
+    display: none;
+  }
+
+  .selectArrow {
+    z-index: 9999;
+    border: 8px solid transparent;
+    border-bottom: 0;
+    right: 6px;
+  }
+  .selectArrow:nth-child(1) {
+    top: 11px;
+    border-top-color: #c7ccdc;
+  }
+  .selectArrow:nth-child(2) {
+    top: 8px;
+    border-top-color: #c7ccdc;
   }
 
   .inputSum {
@@ -86,6 +110,12 @@
     font-weight: bold;
     text-transform: uppercase;
     background: none;
+  }
+
+  .button:hover,
+  .button:focus {
+    background: #ff751d;
+    color: #ffffff;
   }
 
   form button:active {

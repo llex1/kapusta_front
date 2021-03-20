@@ -7,7 +7,7 @@ import Header from "../../components/Header";
 import BackgroundAuth from "../../components/BackgroundAuth";
 import UniversalModal from "../../components/UniversalModal/UniversalModal";
 import IncomeAndCosts from "../../components/IncomeAndCosts";
-import Balance from "../../components/balance/Balance";
+import Balance from "../../components/Balance";
 
 function Profit(props) {
   const user = useSelector((state) => state.user);
@@ -15,9 +15,9 @@ function Profit(props) {
     return (
       <React.Fragment>
         <Header />
-        <Balance />
         <UniversalModal />
         <BackgroundAuth />
+        <Balance />
         <IncomeAndCosts title="profit" />
       </React.Fragment>
     );
