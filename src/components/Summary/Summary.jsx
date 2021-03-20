@@ -8,7 +8,7 @@ class Summary extends Component {
     this.props.toFetchProducts();
   }
 
-  render(){
+  render() {
     return (
       <div className={styles.wrapper}>
         <h3 className={styles.title}>Сводка</h3>

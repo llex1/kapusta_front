@@ -66,29 +66,6 @@
   .listItemSum {
     margin-left: auto;
   }
-  /* Scroll-bar customisation */
-  .scrollbar {
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    scrollbar-width: thin;
-    scrollbar-color: #264061 #f0f1f3;
-  }
-  .scrollbar::-webkit-scrollbar {
-    width: 6px;
-  }
-  .scrollbar::-webkit-scrollbar-track {
-    background-color: #f0f1f3;
-  }
-  .scrollbar::-webkit-scrollbar-thumb {
-    background-color: #264061;
-    border-radius: 0px;
-  }
-  .scrollbar::-webkit-scrollbar-thumb:vertical {
-    min-height: 1.5rem;
-  }
-  .scrollbar::-webkit-scrollbar-thumb:horizontal {
-    min-width: 1.5rem;
-  }
 }
 @media screen and (min-width: 1280px) {
   .wrapper {
