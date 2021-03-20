@@ -20,20 +20,21 @@ const addCostOperation = (data, jwt) => (dispatch) => {
     });
 };
 
-const deleteCostOperation = (data, jwt) => function modal(dispatch){
-  dispatch(dbActions.deleteCostRequest());
-  axios
-    .delete(`${url}/costs/${data.id}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${jwt}`,
-      },
-    })
-    .then(() => dispatch(dbActions.deleteCostSuccess({ id: data.id })))
-    .catch((error) => {
-      dispatch(dbActions.deleteCostError(error));
-    });
-};
+const deleteCostOperation = (data, jwt) =>
+  function modal(dispatch) {
+    dispatch(dbActions.deleteCostRequest());
+    axios
+      .delete(`${url}/costs/${data.id}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${jwt}`,
+        },
+      })
+      .then(() => dispatch(dbActions.deleteCostSuccess({ id: data.id })))
+      .catch((error) => {
+        dispatch(dbActions.deleteCostError(error));
+      });
+  };
 
 const getDateCostCalendar = (data, jwt) => (dispatch) => {
   dispatch(dbActions.getCostByDateRequest());
@@ -96,6 +97,39 @@ const getDateProfitCalendar = (data, jwt) => (dispatch) => {
     })
     .catch((error) => dispatch(dbActions.getProfitByDateError(error)));
 };
+const addBalanceOperation = (data, jwt) => (dispatch) => {
+  dispatch(dbActions.addBalanceRequest());
+  axios
+    .patch(`${url}/balance`, data, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwt}`,
+      },
+    })
+    .then(({ data }) => {
+      dispatch(dbActions.addBalanceSuccess(data.balance));
+    })
+    .catch((error) => {
+      dispatch(dbActions.addBalanceError(error));
+    });
+};
+
+const getBalanceOperation = (jwt) => (dispatch) => {
+  dispatch(dbActions.getBalanceRequest());
+  axios
+    .get(`${url}/balance`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwt}`,
+      },
+    })
+    .then(({ data }) => {
+      dispatch(dbActions.getBalanceSuccess(data.balance));
+    })
+    .catch((error) => {
+      dispatch(dbActions.getBalanceError(error));
+    });
+};
 
 export default {
   addCostOperation,
@@ -104,4 +138,6 @@ export default {
   addProfitOperation,
   deleteProfitOperation,
   getDateProfitCalendar,
+  addBalanceOperation,
+  getBalanceOperation,
 };
