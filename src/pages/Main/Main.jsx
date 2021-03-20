@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 // import { useSelector } from "react-redux";
 
-import Modal from "../../components/Modal";
-import Header from "../../components/Header";
-import Background from "../../components/Background";
+import Modal from '../../components/Modal';
+import Header from '../../components/Header';
+import Background from '../../components/Background';
 
 function Main(props) {
   // const user = useSelector((state) => state.user);
