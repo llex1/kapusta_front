@@ -1,5 +1,7 @@
 .mainContainer {
   position: absolute;
+  top: 176px;
+  width: 292px;
 }
 
 .container {
@@ -18,7 +20,7 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  left: 88px;
+  left: 75px;
   top: -8px;
   transform: rotate(45deg);
 }
@@ -28,6 +30,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.43;
+  text-align: left;
   color: #ffffff;
 }
 .description {
@@ -41,18 +44,18 @@
   .mainContainer {
     width: 292px;
     top: 100px;
-    left: 141px;
+    left: 148px;
     padding-left: 30px;
     padding-right: 30px;
   }
   .mainContainer::before {
     top: -7px;
-    left: 77px;
+    left: 82px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .mainContainer {
-    left: 512px;
+    left: 517px;
   }
 }
