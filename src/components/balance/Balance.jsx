@@ -16,62 +16,51 @@ function Balance() {
   });
   const changeBalance = (e) => {
     e.preventDefault();
-    dispatch(
-      dbOperations.addBalanceOperation(
-        {
-          balance: e.target.balance.value,
-        },
-        jwt
-      )
-    );
+    if (e.target.balance.value) {
+      dispatch(
+        dbOperations.addBalanceOperation(
+          {
+            balance: e.target.balance.value,
+          },
+          jwt
+        )
+      );
+    }
+    e.target.balance.value = "";
   };
-  let newValue;
+
   let setPlaceholder;
   if (balance === 0) {
     setPlaceholder = "00.00 UAH";
   } else {
-    setPlaceholder = "";
-    newValue = `${balance}.00 UAH`;
+    setPlaceholder = `${balance}.00 UAH`;
   }
   return (
-    <>
-      <div className={styles.container}>
-        {balance === 0 ? <BalanceModal /> : ""}
-        <div className={styles.tabletBox}>
-          <div className={styles.reportsBox}>
-            <p className={styles.reportsLink}> Перейти к отчетам</p>
-            <svg width="14" height="14">
-              <use href={sprite + "#icon-schedule"} />
-            </svg>
-          </div>
-          <form className={styles.balanceBox} onSubmit={changeBalance}>
-            <label className={styles.balance}>
-              Баланс:
-              <input
-                className={styles.moneyInput}
-                name="balance"
-                value={newValue}
-                type="text"
-                placeholder={setPlaceholder}
-              />
-            </label>
-            {balance > 0 ? (
-              <button type="submit" className={styles.confirmBtn} disabled>
-                Подтвердить
-              </button>
-            ) : (
-              <button type="submit" className={styles.confirmBtn}>
-                Подтвердить
-              </button>
-            )}
-          </form>
+    <div className={styles.container}>
+      {balance === 0 ? <BalanceModal /> : ""}
+      <div className={styles.tabletBox}>
+        <div className={styles.reportsBox}>
+          <p className={styles.reportsLink}> Перейти к отчетам</p>
+          <svg width="14" height="14">
+            <use href={sprite + "#icon-schedule"} />
+          </svg>
         </div>
-        <div className={styles.notification}>
-          <p>Привет! Для начала работы внеси текущий баланс своего счета!</p>
-          <p>Ты не можешь тратить деньги пока их у тебя нет :)</p>
-        </div>
+        <form className={styles.balanceBox} onSubmit={changeBalance}>
+          <label className={styles.balance}>
+            Баланс:
+            <input
+              className={styles.moneyInput}
+              name="balance"
+              type="text"
+              placeholder={setPlaceholder}
+            />
+          </label>
+          <button type="submit" className={styles.confirmBtn}>
+            Подтвердить
+          </button>
+        </form>
       </div>
-    </>
+    </div>
   );
 }
 
