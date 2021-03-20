@@ -1,24 +1,23 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import styles from "./Header.module.css";
-import action from "../../redux/universalModal/universalModal.action.js";
-import { Link } from "react-router-dom";
-import sprite from "../../assets/img/sprite.svg";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import styles from './Header.module.css';
+import action from '../../redux/universalModal/universalModal.action.js';
+import { Link } from 'react-router-dom';
+import sprite from '../../assets/img/sprite.svg';
 
 class Header extends Component {
-  modalOpen = (e) => {
+  modalOpen = e => {
     if (
-      e.target.nodeName === "U" ||
-      e.target.nodeName === "svg" ||
-      e.target.nodeName === "use"
+      e.target.nodeName === 'U' ||
+      e.target.nodeName === 'svg' ||
+      e.target.nodeName === 'use'
     ) {
       this.props.action_exit();
     }
-
   };
 
   userName = this.props.state.user.email;
-  indexR = this.userName.search("@");
+  indexR = this.userName.search('@');
   name = () => {
     if (this.indexR < 10) {
       return this.userName.slice(0, this.indexR);
@@ -27,14 +26,13 @@ class Header extends Component {
     }
   };
 
-  componentDidMount = () => {
-  };
+  // componentDidMount = () => {};
 
   render() {
     return (
       <div className="container">
         <header className={styles.header}>
-          <Link to="/costs" alt=" ">
+          <Link to="/costs" alt=" " className={styles.logoLink}>
             <div className={styles.logo}>
               <span className={styles.logoImg}></span>
               <span className={styles.logoText}>Kapusta</span>
@@ -55,7 +53,7 @@ class Header extends Component {
               </button>
 
               <svg className={styles.exitMobile} onClick={this.modalOpen}>
-                <use href={sprite + "#icon-exit"}></use>
+                <use href={sprite + '#icon-exit'}></use>
               </svg>
             </div>
           )}
@@ -65,15 +63,15 @@ class Header extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     state: state,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    action_exit: (obj) => {
+    action_exit: obj => {
       dispatch(action.universalModalShowOpenWithTile);
     },
   };

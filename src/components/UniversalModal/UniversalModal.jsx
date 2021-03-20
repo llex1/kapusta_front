@@ -20,11 +20,6 @@ function UniversalModal(props) {
       e.code === 'Escape'
     ) {
       dispatch(action.universalModalShowClose);
-        // setTimeout(()=>{
-       // return
-      //  dispatch(action.universalModalShowAnswerReset)
-    // }, 2000)
-      // if(modalAnswer && !!modalVisibility){dispatch(action.universalModalShowAnswerReset)}
     }
     if (modalTitle && e.target.id === 'go') {
       dispatch(action.universalModalShowAnswerExit);
@@ -34,7 +29,6 @@ function UniversalModal(props) {
     }
   };
   useEffect(() => {
-    //слухач на клавіатуру
     window.addEventListener('keydown', modalClose);
   });
 
@@ -52,24 +46,15 @@ function UniversalModal(props) {
               <use data-id="svgUse" href={sprite + '#icon-x'} />
             </svg>
 
-            {/*++ варіант є true або false ++*/}
             <p className={style.question}>
               {modalTitle === true
                 ? 'Вы действительно хотите выйти?'
                 : 'Вы уверены?'}
             </p>
-
-            {/*++ варіант передача тексту ++*/}
-            {/* <p className={style.question}>{props.message}</p> */}
-
-            {/* <p className={style.question}>Вы уверены?</p> */}
-            {/* пропс при розлогіні ? <p>Вы действительно хотите выйти?</p> :
-          <p>Вы уверены?</p> */}
-
-            <button id="go" className="go" onClick={modalClose}>
+            <button id="go" className={`${style.go} go`} onClick={modalClose}>
               Да
             </button>
-            <button className="back" onClick={modalClose}>
+            <button className={`${style.back} back`} onClick={modalClose}>
               Нет
             </button>
           </div>
