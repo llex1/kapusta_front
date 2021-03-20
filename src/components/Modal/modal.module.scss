@@ -69,7 +69,7 @@
     font-size: 10px;
     line-height: 1.2;
     letter-spacing: 0.04em;
-    color: #EB5757;
+    color: #eb5757;
   }
   label {
     display: inline-block;
@@ -89,6 +89,8 @@
     display: inline;
   }
   .regMailForm {
+    position: relative;
+    // box-sizing:border-box;
     width: 100%;
     height: 52px;
     font-family: Roboto;
@@ -96,11 +98,33 @@
     font-size: 14px;
     line-height: 1.143;
     letter-spacing: 0.04em;
-    
+
     border: none;
     border-radius: 30px;
     color: #a6abb9;
     background-color: #f6f7fb;
+    animation: alertForm;
+    animation-duration: 1s;
+    animation-iteration-count:3;
+    &::placeholder{
+      color: #1D3433;
+    }
+  }
+  @keyframes alertForm {
+    0% {
+      background: #f6f7fb;
+      color: #a6abb9;
+    }
+    50% {
+      background: #FFBEC2;
+      color: #a6abb9;
+      box-shadow: 0 0  1px 1px #F05F75;
+    }
+    100% {
+      background: #f6f7fb;
+      color: #a6abb9;
+    }
+    
   }
 }
 
@@ -121,7 +145,7 @@
     font-size: 10px;
     line-height: 1.2;
     letter-spacing: 0.04em;
-    color: #EB5757;
+    color: #eb5757;
   }
   label {
     display: inline-block;
@@ -135,12 +159,13 @@
   }
   label span {
     display: none;
-    color: red;
+    color: #eb5757;
   }
   .regPassError ~ label span {
     display: inline;
   }
   .regPassForm {
+    position: relative;
     width: 100%;
     height: 52px;
     font-family: Roboto;
@@ -148,23 +173,13 @@
     font-size: 14px;
     line-height: 1.143;
     letter-spacing: 0.04em;
-    
+
     border: none;
     border-radius: 30px;
     color: #a6abb9;
     background-color: #f6f7fb;
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 /*! =============== FORM FIELD ================= */
 // .formFields {
@@ -186,10 +201,12 @@
 /*! =============== FORM FIELD END ================= */
 
 .loginBtn {
+  position: relative;
   width: 125px;
   height: 44px;
   background: #ff751d;
-  border: 1px solid transparent;
+  box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
+  border: none;
   border-radius: 16px;
 
   color: #fff;
@@ -198,12 +215,18 @@
   line-height: 1.166;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+
+  &:active {
+    top: 0.1em;
+  }
 }
 .regisrBtn {
+  position: relative;
   width: 125px;
   height: 44px;
   background: #f5f6fb;
-  border: 1px solid transparent;
+  box-shadow: 1px 3px 5px rgba(82, 85, 95, 0.15);
+  border: none;
   border-radius: 16px;
 
   color: #52555f;
@@ -212,6 +235,11 @@
   line-height: 1.1666;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  &:active {
+    background-color: #f5f6fb;
+    color: #52555f;
+    top: 0.1em;
+  }
 }
 .btnWrapper {
   display: flex;

@@ -9,7 +9,7 @@ import sprite from "../../assets/img/sprite.svg";
 import action from "../../redux/auth/auth.action";
 
 const RegisterSchema = Yup.object().shape({
-  email: Yup.string()
+  email: Yup.string().email()
     .min(2, "Некорректная длинна поля")
     .max(50, "Превышен лимит символов")
     .required("это обязательное поле"),
@@ -42,13 +42,18 @@ class Modal extends Component {
     }
   };
 
-  login = (e) => {
+  login = async (e) => {
     e.preventDefault();
-    this.props.action_login(this.state);
+    console.log(await RegisterSchema.isValid(this.state));
+    if(await RegisterSchema.isValid(this.state)){
+      // this.props.action_login(this.state);
+    }
   };
-  register = (e) => {
+  register = async (e) => {
     e.preventDefault();
-    this.props.action_register(this.state);
+    if(await RegisterSchema.isValid(this.state)){
+      this.props.action_register(this.state);
+    }
   };
 
   render() {
