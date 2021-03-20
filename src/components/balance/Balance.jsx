@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './Balance.module.css';
-import sprite from '../../assets/img/sprite.svg';
+import React from "react";
+import styles from "./Balance.module.css";
+import sprite from "../../assets/img/sprite.svg";
 
 function Balance() {
   return (
@@ -8,9 +8,9 @@ function Balance() {
       <div className={styles.container}>
         <div className={styles.tabletBox}>
           <div className={styles.reportsBox}>
-            <p className={styles.reportsLink}>Перейти к отчетам</p>
+            <p className={styles.reportsLink}> Перейти к отчетам</p>
             <svg width="14" height="14">
-              <use href={sprite + '#icon-schedule'} />
+              <use href={sprite + "#icon-schedule"} />
             </svg>
           </div>
           <div className={styles.balanceBox}>

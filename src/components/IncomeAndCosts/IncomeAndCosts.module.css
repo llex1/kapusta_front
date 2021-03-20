@@ -51,9 +51,16 @@
 }
 
 @media screen and (min-width: 1280px) {
+  .costBtn {
+    top: 150px;
+  }
+  .incomeBtn {
+    top: 150px;
+  }
   .incomeWrapper {
     width: 1060px;
     height: 579px;
     padding: 0px 20px;
+    top: 190px;
   }
 }
