@@ -1,0 +1,19 @@
+.wrapper {
+  position: relative;
+  width: 280px;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 5;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 666px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    width: 1060px;
+  }
+}
