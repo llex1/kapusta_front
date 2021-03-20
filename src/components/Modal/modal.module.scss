@@ -1,0 +1,261 @@
+.overlay {
+  background-color: #f5f6fb;
+}
+.modalWrapper {
+  position: absolute;
+  background-color: white;
+  top: 230px;
+  left: 8%;
+  width: 300px;
+  height: 525px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 40px 18px 0px;
+}
+.modalText {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: var(--second-text-color);
+  margin-bottom: 24px;
+  margin-top: 0px;
+}
+.googleWrapper {
+  text-align: center;
+}
+.googleBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 125px;
+  height: 40px;
+  border-radius: 30px;
+  background-color: #f6f7fb;
+  margin-bottom: 30px;
+}
+.googleBtnSvg {
+  margin-right: 10px;
+}
+.googleBtnText {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.142;
+  letter-spacing: 0.02em;
+  color: var(--main-text-color);
+  text-align: center;
+}
+/* =============== wrapper ================= */
+.registrWrapper {
+  position: relative;
+  margin-bottom: 40px;
+}
+/* =============== Email ================= */
+.regMail {
+  margin: 0 0 30px;
+  padding: 0;
+  position: relative;
+
+  .regMailError {
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: #EB5757;
+  }
+  label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.666;
+    letter-spacing: 0.04em;
+  }
+  label span {
+    display: none;
+    color: red;
+  }
+  .regMailError ~ label span {
+    display: inline;
+  }
+  .regMailForm {
+    width: 100%;
+    height: 52px;
+    font-family: Roboto;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.143;
+    letter-spacing: 0.04em;
+    
+    border: none;
+    border-radius: 30px;
+    color: #a6abb9;
+    background-color: #f6f7fb;
+  }
+}
+
+/* =============== Pass ================= */
+.regPass {
+  margin: 0 0 40px;
+  padding: 0;
+  position: relative;
+
+  .regPassError {
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: #EB5757;
+  }
+  label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.666;
+    letter-spacing: 0.04em;
+  }
+  label span {
+    display: none;
+    color: red;
+  }
+  .regPassError ~ label span {
+    display: inline;
+  }
+  .regPassForm {
+    width: 100%;
+    height: 52px;
+    font-family: Roboto;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.143;
+    letter-spacing: 0.04em;
+    
+    border: none;
+    border-radius: 30px;
+    color: #a6abb9;
+    background-color: #f6f7fb;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*! =============== FORM FIELD ================= */
+// .formFields {
+//   width: 253px;
+//   height: 52px;
+//   border: 1px solid transparent;
+//   border-radius: 30px;
+//   background-color: #f6f7fb;
+
+//   padding-left: 20px;
+//   font-size: 14px;
+//   line-height: 1.142;
+//   letter-spacing: 0.04em;
+//   color: #a6abb9;
+// }
+// .formFields:not(:last-child) {
+//   margin-bottom: 30px;
+// }
+/*! =============== FORM FIELD END ================= */
+
+.loginBtn {
+  width: 125px;
+  height: 44px;
+  background: #ff751d;
+  border: 1px solid transparent;
+  border-radius: 16px;
+
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.regisrBtn {
+  width: 125px;
+  height: 44px;
+  background: #f5f6fb;
+  border: 1px solid transparent;
+  border-radius: 16px;
+
+  color: #52555f;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.1666;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.btnWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .modalWrapper {
+    width: 436px;
+    height: 535px;
+    left: 25%;
+    top: 305px;
+    text-align: left;
+    padding: 50px 85px 0px;
+  }
+
+  .modalText {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: var(--second-text-color);
+    margin-bottom: 20px;
+    margin-top: 0px;
+  }
+
+  .btnWrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .loginBtn {
+    margin-right: 15px;
+  }
+  .googleWrapper {
+    text-align: left;
+  }
+  .googleBtnWrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modalWrapper {
+    left: 57%;
+    top: 173px;
+  }
+}
