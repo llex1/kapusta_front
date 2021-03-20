@@ -6,7 +6,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
-  /* outline: 1px dotted dodgerblue; */
+  outline: 1px dotted dodgerblue;
 }
 #root {
   margin: 0;
@@ -16,6 +16,7 @@ html {
 :root {
   --main-text-color: #000000;
   --second-text-color: #52555f;
+  --error-text-color: #EB5757;
 }
 
 body {
