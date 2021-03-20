@@ -9,7 +9,6 @@ class Summary extends Component {
   }
 
   render() {
-    console.log(`this.props.array`, this.props.array);
     return (
       <div className={styles.wrapper}>
         <h3 className={styles.title}>Сводка</h3>

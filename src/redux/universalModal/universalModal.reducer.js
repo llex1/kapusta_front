@@ -5,11 +5,7 @@ const universalModalreduce = (state = InitState.universalModal, action) => {
     case 'action-universalModal/Open':
       return {
         ...state,
-        ...action.payload
-        // modalTitle: action.payload.modalTitle,
-        // modalVisibility: action.payload.modalVisibility,
-        // answer: action.payload.answer,
-        // delElementId:action.payload.id
+        ...action.payload,
       };
     case 'action-universalModal/Close':
       return {
@@ -17,7 +13,7 @@ const universalModalreduce = (state = InitState.universalModal, action) => {
         modalTitle: action.payload.modalTitle,
         modalVisibility: action.payload.modalVisibility,
       };
-      case 'action-universalModal/AnswerReset':
+    case 'action-universalModal/AnswerReset':
       return {
         ...state,
         answer: action.payload.answer,

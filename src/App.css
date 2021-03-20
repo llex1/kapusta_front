@@ -6,7 +6,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
-  /* outline: 1px dotted dodgerblue; */
+  outline: 1px dotted dodgerblue;
 }
 #root {
   margin: 0;
@@ -16,11 +16,12 @@ html {
 :root {
   --main-text-color: #000000;
   --second-text-color: #52555f;
+  --error-text-color: #eb5757;
 }
 
 body {
   margin: 0;
-  font-family: "Roboto";
+  font-family: 'Roboto';
 }
 
 .container {
@@ -67,6 +68,7 @@ button.back {
     border-radius: 16px;
     border: 1px solid #ff751d;
     box-shadow: none;
+    /* color: #ffffff; */
   }
   button.back {
     width: 125px;
@@ -77,6 +79,7 @@ button.back {
     background: border-box;
     margin-left: 15px;
     box-shadow: none;
+    /* color: #52555f; */
   }
 }
 
