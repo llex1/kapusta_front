@@ -46,15 +46,14 @@ function Balance() {
           </svg>
         </div>
         <form className={styles.balanceBox} onSubmit={changeBalance}>
-          <label className={styles.balance}>
-            Баланс:
-            <input
-              className={styles.moneyInput}
-              name="balance"
-              type="text"
-              placeholder={setPlaceholder}
-            />
-          </label>
+          <p className={styles.balance}>Баланс:</p>
+          <input
+            className={styles.moneyInput}
+            name="balance"
+            type="text"
+            placeholder={setPlaceholder}
+          />
+
           <button type="submit" className={styles.confirmBtn}>
             Подтвердить
           </button>
