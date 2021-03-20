@@ -2,9 +2,8 @@
   height: 56px;
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   /* justify-content: flex-start; */
- 
 }
 .logo {
   position: relative;
@@ -14,7 +13,7 @@
   padding-left: 20px;
 }
 .logoImg {
-  }
+}
 .logoImg::before {
   content: '';
   position: absolute;
@@ -41,6 +40,7 @@
   font-weight: 900;
   font-size: 18px;
   letter-spacing: 0.045em;
+  color: #000000;
 }
 .logoText::before {
   content: '';
@@ -61,45 +61,47 @@
   background: black;
   text-align: end;
 }
-
-.logoInfo{
+.logoLink {
+  text-decoration: none;
+}
+.logoInfo {
   display: flex;
   justify-content: center;
- align-items: center;
+  align-items: center;
 }
 
- .userName{
- display: flex;
- justify-content: center;
- align-items: center;
- font-family: Roboto;
- font-style: normal;
- font-weight: 700;
-}
-
-.bgr{
+.userName {
   display: flex;
-background-color:#F5F6FA;
-border: 1px solid #F5F6FA;
-width:32px;
-height: 32px;
-padding: 0px 0px 3px -3px;
-border-radius: 50%;
-margin-right: 10px;
-justify-content: center;
-align-items: center;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  color: #52555f;
 }
 
-.logout{
+.bgr {
+  display: flex;
+  background-color: #f5f6fa;
+  border: 1px solid #f5f6fa;
+  width: 32px;
+  height: 32px;
+  padding: 0px 0px 3px -3px;
+  border-radius: 50%;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout {
   display: none;
- }
- .fonVertikal {
- display: none;
- }
- .exit{
+}
+.fonVertikal {
   display: none;
-  }
- 
+}
+.exit {
+  display: none;
+}
 
 .logoPage {
   font-style: normal;
@@ -131,63 +133,73 @@ align-items: center;
   width: 16px;
   height: 16px;
   cursor: pointer;
-  fill: #CBCCD0;
+  fill: #cbccd0;
 }
 
 @media screen and (min-width: 768px) {
   .fonVertikal {
-    width: 2px; 
+    width: 2px;
     height: 36px;
-    background: #F5F6FA;
-    }
-    .logout{
-      width: 64px;
-      font-size: 12px;
-     margin-right: 20px;
-     display: inline;
-    }
-    .exit{
-      width: 64px;
-      font-size: 12px;
-      display: inline;
-      margin-left: 20px;
-    }
-    .exitMobile {
-      display: none;
-    }
-    .userName{
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: 700;
-     }
-     .logout{
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: 400;
-     }
-     .exit{
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: 400;
-      }
-}
-
-@media screen and (min-width: 1280px) {
-  .userName{
+    background: #f5f6fa;
+  }
+  .logout {
+    width: 64px;
+    font-size: 12px;
+    line-height: 1.17;
+    margin-right: 20px;
+    display: inline;
+    color: #52555f;
+  }
+  .exit {
+    width: 64px;
+    font-size: 12px;
+    display: inline;
+    padding-left: 20px;
+    border: none;
+    background-color: transparent;
+    color: #52555f;
+    font-size: 12px;
+    line-height: 1.17;
+    border-left: 1px solid #e0e5eb;
+    height: 36px;
+    margin-right: 15px;
+  }
+ 
+  .exitMobile {
+    display: none;
+  }
+  .userName {
     font-family: Roboto;
     font-style: normal;
     font-weight: 700;
-   }
-   
-   .logout{
+  }
+  .logout {
     font-family: Roboto;
     font-style: normal;
     font-weight: 400;
-   }
-   .exit{
+  }
+  .exit {
     font-family: Roboto;
     font-style: normal;
     font-weight: 400;
-    }
+  }
 }
 
+@media screen and (min-width: 1280px) {
+  .userName {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .logout {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+  }
+  .exit {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+  }
+}
