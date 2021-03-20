@@ -9,12 +9,13 @@ import currentMonthAction from "../../redux/currentMonth/currentMonthAction";
 
 export default function CurrentPeriod() {
   const [selectedDate, setSelectedDate] = useState(moment());
-
+  const [month, setMonth] = useState(new Date().getFullYear() * 12 + new Date().getMonth() + 1);
   const dispatch = useDispatch();
 
+  console.log("start", month);
   useEffect(() => {
-    dispatch(currentMonthAction.currentMonth(selectedDate.format("MMMM")));
-  }, [dispatch, selectedDate]);
+    dispatch(currentMonthAction.currentMonth(month));
+  }, [dispatch, month, selectedDate]);
 
   function currMonthName() {
     return selectedDate.format("MMMM");
@@ -23,9 +24,11 @@ export default function CurrentPeriod() {
     return selectedDate.format("YYYY");
   }
   function prevMonth() {
+    setMonth((prev) => prev - 1);
     return selectedDate.clone().subtract(1, "month");
   }
   function nextMonth() {
+    setMonth((prev) => prev + 1);
     return selectedDate.clone().add(1, "month");
   }
   return (
