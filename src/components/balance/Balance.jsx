@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styles from './Balance.module.css';
 import sprite from '../../assets/img/sprite.svg';
 
@@ -39,12 +40,15 @@ function Balance() {
     <div className={styles.container}>
       {balance === 0 ? <BalanceModal /> : ''}
       <div className={styles.tabletBox}>
-        <div className={styles.reportsBox}>
-          <p className={styles.reportsLink}> Перейти к отчетам</p>
-          <svg width="14" height="14" fill="#52555F">
-            <use href={sprite + '#icon-schedule'} />
-          </svg>
-        </div>
+        {/* <a href="/report" width="10px"></a> */}
+        <Link to="/report" className={styles.reportsLink}>
+          <button className={styles.reportsBox}>
+            <p className={styles.reportsLinkTitle}> Перейти к отчетам</p>
+            <svg width="14" height="14" fill="#52555F">
+              <use href={sprite + '#icon-schedule'} />
+            </svg>
+          </button>
+        </Link>
         <form className={styles.balanceBox} onSubmit={changeBalance}>
           <p className={styles.balance}>Баланс:</p>
           <input
