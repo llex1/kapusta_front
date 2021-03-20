@@ -24,6 +24,14 @@ const getProfitByDateRequest = createAction('costs/getProfitByDateRequest');
 const getProfitByDateSuccess = createAction('costs/getProfitByDateSuccess');
 const getProfitByDateError = createAction('costs/getProfitByDateError');
 
+const addBalanceRequest = createAction("costs/addBalanceRequest");
+const addBalanceSuccess = createAction("costs/addBalanceSuccess");
+const addBalanceError = createAction("costs/addBalanceError");
+
+const getBalanceRequest = createAction("costs/getBalanceRequest");
+const getBalanceSuccess = createAction("costs/getBalanceSuccess");
+const getBalanceError = createAction("costs/getBalanceError");
+
 export default {
   addCostRequest,
   addCostSuccess,
@@ -43,4 +51,10 @@ export default {
   getProfitByDateRequest,
   getProfitByDateSuccess,
   getProfitByDateError,
+  addBalanceRequest,
+  addBalanceSuccess,
+  addBalanceError,
+  getBalanceRequest,
+  getBalanceSuccess,
+  getBalanceError,
 };

@@ -8,7 +8,7 @@ const initState = {
     modalVisibility: false,
     answer: false,
     delElementId: "",
-    },
+  },
 
   date: {
     currentDate: "поточна дата в Unix форматі",
@@ -18,7 +18,7 @@ const initState = {
     },
   },
   db: {
-    balance: "integer",
+    balance: 0,
     summaryCosts: [
       {
         month: "перша секунда поточного місяця",
