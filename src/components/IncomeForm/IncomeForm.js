@@ -64,7 +64,7 @@ function IncomeForm(props) {
             />
             <div className={`${styles.selectWrapper} ${styles.input}`}>
               <select name="category">
-                <option>Категории товаров</option>
+                <option disabled>Категории товаров</option>
                 <option value="Транспорт">Транспорт</option>
                 <option value="Продукты">Продукты</option>
                 <option value="Здоровье">Здоровье</option>
@@ -118,7 +118,7 @@ function IncomeForm(props) {
               />
               <div className={`${styles.selectWrapper} ${styles.input}`}>
                 <select name="category">
-                  <option>Категории дохода</option>
+                  <option disabled>Категории дохода</option>
                   <option value="ЗП">ЗП</option>
                   <option value="Доп. доход">Доп. доход</option>
                 </select>

@@ -13,7 +13,8 @@ function Balance() {
 
   useEffect(() => {
     dispatch(dbOperations.getBalanceOperation(jwt));
-  });
+  }, []);
+
   const changeBalance = (e) => {
     e.preventDefault();
     if (e.target.balance.value) {

@@ -1,7 +1,7 @@
 import React from "react";
 // import { useSelector } from "react-redux";
 
-import Modal from "../../components/Modal";
+import Modal from "../../components/Modal/Modal";
 import Header from "../../components/Header";
 import Background from "../../components/Background";
 
