@@ -81,7 +81,6 @@ function DiagramsContainer(props) {
   const [pageIncome, setPageIncome] = useState(false);
   const [currentCategory, setCurrentCategory] = useState("Продукты");
   const [dataForRender, setDataForRender] = useState([]);
-  const [dataForRenderProfit, setDataForRenderProfit] = useState([]);
 
   const dispatch = useDispatch();
   const selector = useSelector(getReport);
