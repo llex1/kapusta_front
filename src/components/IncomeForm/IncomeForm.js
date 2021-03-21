@@ -49,9 +49,16 @@ function IncomeForm(props) {
 
   return (
     <div className={styles.incomeEnterWrapper}>
-      <div className={`${styles.date} ${styles.input}`}>
-        <Calendar />
+      <div className={styles.iconLeftWrapper}>
+        <button className={styles.iconLeftButton}>
+        <svg width="18" height="12" className={styles.iconLeft}>
+              <use href={sprite + "#icon-left"} />
+          </svg>
+          </button>
       </div>
+      {/* <div className={`${styles.date} ${styles.input}`}> */}
+        {/* <Calendar /> */}
+      {/* </div> */}
       {props.title === "costs" ? (
         <form className={styles.form} onSubmit={costsAdd}>
           <div className={styles.inputsWrapper}>
@@ -86,9 +93,11 @@ function IncomeForm(props) {
               placeholder="0.00"
               required
             />
+            <div className={styles.iconWrapper}>
             <svg width="20" height="20">
               <use href={sprite + "#icon-calculator"} />
-            </svg>
+              </svg>
+              </div>
           </div>
           <div className={styles.buttonWrapper}>
             <button
