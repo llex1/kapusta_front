@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Page404.module.css';
 import notFound from './img/notFound.png';
+import Header from '../../components/Header/Header';
 
 
 
@@ -13,12 +14,15 @@ class Page404 extends Component {
   
     render() {
       return (
+        <>
+        <Header/>
+          
         <div className={styles.notFoundWrapper}>
     
         <br/>
         <br/>
         <br/>
-        <h1 className={styles.zaglav}> Oh Snap!<br/>
+        <h1 className={styles.title}> Oh Snap!<br/>
           Error Code : 404 not Found! <br/>
           <br/>
     <Link className={styles.linkKart} to='/costs'> To home page</Link>
@@ -33,6 +37,7 @@ class Page404 extends Component {
             /> 
          
       </div>
+      </>
     );
       }
     };
