@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Page404.module.css';
-import notFound from './img/notFound.jpg';
+import notFound from './img/notFound.png';
 
 
 
