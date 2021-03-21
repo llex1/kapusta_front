@@ -1,8 +1,9 @@
 import { createReducer } from "@reduxjs/toolkit";
 import currentMonthAction from "./currentMonthAction";
-import moment from "moment";
 
-const currentMonthReducer = createReducer(moment().format("MMMM"), {
+const initialState = new Date().getFullYear() * 12 + new Date().getMonth() + 1;
+
+const currentMonthReducer = createReducer(initialState, {
   [currentMonthAction.currentMonth]: (state, action) => action.payload,
 });
 

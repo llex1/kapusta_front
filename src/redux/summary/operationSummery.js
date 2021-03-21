@@ -15,7 +15,7 @@ export const fetchSummery = (date) => (dispatch, getState) => {
       dispatch(
         actionSummary.fetchSummerySuccess({
           type: "costsAdd/ok",
-          payload: resp,
+          payload: resp.json(),
         })
       )
     )

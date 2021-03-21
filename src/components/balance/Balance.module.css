@@ -8,12 +8,17 @@
   padding-right: 19px;
   margin: 0 auto;
 }
+.reportsLink {
+  text-decoration: none;
+}
 .reportsBox {
   display: flex;
   align-items: baseline;
   justify-content: center;
+  border: transparent;
+  background: transparent;
 }
-.reportsLink {
+.reportsLinkTitle {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -22,7 +27,7 @@
   text-align: center;
   letter-spacing: 0.04em;
   margin-right: 20px;
-  margin-bottom: 43px;
+  /* margin-bottom: 43px; */
   text-decoration: none;
   color: rgba(82, 85, 95, 0.7);
 }
