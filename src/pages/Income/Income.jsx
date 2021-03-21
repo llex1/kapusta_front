@@ -7,7 +7,7 @@ import Header from "../../components/Header";
 import BackgroundAuth from "../../components/BackgroundAuth";
 import UniversalModal from "../../components/UniversalModal/UniversalModal";
 import IncomeAndCosts from "../../components/IncomeAndCosts";
-import Balance from "../../components/Balance";
+import Balance from "../../components/balance";
 
 function Profit(props) {
   const user = useSelector((state) => state.user);

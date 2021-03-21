@@ -95,6 +95,7 @@ function DiagramsContainer(props) {
 
   useEffect(() => {
     console.log("zapros na poluchenie dannix");
+    console.log(`selectedMonth`, selectedMonth);
     dispatch(reportOperation.report(selectedMonth));
   }, [dispatch, selectedMonth]);
 
