@@ -13,33 +13,31 @@ class Page404 extends Component {
   
     render() {
       return (
-        <div className="NotFoundWrapper">
+        <div className={styles.notFoundWrapper}>
     
         <br/>
         <br/>
         <br/>
-        <h1> Oh Snap!<br/>
+        <h1 className={styles.zaglav}> Oh Snap!<br/>
           Error Code : 404 not Found! <br/>
           <br/>
-    <Link className="link" to='/costs'> To home page</Link>
+    <Link className={styles.linkKart} to='/costs'> To home page</Link>
         </h1>
         <img
         
               src={notFound}
               alt="NotFound"
               aria-label="NotFound"
-              className={styles.img}
+              className={styles.photo}
              
             /> 
-    
-     
+         
       </div>
     );
       }
     };
 
-
-
+  
 
   
   
