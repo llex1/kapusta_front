@@ -8,6 +8,9 @@ class Summary extends Component {
     this.props.toFetchProducts();
     console.log(this.props.array);
   }
+  componentDidUpdate(){
+    this.props.toFetchProducts();
+  }
 
   render() {
     return (
