@@ -105,55 +105,35 @@ class Modal extends Component {
                   зарегестрировавшись:
                 </p>
                 <div className={styles.registrWrapper}>
-
-
-
-
-
-                  <div className={styles.regMail}>
-                    <ErrorMessage
-                      className={styles.regMailError}
-                      name="email"
-                      component="span"
-                      />
-                    <label htmlFor="email">
-                      <span>*</span>Электронная почта:
-                    </label>
-                    <Field
-                      className={styles.regMailForm}
-                      type="email"
-                      name="email"
-                      // disabled
-                      placeholder="your@email.com"
-                      />
-                  </div>
-
-
-
-
-                  <div className={styles.regPass}>
-                    <ErrorMessage
-                      className={styles.regPassError}
-                      name="password"
-                      component="span"
-                    />
-                    <label htmlFor="password" >
-                      <span>*</span>Пароль:
-                    </label>
-                    <Field
-                      className={styles.regPassForm}
-                      type="password"
-                      name="password"
-                      placeholder="Пароль"
-                    />
-                  </div>
-
-                  
-
-
+                  <label htmlFor="email" className={styles.regisrLabel}>
+                    Электронная почта:
+                  </label>
+                  <Field
+                    className={styles.formFields}
+                    type="email"
+                    name="email"
+                    placeholder="your@email.com"
+                  />
+                  <ErrorMessage
+                    className={styles.errorMessage}
+                    name="email"
+                    component="span"
+                  />
+                  <label htmlFor="password" className={styles.regisrLabel}>
+                    Пароль:
+                  </label>
+                  <Field
+                    className={styles.formFields}
+                    type="password"
+                    name="password"
+                    placeholder="Пароль"
+                  />
+                  <ErrorMessage
+                    className={styles.errorMessage}
+                    name="password"
+                    component="span"
+                  />
                 </div>
-
-
                 <div className={styles.btnWrapper}>
                   <button
                     type="submit"

@@ -5,6 +5,7 @@ import Main from "./pages/Main";
 import Costs from "./pages/Costs";
 import Profit from "./pages/Income";
 import Report from "./pages/Report";
+import Page404 from "./pages/Page404";
 
 import "./App.css";
 
@@ -16,7 +17,7 @@ function App() {
         <Route exact path="/costs" component={Costs}></Route>
         <Route exact path="/profit" component={Profit}></Route>
         <Route exact path="/report" component={Report}></Route>
-        {/* <Route component={NotFound}></Route> */}
+        <Route component={Page404}></Route>
       </Switch>
     </Fragment>
   );
