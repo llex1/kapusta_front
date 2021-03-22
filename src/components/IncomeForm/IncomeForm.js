@@ -50,7 +50,7 @@ function IncomeForm(props) {
   return (
     <div className={styles.incomeEnterWrapper}>
       <div className={styles.iconLeftWrapper}>
-        <button className={styles.iconLeftButton}>
+        <button onClick={props.onSwitch} className={styles.iconLeftButton}>
         <svg width="18" height="12" className={styles.iconLeft}>
               <use href={sprite + "#icon-left"} />
           </svg>

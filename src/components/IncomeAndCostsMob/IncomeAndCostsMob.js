@@ -8,15 +8,27 @@ import Calendar from "../Calendar";
 import styles from "./IncomeAndCostsMob.module.css";
 
 class IncomeAndCostsMob extends Component {
+  state = {
+    isOpened: false
+  };
+
+  handleSwitch = () => {
+    if (this.state.isOpened === false) {
+      this.setState({ isOpened: true })
+    } else {
+      this.setState({isOpened:false})
+    }
+  }
+
   render() {
     return (
       <div className={styles.container}>
         <BackgroundAuth />
         <div className={styles.positionWrapper}>
-          <div className={styles.formWrapper}>
-            <IncomeForm title={this.props.title} />
-            </div>
-          <div className={styles.displayNone}>
+          {this.state.isOpened===true?(<div className={styles.formWrapper}>
+            <IncomeForm onSwitch={this.handleSwitch} title={this.props.title} />
+          </div>):
+          (<div className={styles.showMain}>
           <Balance />
           <div className={styles.calendarWrapper}>
             <Calendar />
@@ -26,19 +38,21 @@ class IncomeAndCostsMob extends Component {
           <NavLink
             to="/costs"
             className={`${styles.costBtn} ${styles.textBtn}`}
-            activeClassName={styles.active}
+                activeClassName={styles.active}
+                onClick={this.handleSwitch}
           >
             РАСХОД
           </NavLink>
           <NavLink
             to="/profit"
             className={`${styles.incomeBtn} ${styles.textBtn}`}
-            activeClassName={styles.active}
+                activeClassName={styles.active}
+                onClick={this.handleSwitch}
           >
                 ДОХОД
           </NavLink>
               </div>
-            </div>
+            </div>)}
         </div>
       </div>
     );

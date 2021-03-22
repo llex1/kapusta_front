@@ -9,12 +9,16 @@
   transform: translate(-50%,); */
 }
 
-.formWrapper {
+/* .formWrapper {
   display: none;
 }
 
-.displayNone {
-  /* display: none; */
+.showMain {
+  display: block;
+} */
+
+.hiddenMain {
+  display: none;
 }
 
 .calendarWrapper {
