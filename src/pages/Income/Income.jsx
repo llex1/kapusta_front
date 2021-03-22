@@ -8,6 +8,7 @@ import BackgroundAuth from "../../components/BackgroundAuth";
 import UniversalModal from "../../components/UniversalModal/UniversalModal";
 import IncomeAndCosts from "../../components/IncomeAndCosts";
 import Balance from "../../components/balance/Balance";
+import IncomeAndCostsMob from "../../components/IncomeAndCostsMob";
 
 function Profit(props) {
   const user = useSelector((state) => state.user);
@@ -16,9 +17,10 @@ function Profit(props) {
       <React.Fragment>
         <Header />
         <UniversalModal />
-        <BackgroundAuth />
-        <Balance />
-        <IncomeAndCosts title="profit" />
+        {/* <BackgroundAuth /> */}
+        {/* <Balance /> */}
+        {/* <IncomeAndCosts title="profit" /> */}
+        <IncomeAndCostsMob title="profit" />
       </React.Fragment>
     );
   } else {
