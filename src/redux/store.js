@@ -21,7 +21,7 @@ import seMiddleware from "./middlewares/se.middleware";
 const persistConfig = {
   key: "user",
   storage,
-  whitelist: ["email", "jwt"],
+  whitelist: ["email", "jwt", "avatar"],
 };
 
 const reducers = combineReducers({

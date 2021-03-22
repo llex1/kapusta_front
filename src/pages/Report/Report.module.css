@@ -41,14 +41,19 @@
   box-sizing: border-box;
   border-radius: 22px;
 
+  background-color: #f5f6fb;
+}
+
+.balancAmount::placeholder {
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
+  text-align: center;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-
+  /* display: inline; */
   color: #000000;
 }
 

@@ -76,14 +76,15 @@ const initialState = {
 };
 
 function DiagramsContainer(props) {
-  const [data, setData] = useState(initialState);
+  const selector = useSelector(getReport);
+
+  const [data, setData] = useState(selector);
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [pageIncome, setPageIncome] = useState(false);
   const [currentCategory, setCurrentCategory] = useState("Продукты");
   const [dataForRender, setDataForRender] = useState([]);
 
   const dispatch = useDispatch();
-  const selector = useSelector(getReport);
   const selectedMonth = useSelector(getCurrentMonth);
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import initState from "../../redux/initState";
+import initState from '../../redux/initState';
 
 const userReducer = (state = initState.user, { type, payload }) => {
   switch (type) {
@@ -23,8 +23,9 @@ const userReducer = (state = initState.user, { type, payload }) => {
         ...state,
         jwt: payload.jwt,
         email: payload.email,
+        avatar: payload.avatar,
       };
-    case "action-universalModal/AnswerExit":
+    case 'action-universalModal/AnswerExit':
       return { ...state, email: payload.email, jwt: payload.jwt };
     case "clearErrorMessage":
       return {...state, message: ''}
