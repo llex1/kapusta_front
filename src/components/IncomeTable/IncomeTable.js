@@ -39,6 +39,7 @@ export function IncomeTable(props) {
   } else if (props.title === "profit") {
     data = profits;
   }
+
   if (data) {
     mapData = data.map((el, index) => {
       return (

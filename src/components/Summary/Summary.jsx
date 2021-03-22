@@ -7,6 +7,9 @@ class Summary extends Component {
   componentDidMount() {
     this.props.toFetchProducts();
   }
+  componentDidUpdate(){
+    this.props.toFetchProducts();
+  }
 
   render() {
     return (

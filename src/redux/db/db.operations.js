@@ -40,6 +40,7 @@ const deleteCostOperation = (cost, jwt) =>
 
 const getDateCostCalendar = (data, jwt) => (dispatch) => {
   dispatch(dbActions.getCostByDateRequest());
+  console.log(data);
   axios
     .get(`${url}/costs/date/${data}`, {
       headers: {
@@ -51,6 +52,20 @@ const getDateCostCalendar = (data, jwt) => (dispatch) => {
       dispatch(dbActions.getCostByDateSuccess(data));
     })
     .catch((error) => dispatch(dbActions.getCostByDateError(error)));
+};
+const getDateProfitCalendar = (data, jwt) => (dispatch) => {
+  dispatch(dbActions.getProfitByDateRequest());
+  axios
+    .get(`${url}/profit/date/${data}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwt}`,
+      },
+    })
+    .then((data) => {
+      dispatch(dbActions.getProfitByDateSuccess(data));
+    })
+    .catch((error) => dispatch(dbActions.getProfitByDateError(error)));
 };
 
 const addProfitOperation = (data, jwt) => (dispatch) => {
@@ -89,20 +104,6 @@ const deleteProfitOperation = (profit, jwt) => (dispatch) => {
     });
 };
 
-const getDateProfitCalendar = (data, jwt) => (dispatch) => {
-  dispatch(dbActions.getProfitByDateRequest());
-  axios
-    .get(`${url}/profit/date/${data}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${jwt}`,
-      },
-    })
-    .then((data) => {
-      dispatch(dbActions.getProfitByDateSuccess(data));
-    })
-    .catch((error) => dispatch(dbActions.getProfitByDateError(error)));
-};
 const addBalanceOperation = (data, jwt) => (dispatch) => {
   dispatch(dbActions.addBalanceRequest());
   axios

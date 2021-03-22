@@ -7,7 +7,8 @@ const dbReducer = createReducer(initState.db, {
     return {
       ...state,
       costs: [...state.costs, ...[payload.costs]],
-      balance: payload.balance,
+      // costs: [...state.costs],
+      balance: payload.balance
     };
   },
   [dbActions.deleteCostSuccess]: (state, { payload }) => {
@@ -24,7 +25,8 @@ const dbReducer = createReducer(initState.db, {
     return {
       ...state,
       profits: [...state.profits, ...[payload.profits]],
-      balance: payload.balance,
+      // profits: [...state.profits],
+      balance: payload.balance
     };
   },
   [dbActions.deleteProfitSuccess]: (state, { payload }) => {

@@ -11,7 +11,7 @@ const report = (date) => (dispatch, getState) => {
   console.log(`date`, date);
 
   axios
-    .get(`/${date}`)
+    .get(`http://kapusta.fun/api/report/${date}`)
     .then(({ data }) => {
       dispatch(reportAction.reportSuccess(data));
     })
