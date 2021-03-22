@@ -1,7 +1,13 @@
-.backgroundFon {
-  padding-bottom: 50px;
-}
 @media screen and (max-width: 767px) {
+  .backgroundFon {
+    /* position: relative; */
+    background-image: url(../../assets/img/bgDiagramMob.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% 275px;
+    padding-bottom: 50px;
+  }
+
   .svgKapusta {
     display: none;
   }
@@ -9,7 +15,12 @@
 @media screen and (min-width: 768px) {
   .backgroundFon {
     position: relative;
-    background-color: #d2d2d20f;
+    /* background-color: #d2d2d20f; */
+    background-image: url(../../assets/img/bgDiagramMob.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% 530px;
+    padding-top: 40px;
     padding-bottom: 75px;
     overflow: hidden;
   }
@@ -38,7 +49,6 @@
     background-position: top left;
     background-repeat: no-repeat;
     background-size: 100% 527px;
-    padding-top: 40px;
   }
 
   .backgroundFooter {
