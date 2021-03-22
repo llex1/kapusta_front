@@ -8,8 +8,10 @@ const report = (date) => (dispatch, getState) => {
   const { jwt } = getState().user;
   axios.defaults.headers = { Authorization: `Bearer ${jwt}` };
 
+  console.log(`date`, date);
+
   axios
-    .get(`/${date}`)
+    .get(`http://kapusta.fun/api/report/${date}`)
     .then(({ data }) => {
       dispatch(reportAction.reportSuccess(data));
     })

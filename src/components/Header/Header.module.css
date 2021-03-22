@@ -77,7 +77,10 @@
   font-weight: 700;
   color: #52555f;
 }
-
+.userAvatar {
+  width: 25px;
+  height: 25x;
+}
 .bgr {
   display: flex;
   background-color: #f5f6fa;
@@ -166,11 +169,7 @@
   .exitMobile {
     display: none;
   }
-  .userName {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 700;
-  }
+
   .logout {
     font-family: Roboto;
     font-style: normal;
