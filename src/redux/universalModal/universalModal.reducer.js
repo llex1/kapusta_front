@@ -6,10 +6,6 @@ const universalModalreduce = (state = InitState.universalModal, action) => {
       return {
         ...state,
         ...action.payload,
-        // modalTitle: action.payload.modalTitle,
-        // modalVisibility: action.payload.modalVisibility,
-        // answer: action.payload.answer,
-        // delElementId:action.payload.id
       };
     case 'action-universalModal/Close':
       return {

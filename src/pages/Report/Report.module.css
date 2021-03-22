@@ -1,0 +1,118 @@
+.wrapper {
+  position: relative;
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  overflow: hidden;
+  z-index: 5;
+}
+.balancBtn {
+  display: none;
+}
+
+.balancPeriod {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.wrapperBalanc {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.balancTitle {
+  margin: 0;
+  margin-bottom: 6px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: rgba(82, 85, 95, 0.7);
+}
+
+.balancAmount {
+  margin: 0;
+  padding: 15px 29px;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 22px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 666px;
+  }
+
+  .balancPeriod {
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+  }
+
+  .wrapperBalanc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-right: 80px;
+  }
+
+  .balancAmount {
+    margin: 0;
+    margin-left: 21px;
+    padding: 12px 20px;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 16px;
+  }
+
+  .balancTitle {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    width: 1060px;
+  }
+
+  .wrapperBalanc {
+    margin-right: 225px;
+  }
+  .balancAmount {
+    margin: 0 15px;
+  }
+  .balancBtn {
+    display: block;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 16px;
+    padding: 12px 20px;
+    background: transparent;
+
+    font-family: Roboto;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+    color: rgba(82, 85, 95, 0.7);
+  }
+}
