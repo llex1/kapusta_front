@@ -4,6 +4,7 @@
   margin: 0 auto;
   overflow: hidden;
   z-index: 5;
+  background-color: #ffffff;
 }
 
 .count {

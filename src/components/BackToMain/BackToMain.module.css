@@ -1,18 +1,27 @@
-.backToMainTitle{
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-line-height: 1.16;
-letter-spacing: 0.04em;
-color: rgba(82, 85, 95, 0.7);
+.backToMainTitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04em;
+  color: rgba(82, 85, 95, 0.7);
 }
-.leftArrow{
+.leftArrow {
   margin-right: 18px;
   fill: orange;
 }
-.BackToMainBox{
+.BackToMainBox {
   display: flex;
   align-items: center;
-  width: 172px;
+  width: 177px;
+}
+
+@media screen and (max-width: 767px) {
+  .backToMainTitle {
+    display: none;
+  }
+  .BackToMainBox {
+    margin-top: 10px;
+  }
 }

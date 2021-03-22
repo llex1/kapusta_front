@@ -81,7 +81,6 @@ function DiagramsContainer(props) {
   const [pageIncome, setPageIncome] = useState(false);
   const [currentCategory, setCurrentCategory] = useState("Продукты");
   const [dataForRender, setDataForRender] = useState([]);
-  const [dataForRenderProfit, setDataForRenderProfit] = useState([]);
 
   const dispatch = useDispatch();
   const selector = useSelector(getReport);
@@ -95,6 +94,7 @@ function DiagramsContainer(props) {
 
   useEffect(() => {
     console.log("zapros na poluchenie dannix");
+    console.log(`selectedMonth`, selectedMonth);
     dispatch(reportOperation.report(selectedMonth));
   }, [dispatch, selectedMonth]);
 
