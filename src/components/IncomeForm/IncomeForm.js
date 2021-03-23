@@ -1,19 +1,20 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import styles from './IncomeForm.module.css';
-import sprite from '../../assets/img/sprite.svg';
-import Calendar from '../Calendar';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import styles from "./IncomeForm.module.css";
+import sprite from "../../assets/img/sprite.svg";
+import Calendar from "../Calendar";
 
-import dbOperations from '../../redux/db/db.operations';
+import dbOperations from "../../redux/db/db.operations";
+
 
 function IncomeForm(props) {
   const dispatch = useDispatch();
-  const jwt = useSelector(store => store.user.jwt);
-  const date = useSelector(store => store.calendar);
-
-  const costsAdd = e => {
+  const jwt = useSelector((store) => store.user.jwt);
+  const date = useSelector((store) => store.calendar);
+console.log();
+  const costsAdd = (e) => {
     e.preventDefault();
-    const dataToArr = date.split('.');
+    const dataToArr = date.split(".");
     const month = +dataToArr[2] * 12 + +dataToArr[1];
     dispatch(
       dbOperations.addCostOperation(
@@ -24,14 +25,15 @@ function IncomeForm(props) {
           category: e.target.category.value,
           sum: +e.target.sum.value,
         },
-        jwt,
-      ),
-    );
+        jwt
+      )
+    )
+
   };
 
-  const profitAdd = e => {
+  const profitAdd = (e) => {
     e.preventDefault();
-    const dataToArr = date.split('.');
+    const dataToArr = date.split(".");
     const month = +dataToArr[2] * 12 + +dataToArr[1];
     dispatch(
       dbOperations.addProfitOperation(
@@ -42,8 +44,8 @@ function IncomeForm(props) {
           category: e.target.category.value,
           sum: +e.target.sum.value,
         },
-        jwt,
-      ),
+        jwt
+      )
     );
   };
 
@@ -52,7 +54,7 @@ function IncomeForm(props) {
       <div className={`${styles.date} ${styles.input}`}>
         <Calendar />
       </div>
-      {props.title === 'costs' ? (
+      {props.title === "costs" ? (
         <form className={styles.form} onSubmit={costsAdd}>
           <div className={styles.inputsWrapper}>
             <input
@@ -87,14 +89,11 @@ function IncomeForm(props) {
               required
             />
             <svg width="20" height="20" fill="#52555F">
-              <use href={sprite + '#icon-calculator'} />
+              <use href={sprite + "#icon-calculator"} />
             </svg>
           </div>
           <div className={styles.buttonWrapper}>
-            <button
-              className={`${styles.button} ${styles.input}`}
-              type="submit"
-            >
+            <button className={`${styles.button} ${styles.input}`} type="submit">
               Ввод
             </button>
             <button className={`${styles.button} ${styles.input}`} type="reset">
@@ -103,9 +102,9 @@ function IncomeForm(props) {
           </div>
         </form>
       ) : (
-        ''
+        ""
       )}
-      {props.title === 'profit' ? (
+      {props.title === "profit" ? (
         <>
           <form className={styles.form} onSubmit={profitAdd}>
             <div className={styles.inputsWrapper}>
@@ -132,27 +131,21 @@ function IncomeForm(props) {
                 required
               />
               <svg width="20" height="20">
-                <use href={sprite + '#icon-calculator'} />
+                <use href={sprite + "#icon-calculator"} />
               </svg>
             </div>
             <div className={styles.buttonWrapper}>
-              <button
-                className={`${styles.button} ${styles.input}`}
-                type="submit"
-              >
+              <button className={`${styles.button} ${styles.input}`} type="submit">
                 Ввод
               </button>
-              <button
-                className={`${styles.button} ${styles.input}`}
-                type="reset"
-              >
+              <button className={`${styles.button} ${styles.input}`} type="reset">
                 Очистить
               </button>
             </div>
           </form>
         </>
       ) : (
-        ''
+        ""
       )}
     </div>
   );
