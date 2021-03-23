@@ -1,23 +1,24 @@
-.calendarContainer{
+.calendarContainer {
   display: flex;
   align-items: center;
   width: 104px;
   border: transparent;
 }
-.calendar{
+.calendar {
   border: none;
   width: 74px;
-height: 40px;
-font-family: Roboto;
-font-style: normal;
-font-weight: 900;
-font-size: 12px;
-line-height: 14px;
-letter-spacing: 0.04em;
-text-transform: uppercase;
-color: #52555F;
+  height: 40px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #52555f;
+  background: transparent;
 }
 
-.calendarSVG{
+.calendarSVG {
   margin-right: 10px;
 }

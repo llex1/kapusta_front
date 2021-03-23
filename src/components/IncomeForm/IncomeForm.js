@@ -51,6 +51,13 @@ console.log();
 
   return (
     <div className={styles.incomeEnterWrapper}>
+      <div className={styles.iconLeftWrapper}>
+        <button onClick={props.onSwitch} className={styles.iconLeftButton}>
+        <svg width="18" height="12" className={styles.iconLeft}>
+              <use href={sprite + "#icon-left"} />
+          </svg>
+          </button>
+      </div>
       <div className={`${styles.date} ${styles.input}`}>
         <Calendar />
       </div>
@@ -88,9 +95,11 @@ console.log();
               placeholder="0.00"
               required
             />
+            <div className={styles.iconWrapper}>
             <svg width="20" height="20" fill="#52555F">
               <use href={sprite + "#icon-calculator"} />
-            </svg>
+              </svg>
+              </div>
           </div>
           <div className={styles.buttonWrapper}>
             <button className={`${styles.button} ${styles.input}`} type="submit">
@@ -130,9 +139,11 @@ console.log();
                 placeholder="0.00"
                 required
               />
-              <svg width="20" height="20">
-                <use href={sprite + "#icon-calculator"} />
+              <div className={styles.iconWrapper}>
+            <svg width="20" height="20" fill="#52555F">
+              <use href={sprite + "#icon-calculator"} />
               </svg>
+              </div>
             </div>
             <div className={styles.buttonWrapper}>
               <button className={`${styles.button} ${styles.input}`} type="submit">

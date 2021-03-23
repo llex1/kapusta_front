@@ -1,13 +1,18 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+
+import React from "react";
+import { Redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Media from 'react-media';
+
 
 import routes from "../../routes";
 import Header from "../../components/Header";
 import BackgroundAuth from "../../components/BackgroundAuth";
 import UniversalModal from "../../components/UniversalModal/UniversalModal";
 import IncomeAndCosts from "../../components/IncomeAndCosts";
-import Balance from "../../components/balance";
+import Balance from "../../components/Balance/Balance";
+import IncomeAndCostsMob from "../../components/IncomeAndCostsMob";
+
 
 function Costs(props) {
   const user = useSelector(state => state.user);
@@ -16,9 +21,21 @@ function Costs(props) {
       <React.Fragment>
         <Header />
         <UniversalModal />
-        <BackgroundAuth />
-        <Balance />
-        <IncomeAndCosts title="costs" />
+        {/* <BackgroundAuth /> */}
+        {/* <Balance /> */}
+        {/* <IncomeAndCosts title="costs" /> */}
+        {/* <IncomeAndCostsMob title="costs" /> */}
+        <Media queries={{ small: { maxWidth: 767 } }}>
+          {matches =>
+            matches.small ? (
+              <IncomeAndCostsMob title="costs" />
+            ) : (<>
+              <BackgroundAuth />
+              <Balance />
+              <IncomeAndCosts title="costs" />
+                </>)
+          }
+        </Media>
       </React.Fragment>
     );
   } else {
