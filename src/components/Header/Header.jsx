@@ -39,7 +39,7 @@ class Header extends Component {
             </div>
           </Link>
 
-          {this.props.state.user.jwt && (
+          {this.props.state.user.jwt && !this.props.userFalse && (
             <div className={styles.logoInfo}>
               <div className={styles.bgr}>
                 <img
