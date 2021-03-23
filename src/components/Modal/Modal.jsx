@@ -7,6 +7,7 @@ import styles from "./modal.module.scss";
 import sprite from "../../assets/img/sprite.svg";
 import action from "../../redux/auth/auth.action";
 import {user} from '../../redux/auth/auth.selectors'
+import routes from '../../routes';
 
 const RegisterSchema = Yup.object().shape({
   email: Yup.string().email()
@@ -23,6 +24,7 @@ class Modal extends Component {
     additionalStyle: '',
     timeoutId: null,
     spinner: false,
+    isLogin: false,
   };
 
 
@@ -38,8 +40,33 @@ class Modal extends Component {
       if(this.props.user.message){
         this.addAdditionalStyle(styles.inputFormEmpty);
         this.props.action_clearErrorMessage();
+        this.setState(()=>{
+          return{
+            isLogin: false,
+          }
+        })
+      // }else if(this.props.user.jwt && this.isLogin){
+      }else if(this.props.user.jwt){
+        this.setState(()=>{
+          return {
+            additionalStyle: styles.inputFormOk
+          }
+        })
       }
+        // setTimeout(()=>{
+        //   window.location.pathname = routes.costs;
+        // }, 1000)
+      // }
 
+    }
+  }
+  componentDidMount = ()=>{
+    if(this.props.user.jwt){
+      this.setState(()=>{
+        return {
+          additionalStyle: styles.inputFormOk
+        }
+      })
     }
   }
 
@@ -99,6 +126,11 @@ class Modal extends Component {
 
   login = async (e) => {
     e.preventDefault();
+    this.setState(()=>{
+      return{
+        isLogin: true,
+      }
+    })
     clearTimeout(this.state.timeoutId)
     await this.clearAdditionalStyle()
 
@@ -120,11 +152,15 @@ class Modal extends Component {
 
   register = async (e) => {
     e.preventDefault();
-    // this.setState((state)=>{
-    //   return {
-    //     spinner: true
-    //   }
-    // })
+    this.setState(()=>{
+      return{
+        isLogin: true,
+      }
+    })
+
+
+
+    //=============
 
     clearTimeout(this.state.timeoutId)
     await this.clearAdditionalStyle()
@@ -204,13 +240,22 @@ class Modal extends Component {
                     <label htmlFor="email">
                       <span>*</span>Электронная почта:
                     </label>
-                    <Field
+                    {this.state.additionalStyle === styles.inputFormOk ?
+                      (<Field
                       className={`${styles.regMailForm} ${this.state.additionalStyle}`}
                       type="email"
                       name="email"
-                      // disabled
-                      placeholder="your@email.com"
-                      />
+                      value={this.props.user.email}
+                      // placeholder="your@email.com"
+                      disabled
+                      />  ) :
+                    (<Field
+                    className={`${styles.regMailForm} ${this.state.additionalStyle}`}
+                    type="email"
+                    name="email"
+                    placeholder="your@email.com" 
+                    />)
+                  }
                   </div>
 
 
