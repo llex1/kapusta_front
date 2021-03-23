@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Media from 'react-media';
 
 import routes from "../../routes";
 import Header from "../../components/Header";
@@ -20,7 +21,18 @@ function Profit(props) {
         {/* <BackgroundAuth /> */}
         {/* <Balance /> */}
         {/* <IncomeAndCosts title="profit" /> */}
-        <IncomeAndCostsMob title="profit" />
+        <Media queries={{ small: { maxWidth: 767 } }}>
+          {matches =>
+            matches.small ? (
+              <IncomeAndCostsMob title="profit" />
+            ) : (<>
+              <BackgroundAuth />
+              <Balance />
+              <IncomeAndCosts title="profit" />
+                </>)
+          }
+        </Media>
+        {/* <IncomeAndCostsMob title="profit" /> */}
       </React.Fragment>
     );
   } else {

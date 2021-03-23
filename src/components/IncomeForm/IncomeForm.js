@@ -56,9 +56,9 @@ function IncomeForm(props) {
           </svg>
           </button>
       </div>
-      {/* <div className={`${styles.date} ${styles.input}`}> */}
-        {/* <Calendar /> */}
-      {/* </div> */}
+      <div className={`${styles.date} ${styles.input}`}>
+        <Calendar />
+      </div>
       {props.title === "costs" ? (
         <form className={styles.form} onSubmit={costsAdd}>
           <div className={styles.inputsWrapper}>
