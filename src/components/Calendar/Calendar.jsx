@@ -10,10 +10,13 @@ import dbOperations from "../../redux/db/db.operations";
 
 class DateCalendar extends Component {
   state = {
-    date: "",
+    date: moment(Date.now()).format("DD.MM.YYYY"),
+    // date: new Date().toLocaleDateString(),
   };
   componentDidMount() {
     this.props.setDate(moment(Date.now()).format("DD.MM.YYYY"));
+    this.props.getDateCostCalendar(this.state.date, this.props.jwt);
+    this.props.getDateProfitCalendar(this.state.date, this.props.jwt);
   }
 
   componentDidUpdate(prevProps, prevState) {

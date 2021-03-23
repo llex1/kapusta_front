@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import styles from "./modal.module.css";
+import styles from "./modal.module.scss";
 import sprite from "../../assets/img/sprite.svg";
-// import {user} from "../../redux/selectors";
 import action from "../../redux/auth/auth.action";
+import {user} from '../../redux/auth/auth.selectors'
 
 const RegisterSchema = Yup.object().shape({
-  email: Yup.string()
+  email: Yup.string().email()
     .min(2, "Некорректная длинна поля")
     .max(50, "Превышен лимит символов")
     .required("это обязательное поле"),
@@ -20,7 +20,32 @@ class Modal extends Component {
   state = {
     email: "",
     password: "",
+    additionalStyle: '',
+    timeoutId: null,
+    spinner: false,
+    isLogin: false,
   };
+
+
+  componentDidUpdate = (prevProps, prevState)=>{
+    if(prevProps.user !== this.props.user){
+      if(this.props.user.jwt || this.props.user.message){
+        this.setState((state)=>{
+          return {
+            spinner: false
+          }
+        })
+      }
+      if(this.props.user.message){
+        this.addAdditionalStyle(styles.inputFormEmpty);
+        this.props.action_clearErrorMessage();
+      }
+
+    }
+  }
+
+
+
   handleChange = (e) => {
     switch (e.target.name) {
       case "email":
@@ -42,13 +67,73 @@ class Modal extends Component {
     }
   };
 
-  login = (e) => {
+  clearAdditionalStyle = () =>{
+    return new Promise((res, rej)=>{
+      this.setState(()=>{
+        return {
+          additionalStyle: null,
+        }
+      }, res(true))
+    })
+  }
+  addAdditionalStyle = (styleName) => {
+    this.setState((state)=>{
+      return {
+        additionalStyle: styleName,
+        // additionalStyle: styles.regMailFormEmpty,
+      }
+    })
+    this.setState(()=>{
+      return{
+        timeoutId: setTimeout(()=>{
+          this.setState((state)=>{
+            return {
+              additionalStyle: '',
+            }
+          })
+        }, 1600)
+      }
+    })
+  }
+
+
+
+  login = async (e) => {
     e.preventDefault();
-    this.props.action_login(this.state);
+    clearTimeout(this.state.timeoutId)
+    await this.clearAdditionalStyle()
+
+    if(await RegisterSchema.isValid(this.state)){
+      this.setState((state)=>{
+        return {
+          spinner: true
+        }
+      })
+      this.props.action_login(this.state);
+    }else {
+      this.addAdditionalStyle(styles.inputFormEmpty)
+    }
   };
-  register = (e) => {
+
+
+
+
+
+  register = async (e) => {
     e.preventDefault();
-    this.props.action_register(this.state);
+    // this.setState((state)=>{
+    //   return {
+    //     spinner: true
+    //   }
+    // })
+
+    clearTimeout(this.state.timeoutId)
+    await this.clearAdditionalStyle()
+    if(await RegisterSchema.isValid(this.state)){
+      this.props.action_register(this.state);
+    }else{
+      this.addAdditionalStyle(styles.inputFormEmpty)
+    }
   };
 
   render() {
@@ -73,7 +158,7 @@ class Modal extends Component {
                   <div className={styles.googleBtnWrapper}>
                     <a
                       className={styles.googleBtn}
-                      href="http://kapusta.fun/api/auth/google"
+                      href="https://kapusta.fun/api/auth/google"
                     >
                       <svg
                         width="18"
@@ -105,35 +190,58 @@ class Modal extends Component {
                   зарегестрировавшись:
                 </p>
                 <div className={styles.registrWrapper}>
-                  <label htmlFor="email" className={styles.regisrLabel}>
-                    Электронная почта:
-                  </label>
-                  <Field
-                    className={styles.formFields}
-                    type="email"
-                    name="email"
-                    placeholder="your@email.com"
-                  />
-                  <ErrorMessage
-                    className={styles.errorMessage}
-                    name="email"
-                    component="span"
-                  />
-                  <label htmlFor="password" className={styles.regisrLabel}>
-                    Пароль:
-                  </label>
-                  <Field
-                    className={styles.formFields}
-                    type="password"
-                    name="password"
-                    placeholder="Пароль"
-                  />
-                  <ErrorMessage
-                    className={styles.errorMessage}
-                    name="password"
-                    component="span"
-                  />
+
+
+
+
+
+                  <div className={styles.regMail}>
+                  {this.state.spinner ? (<div className={styles.modalFormIcon}><span className={'_Spinner'}></span></div>) : ''}
+                    <ErrorMessage
+                      className={styles.regMailError}
+                      name="email"
+                      component="span"
+                      />
+                    <label htmlFor="email">
+                      <span>*</span>Электронная почта:
+                    </label>
+                    <Field
+                      className={`${styles.regMailForm} ${this.state.additionalStyle}`}
+                      type="email"
+                      name="email"
+                      // disabled
+                      placeholder="your@email.com"
+                      />
+                  </div>
+
+
+
+
+                  <div className={styles.regPass}>
+                    {this.state.spinner ? (<div className={styles.modalFormIcon}><span className={'_Spinner'}></span></div>) : ''}
+                    <ErrorMessage
+                      className={styles.regPassError}
+                      name="password"
+                      component="span"
+                    />
+                    <label htmlFor="password" >
+                      <span>*</span>Пароль:
+                    </label>
+                    <Field
+                      className={`${styles.regPassForm} ${this.state.additionalStyle}`}
+                      type="password"
+                      name="password"
+                      placeholder="Пароль"
+                      // placeholder="*********"
+                    />
+                  </div>
+
+                  
+
+
                 </div>
+
+
                 <div className={styles.btnWrapper}>
                   <button
                     type="submit"
@@ -161,7 +269,7 @@ class Modal extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    state: state,
+    user: user(state),
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -172,6 +280,7 @@ const mapDispatchToProps = (dispatch) => {
     action_register: (obj) => {
       dispatch(action.register(obj));
     },
+    action_clearErrorMessage: ()=>{dispatch({type: 'clearErrorMessage'})}
   };
 };
 

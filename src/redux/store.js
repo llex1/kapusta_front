@@ -12,6 +12,8 @@ import calendar from "./calendar/calendarReducer";
 // import dateReducer from "./reducers/date.reducer";
 import dbReducer from "./db/db.reducer";
 import summaryReducer from "./summary/reducerSummery";
+import reportReducer from "./report/reportReducer";
+import currentMonthReducer from "./currentMonth/currentMonthReducer";
 
 //middlewares
 import seMiddleware from "./middlewares/se.middleware";
@@ -19,7 +21,7 @@ import seMiddleware from "./middlewares/se.middleware";
 const persistConfig = {
   key: "user",
   storage,
-  whitelist: ["email", "jwt"],
+  whitelist: ["email", "jwt", "avatar"],
 };
 
 const reducers = combineReducers({
@@ -28,14 +30,14 @@ const reducers = combineReducers({
   calendar: calendar,
   db: dbReducer,
   summary: summaryReducer,
+  report: reportReducer,
+  currentMonth: currentMonthReducer,
 });
 
 const store = configureStore({
   reducer: reducers,
   middleware: [seMiddleware, thunk],
-  devTools:
-    window.__REDUX_DEVTOOLS_EXTENSION__ &&
-    window.__REDUX_DEVTOOLS_EXTENSION__(),
+  devTools: window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 });
 
 const persistor = persistStore(store);

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styles from "./IncomeTable.module.css";
 import sprite from "../../assets/img/sprite.svg";
 import modalAction from "../../redux/universalModal/universalModal.action";
-import costsOperations from "../../redux/db/db.operations";
+import dbOperations from "../../redux/db/db.operations";
 
 export function IncomeTable(props) {
   const costs = useSelector((state) => state.db.costs);
@@ -22,7 +22,12 @@ export function IncomeTable(props) {
 
   useEffect(() => {
     if (answerTrue && delId === eventId) {
-      dispatch(costsOperations.deleteCostOperation({ id: delId }, jwt));
+      if (props.title === "costs") {
+        dispatch(dbOperations.deleteCostOperation({ id: delId }, jwt));
+      }
+      if (props.title === "profit") {
+        dispatch(dbOperations.deleteProfitOperation({ id: delId }, jwt));
+      }
       dispatch(modalAction.universalModalShowAnswerReset);
     }
   }, [answerTrue, delId]);
@@ -34,6 +39,7 @@ export function IncomeTable(props) {
   } else if (props.title === "profit") {
     data = profits;
   }
+
   if (data) {
     mapData = data.map((el, index) => {
       return (
@@ -81,7 +87,7 @@ export function IncomeTable(props) {
           <th className={styles.sum}>СУММА</th>
         </tr>
       </thead>
-      <tbody className={styles.body}>{mapData}</tbody>
+      <tbody className={`${styles.body} ${styles.scrollbar}`}>{mapData}</tbody>
     </table>
   );
 }

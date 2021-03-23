@@ -16,6 +16,7 @@ html {
 :root {
   --main-text-color: #000000;
   --second-text-color: #52555f;
+  --error-text-color: #eb5757;
 }
 
 body {
@@ -67,6 +68,7 @@ button.back {
     border-radius: 16px;
     border: 1px solid #ff751d;
     box-shadow: none;
+    /* color: #ffffff; */
   }
   button.back {
     width: 125px;
@@ -77,6 +79,7 @@ button.back {
     background: border-box;
     margin-left: 15px;
     box-shadow: none;
+    /* color: #52555f; */
   }
 }
 
@@ -85,5 +88,24 @@ button.back {
     width: 1280px;
     padding: 0 26px;
     margin: 0 auto;
+  }
+}
+
+._Spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: text-bottom;
+  border: 0.18em solid #FF751D;
+  border-right-color: #ffdcc6;;
+  border-left-color: #ffdcc6;;
+  border-radius: 50%;
+  -webkit-animation: spinner-border 0.75s linear infinite;
+  animation: spinner-border 0.75s linear infinite;
+}
+@keyframes spinner-border {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
   }
 }

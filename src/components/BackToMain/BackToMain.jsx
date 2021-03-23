@@ -5,8 +5,8 @@ import styles from "./BackToMain.module.css";
 
 function BackToMain() {
   return (
-    <Link className={styles.BackToMainBox} to="/">
-      <svg className={styles.leftArrow} width="18" height="12">
+    <Link className={styles.BackToMainBox} to="/costs">
+      <svg className={styles.leftArrow} width="24" height="24">
         <use href={sprite + "#icon-left"} />
       </svg>
       <span className={styles.backToMainTitle}>Вернуться на главную</span>

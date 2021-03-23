@@ -1,0 +1,107 @@
+
+.notFoundWrapper{
+    padding-top: 100px;  
+    text-align: center;
+}
+
+
+.title{
+    text-align: center;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: bold;
+    color:#FF751D;
+}
+
+.photo {
+   
+    width: 300px; 
+    height: 200px;
+    margin: 0 auto;
+
+}
+
+ .linkKart {
+    text-decoration: none;
+    color:#52555F;
+    text-decoration: underline;
+    text-decoration-color: tomato;
+    text-decoration-style: double;
+    }
+
+       
+    .linkKart:hover {
+            color:#FF751D;
+         }
+
+
+@media screen and (min-width: 768px) {
+    .notFoundWrapper{
+        padding-top: 100px;  
+        text-align: center;
+    }
+    
+    .title{
+        text-align: center;
+        /* font-size: 40px; */
+        font-family: Roboto;
+        /* font-weight: bold; */
+        color:#FF751D;
+    }
+    .photo {
+
+        width: 600px; 
+        height: 400px;
+      
+    }
+
+/*     
+    .linkKart {
+    text-decoration: none;
+    color:#52555F;
+    }
+         
+    .linkKart:hover {
+        color:#FF751D;
+         } */
+  
+  }
+  
+  
+
+  
+
+  @media screen and (min-width: 1280px) {
+    .notFoundWrapper{
+        padding-top: 100px;  
+        text-align: center;
+    }
+    
+    .title{
+        text-align: center;
+        /* font-size: 30px; */
+        font-family: Roboto;
+        /* font-weight: bold; */
+        color:#FF751D;
+    }
+    .photo {
+        width: 600px; 
+        height: 400px;
+       
+        }
+
+
+    /* .linkKart {
+ 
+    color:#52555F;
+    }
+    a {
+            color:#52555F;
+        }
+        
+        a:hover {
+            color:#FF751D;
+         } */
+  
+  }
+  

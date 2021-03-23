@@ -1,27 +1,27 @@
 import axios from "axios";
 import actionSummary from "./actionSummary";
-import moment from "moment";
 
-axios.defaults.baseURL = "http://kapusta.fun/api/costs/half-year/";
 
-export const fetchSummery = (date) => (dispatch, getState) => {
-  // console.log(moment(Date.now()).format("MM"));
+
+ const fetchSummery = (name) => (dispatch, getState) => {
+  const date = new Date().getFullYear() * 12 + new Date().getMonth() + 1;
+  //24255
+  console.log(`https://kapusta.fun/api/${name}/half-year/${date}`);
   dispatch(actionSummary.fetchSummeryRequest());
   const { jwt } = getState().user;
   axios.defaults.headers = { Authorization: `Bearer ${jwt}` };
   axios
-    // ${moment(Date.now()).format('MM')}
-    .get(`/12`)
+    .get(`https://kapusta.fun/api/${name}/half-year/${date}`)
     .then((resp) =>
       dispatch(
         actionSummary.fetchSummerySuccess({
           type: "costsAdd/ok",
-          payload: resp,
+          payload: resp
         })
       )
     )
     .catch((err) => {
       dispatch(actionSummary.fetchSummeryError(err));
-      // console.log(err);
     });
 };
+export default fetchSummery

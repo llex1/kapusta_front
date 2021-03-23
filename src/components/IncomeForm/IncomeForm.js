@@ -6,11 +6,12 @@ import Calendar from "../Calendar";
 
 import dbOperations from "../../redux/db/db.operations";
 
+
 function IncomeForm(props) {
   const dispatch = useDispatch();
   const jwt = useSelector((store) => store.user.jwt);
   const date = useSelector((store) => store.calendar);
-
+console.log();
   const costsAdd = (e) => {
     e.preventDefault();
     const dataToArr = date.split(".");
@@ -26,7 +27,8 @@ function IncomeForm(props) {
         },
         jwt
       )
-    );
+    )
+
   };
 
   const profitAdd = (e) => {
@@ -71,7 +73,7 @@ function IncomeForm(props) {
             />
             <div className={`${styles.selectWrapper} ${styles.input}`}>
               <select name="category">
-                <option>Категории товаров</option>
+                <option disabled>Категории товаров</option>
                 <option value="Транспорт">Транспорт</option>
                 <option value="Продукты">Продукты</option>
                 <option value="Здоровье">Здоровье</option>
@@ -94,16 +96,13 @@ function IncomeForm(props) {
               required
             />
             <div className={styles.iconWrapper}>
-            <svg width="20" height="20">
+            <svg width="20" height="20" fill="#52555F">
               <use href={sprite + "#icon-calculator"} />
               </svg>
               </div>
           </div>
           <div className={styles.buttonWrapper}>
-            <button
-              className={`${styles.button} ${styles.input}`}
-              type="submit"
-            >
+            <button className={`${styles.button} ${styles.input}`} type="submit">
               Ввод
             </button>
             <button className={`${styles.button} ${styles.input}`} type="reset">
@@ -127,7 +126,7 @@ function IncomeForm(props) {
               />
               <div className={`${styles.selectWrapper} ${styles.input}`}>
                 <select name="category">
-                  <option>Категории дохода</option>
+                  <option disabled>Категории дохода</option>
                   <option value="ЗП">ЗП</option>
                   <option value="Доп. доход">Доп. доход</option>
                 </select>
@@ -145,16 +144,10 @@ function IncomeForm(props) {
               </svg>
             </div>
             <div className={styles.buttonWrapper}>
-              <button
-                className={`${styles.button} ${styles.input}`}
-                type="submit"
-              >
+              <button className={`${styles.button} ${styles.input}`} type="submit">
                 Ввод
               </button>
-              <button
-                className={`${styles.button} ${styles.input}`}
-                type="reset"
-              >
+              <button className={`${styles.button} ${styles.input}`} type="reset">
                 Очистить
               </button>
             </div>
