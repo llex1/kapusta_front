@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styles from "./IncomeTableMob.module.css";
 import sprite from "../../assets/img/sprite.svg";
 import modalAction from "../../redux/universalModal/universalModal.action";
+import dbOperations from "../../redux/db/db.operations";
 import costsOperations from "../../redux/db/db.operations";
 
 export function IncomeTableMob(props) {
@@ -22,7 +23,12 @@ export function IncomeTableMob(props) {
 
   useEffect(() => {
     if (answerTrue && delId === eventId) {
-      dispatch(costsOperations.deleteCostOperation({ id: delId }, jwt));
+      if (props.title === "costs") {
+        dispatch(dbOperations.deleteCostOperation({ id: delId }, jwt));
+      }
+      if (props.title === "profit") {
+        dispatch(dbOperations.deleteProfitOperation({ id: delId }, jwt));
+      }
       dispatch(modalAction.universalModalShowAnswerReset);
     }
   }, [answerTrue, delId]);

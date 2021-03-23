@@ -139,9 +139,11 @@ console.log();
                 placeholder="0.00"
                 required
               />
-              <svg width="20" height="20">
-                <use href={sprite + "#icon-calculator"} />
+              <div className={styles.iconWrapper}>
+            <svg width="20" height="20" fill="#52555F">
+              <use href={sprite + "#icon-calculator"} />
               </svg>
+              </div>
             </div>
             <div className={styles.buttonWrapper}>
               <button className={`${styles.button} ${styles.input}`} type="submit">
