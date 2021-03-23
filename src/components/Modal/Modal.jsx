@@ -23,6 +23,7 @@ class Modal extends Component {
     additionalStyle: '',
     timeoutId: null,
     spinner: false,
+    isLogin: false,
   };
 
 
@@ -157,7 +158,7 @@ class Modal extends Component {
                   <div className={styles.googleBtnWrapper}>
                     <a
                       className={styles.googleBtn}
-                      href="http://kapusta.fun/api/auth/google"
+                      href="https://kapusta.fun/api/auth/google"
                     >
                       <svg
                         width="18"
