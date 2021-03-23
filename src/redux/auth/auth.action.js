@@ -3,7 +3,7 @@ import routes from '../../routes';
 const login = obj =>
   async function login(dispatch) {
     try{
-      const res = await fetch("http://kapusta.fun/api/auth/login", {
+      const res = await fetch("https://kapusta.fun/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,12 +28,12 @@ const login = obj =>
         },
       });
     }
-    window.location.pathname = routes.costs;
+    // window.location.pathname = routes.costs;
   };
 
 const register = obj =>
   async function register(dispatch) {
-    const res = await fetch('http://kapusta.fun/api/auth/register', {
+    const res = await fetch('https://kapusta.fun/api/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

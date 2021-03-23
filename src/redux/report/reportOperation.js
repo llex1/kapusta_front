@@ -1,7 +1,7 @@
 import axios from "axios";
 import reportAction from "./reportAction";
 
-axios.defaults.baseURL = "http://kapusta.fun/api/report";
+axios.defaults.baseURL = "https://kapusta.fun/api/report";
 
 const report = (date) => (dispatch, getState) => {
   dispatch(reportAction.reportRequest());
@@ -11,7 +11,7 @@ const report = (date) => (dispatch, getState) => {
   console.log(`date`, date);
 
   axios
-    .get(`http://kapusta.fun/api/report/${date}`)
+    .get(`https://kapusta.fun/api/report/${date}`)
     .then(({ data }) => {
       dispatch(reportAction.reportSuccess(data));
     })

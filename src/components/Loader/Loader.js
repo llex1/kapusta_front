@@ -6,7 +6,7 @@ import style from './Loader.module.css';
 //   loading: true,
 // };
 //!логіка вимкненя Лоадера
-// fetch('http://kapusta.fun/cost')
+// fetch('https://kapusta.fun/cost')
 // .then(respons=>respons.json())
 // .then(storage=>{
 //   this.setState.loading(false)
