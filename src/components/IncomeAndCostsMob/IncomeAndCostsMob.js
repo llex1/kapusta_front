@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import IncomeForm from "../IncomeForm/IncomeForm";
 import IncomeTableMob from "../IncomeTableMob/IncomeTableMob";
-import Balance from "../balance/Balance";
+import Balance from "../Balance/Balance";
 import BackgroundAuth from "../BackgroundAuth";
 import Calendar from "../Calendar";
 import styles from "./IncomeAndCostsMob.module.css";
