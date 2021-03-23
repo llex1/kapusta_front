@@ -3,22 +3,9 @@
 }
 
 .positionWrapper {
+  width: 100%;
   position: absolute;
   top: 0px;
-  /* left: 50%;
-  transform: translate(-50%,); */
-}
-
-/* .formWrapper {
-  display: none;
-}
-
-.showMain {
-  display: block;
-} */
-
-.hiddenMain {
-  display: none;
 }
 
 .calendarWrapper {
@@ -29,21 +16,28 @@
   margin-bottom: 62px;
 }
 
+.tableWrapper {
+  min-height: calc(100vh - 390px);
+  margin-bottom: 10px;
+}
+
+.btnWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .costBtn {
-  position: fixed;
   min-width: 159px;
   height: 53px;
-  left: 0px;
-  bottom: 0px;
   background: #f5f6fb;
+  margin-right: 2px;
 }
 
 .incomeBtn {
-  position: fixed;
   min-width: 159px;
   height: 53px;
-  right: 0px;
-  bottom: 0px;
   background: #f5f6fb;
 }
 
