@@ -9,7 +9,7 @@ class Summary extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.db.prtofit !== this.props.db.profit) {
+    if (prevProps.db !== this.props.db) {
       this.props.toFetchProducts("profit");
     }
   }
