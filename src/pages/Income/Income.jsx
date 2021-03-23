@@ -3,16 +3,18 @@ import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Media from 'react-media';
 
+
 import routes from "../../routes";
 import Header from "../../components/Header";
 import BackgroundAuth from "../../components/BackgroundAuth";
 import UniversalModal from "../../components/UniversalModal/UniversalModal";
 import IncomeAndCosts from "../../components/IncomeAndCosts";
-import Balance from "../../components/balance/Balance";
+import Balance from "../../components/Balance/Balance";
 import IncomeAndCostsMob from "../../components/IncomeAndCostsMob";
 
+
 function Profit(props) {
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user);
   if (user.email && user.jwt) {
     return (
       <React.Fragment>

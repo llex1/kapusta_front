@@ -144,10 +144,11 @@
     background: #f5f6fa;
   }
   .logout {
+    text-align: center;
     width: 64px;
     font-size: 12px;
     line-height: 1.17;
-    margin-right: 20px;
+    margin-right: 12px;
     display: inline;
     color: #52555f;
   }
