@@ -1,0 +1,103 @@
+.costsHistory {
+  width: 282px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  align-items: center;
+  letter-spacing: 0.04em;
+  color: #52555f;
+}
+
+.body {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  list-style: none;
+}
+
+.bodyRaw {
+  width: 99%;
+  border-bottom: 2px solid #f5f6fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.descPosition {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+.dateCatWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.description {
+  width: 168px;
+  height: 20px;
+  margin: 0;
+}
+
+.date {
+  width: 44px;
+  height: 7px;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 9px;
+  margin: 0;
+}
+
+.category {
+  width: 82px;
+  height: 7px;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 9px;
+  margin: 0;
+  margin-left: 20px;
+}
+
+.sum {
+  width: 90px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  margin-left: 14px;
+  color: #e7192e;
+}
+
+.delete {
+  width: 18px;
+  height: 18px;
+  margin-left: 22px;
+}
+
+.deleteBtn {
+  width: 15px;
+  height: 18px;
+  border: none;
+  background: none;
+  padding: 0;
+  align-items: center;
+}
+
+.deleteBtnSvg {
+  fill: #52555f;
+}
+
+.bodyGreen {
+  composes: sum;
+  color: #407946;
+}

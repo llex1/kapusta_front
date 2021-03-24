@@ -1,7 +1,7 @@
 import axios from "axios";
 import dbActions from "./db.action";
 
-const url = "http://kapusta.fun/api";
+const url = "https://kapusta.fun/api";
 
 axios.default.baseURL = url;
 
