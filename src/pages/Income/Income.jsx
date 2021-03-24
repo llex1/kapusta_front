@@ -28,9 +28,9 @@ function Profit(props) {
             matches.small ? (
               <IncomeAndCostsMob title="profit" />
             ) : (<>
-              <BackgroundAuth />
               <Balance />
               <IncomeAndCosts title="profit" />
+              <BackgroundAuth />
                 </>)
           }
         </Media>
