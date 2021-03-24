@@ -36,7 +36,7 @@ function Balance() {
             {
               month: month,
               date: date,
-              description: "Изменение баланса вручную",
+              description: "Изменение баланса",
               category: "Доп. доход",
               sum: e.target.balance.value,
             },
@@ -52,7 +52,7 @@ function Balance() {
             {
               month: month,
               date: date,
-              description: "Изменение баланса вручную",
+              description: "Изменение баланса",
               category: "Прочее",
               sum: balance - e.target.balance.value,
             },
@@ -67,7 +67,7 @@ function Balance() {
             {
               month: month,
               date: date,
-              description: "Изменение баланса вручную",
+              description: "Изменение баланса",
               category: "Доп. доход",
               sum: e.target.balance.value - balance,
             },
