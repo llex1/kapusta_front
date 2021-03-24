@@ -107,6 +107,31 @@
   color: #ffffff;
   background-color: #ff751d;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    position: static;
+  }
+
+  .tabletBox {
+    width: 282px;
+    margin: 0 auto;
+  }
+
+  .reportsBox {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    border: transparent;
+    background: transparent;
+  }
+
+  .balanceBox {
+    padding-top: 35px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
@@ -149,8 +174,7 @@
     align-items: baseline;
     flex-direction: row-reverse;
     margin: 0 auto;
-
-    width: 695px;
+    width: 700px;
   }
   .confirmBtn {
     margin-right: 205px;

@@ -5,9 +5,10 @@ import sprite from "../../assets/img/sprite.svg";
 class BackgroundAuth extends Component {
   // state = {};
   render() {
+    const heightSize = { height: this.props.size };
     return (
       <>
-        <div className={styles.backgroundFon}>
+        <div className={styles.backgroundFon} style={heightSize}>
           <div className={styles.backgroundPage}></div>
 
           <div className="container">
