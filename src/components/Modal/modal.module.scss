@@ -34,6 +34,7 @@
   height: 40px;
   border-radius: 30px;
   background-color: #f6f7fb;
+  box-shadow: 1px 3px 5px rgba(82, 85, 95, 0.15);
   margin-bottom: 30px;
 }
 .googleBtnSvg {
@@ -109,7 +110,7 @@
   }
   .inputFormOk {
     background-color: #b7fccf;
-    color: #5a5a5a;
+    color: #435580;
     box-shadow: 0 0  1px 1px #00B83F;
   }
 }
@@ -185,11 +186,16 @@
     font-size: 14px;
     line-height: 1.143;
     letter-spacing: 0.04em;
-
+  
     border: none;
     border-radius: 30px;
     color: #a6abb9;
     background-color: #f6f7fb;
+  }
+  .inputFormOk {
+    background-color: #b7fccf;
+    color: #5a5a5a;
+    box-shadow: 0 0  1px 1px #00B83F;
   }
 }
 
@@ -253,6 +259,32 @@
     top: 0.1em;
   }
 }
+.outBtn {
+  position: relative;
+  width: 125px;
+  height: 44px;
+  background: #f5f6fb;
+  box-shadow: 1px 3px 5px rgba(67, 85, 128, 0.25);
+  border: none;
+  border: 1px solid #435580;
+  border-radius: 16px;
+
+  color: #435580;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.1666;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  &:active {
+    background-color: #f5f6fb;
+    color: #52555f;
+    top: 0.1em;
+  }
+}
+
+// #435580
+
+
 .btnWrapper {
   display: flex;
   justify-content: space-between;

@@ -6,11 +6,12 @@ import * as Yup from "yup";
 import styles from "./modal.module.scss";
 import sprite from "../../assets/img/sprite.svg";
 import action from "../../redux/auth/auth.action";
-import {user} from '../../redux/auth/auth.selectors'
-import routes from '../../routes';
+import { user } from "../../redux/auth/auth.selectors";
+import routes from "../../routes";
 
 const RegisterSchema = Yup.object().shape({
-  email: Yup.string().email()
+  email: Yup.string()
+    .email()
     .min(2, "Некорректная длинна поля")
     .max(50, "Превышен лимит символов")
     .required("это обязательное поле"),
@@ -21,56 +22,52 @@ class Modal extends Component {
   state = {
     email: "",
     password: "",
-    additionalStyle: '',
+    additionalStyle: "",
     timeoutId: null,
     spinner: false,
     isLogin: false,
   };
 
-
-  componentDidUpdate = (prevProps, prevState)=>{
-    if(prevProps.user !== this.props.user){
-      if(this.props.user.jwt || this.props.user.message){
-        this.setState((state)=>{
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevProps.user !== this.props.user) {
+      if (this.props.user.jwt || this.props.user.message) {
+        this.setState((state) => {
           return {
-            spinner: false
-          }
-        })
+            spinner: false,
+          };
+        });
       }
-      if(this.props.user.message){
+      if (this.props.user.message) {
         this.addAdditionalStyle(styles.inputFormEmpty);
         this.props.action_clearErrorMessage();
-        this.setState(()=>{
-          return{
-            isLogin: false,
-          }
-        })
-      // }else if(this.props.user.jwt && this.isLogin){
-      }else if(this.props.user.jwt){
-        this.setState(()=>{
+        this.setState(() => {
           return {
-            additionalStyle: styles.inputFormOk
-          }
-        })
+            isLogin: false,
+          };
+        });
+      } else if (this.props.user.jwt && this.state.isLogin) {
+        this.setState(() => {
+          return {
+            additionalStyle: styles.inputFormOk,
+          };
+        });
+        setTimeout(() => {
+          window.location.pathname = routes.costs;
+        }, 500);
+      } else if (!this.props.user.jwt) {
+        this.clearAdditionalStyle();
       }
-        // setTimeout(()=>{
-        //   window.location.pathname = routes.costs;
-        // }, 1000)
-      // }
-
     }
-  }
-  componentDidMount = ()=>{
-    if(this.props.user.jwt){
-      this.setState(()=>{
+  };
+  componentDidMount = () => {
+    if (this.props.user.jwt) {
+      this.setState(() => {
         return {
-          additionalStyle: styles.inputFormOk
-        }
-      })
+          additionalStyle: styles.inputFormOk,
+        };
+      });
     }
-  }
-
-
+  };
 
   handleChange = (e) => {
     switch (e.target.name) {
@@ -93,82 +90,98 @@ class Modal extends Component {
     }
   };
 
-  clearAdditionalStyle = () =>{
-    return new Promise((res, rej)=>{
-      this.setState(()=>{
+  clearAdditionalStyle = () => {
+    return new Promise((res, rej) => {
+      this.setState(() => {
         return {
           additionalStyle: null,
-        }
-      }, res(true))
-    })
-  }
+        };
+      }, res(true));
+    });
+  };
   addAdditionalStyle = (styleName) => {
-    this.setState((state)=>{
+    this.setState((state) => {
       return {
         additionalStyle: styleName,
-        // additionalStyle: styles.regMailFormEmpty,
-      }
-    })
-    this.setState(()=>{
-      return{
-        timeoutId: setTimeout(()=>{
-          this.setState((state)=>{
+      };
+    });
+    this.setState(() => {
+      return {
+        timeoutId: setTimeout(() => {
+          this.setState((state) => {
             return {
-              additionalStyle: '',
-            }
-          })
-        }, 1600)
-      }
-    })
-  }
-
-
+              additionalStyle: "",
+            };
+          });
+        }, 1600),
+      };
+    });
+  };
 
   login = async (e) => {
     e.preventDefault();
-    this.setState(()=>{
-      return{
-        isLogin: true,
-      }
-    })
-    clearTimeout(this.state.timeoutId)
-    await this.clearAdditionalStyle()
-
-    if(await RegisterSchema.isValid(this.state)){
-      this.setState((state)=>{
+    if (this.props.user.jwt) {
+      window.location.pathname = routes.costs;
+    } else {
+      this.setState(() => {
         return {
-          spinner: true
-        }
-      })
-      this.props.action_login(this.state);
-    }else {
-      this.addAdditionalStyle(styles.inputFormEmpty)
+          isLogin: true,
+        };
+      });
+      clearTimeout(this.state.timeoutId);
+      await this.clearAdditionalStyle();
+      if (
+        await RegisterSchema.isValid({
+          email: this.state.email,
+          password: this.state.password,
+        })
+      ) {
+        this.setState((state) => {
+          return {
+            spinner: true,
+          };
+        });
+        this.props.action_login({
+          email: this.state.email,
+          password: this.state.password,
+        });
+      } else {
+        this.addAdditionalStyle(styles.inputFormEmpty);
+      }
     }
   };
 
-
-
-
-
   register = async (e) => {
     e.preventDefault();
-    this.setState(()=>{
-      return{
+    this.setState(() => {
+      return {
         isLogin: true,
-      }
-    })
-
-
-
-    //=============
-
-    clearTimeout(this.state.timeoutId)
-    await this.clearAdditionalStyle()
-    if(await RegisterSchema.isValid(this.state)){
-      this.props.action_register(this.state);
-    }else{
-      this.addAdditionalStyle(styles.inputFormEmpty)
+      };
+    });
+    clearTimeout(this.state.timeoutId);
+    await this.clearAdditionalStyle();
+    if (
+      await RegisterSchema.isValid({
+        email: this.state.email,
+        password: this.state.password,
+      })
+    ) {
+      this.setState((state) => {
+        return {
+          spinner: true,
+        };
+      });
+      this.props.action_register({
+        email: this.state.email,
+        password: this.state.password,
+      });
+    } else {
+      this.addAdditionalStyle(styles.inputFormEmpty);
     }
+  };
+  logout = (e) => {
+    e.preventDefault();
+    this.props.action_logout();
   };
 
   render() {
@@ -204,20 +217,6 @@ class Modal extends Component {
                       </svg>
                       <span className={styles.googleBtnText}>Google</span>
                     </a>
-                    {/* <button
-                          onClick={this.props.signIn}
-                          type="button"
-                          className={styles.googleBtn}
-                        >
-                          <svg
-                            width="18"
-                            height="18"
-                            className={styles.googleBtnSvg}
-                          >
-                            <use href={sprite + '#google'}></use>
-                          </svg>
-                          <span className={styles.googleBtnText}>Google</span>
-                        </button> */}
                   </div>
                 </div>
                 <p className={styles.modalText}>
@@ -225,88 +224,141 @@ class Modal extends Component {
                   зарегестрировавшись:
                 </p>
                 <div className={styles.registrWrapper}>
-
-
-
-
-
                   <div className={styles.regMail}>
-                  {this.state.spinner ? (<div className={styles.modalFormIcon}><span className={'_Spinner'}></span></div>) : ''}
+                    {this.state.spinner ? (
+                      <div className={styles.modalFormIcon}>
+                        <span className={"_Spinner"}></span>
+                      </div>
+                    ) : (
+                      ""
+                    )}
                     <ErrorMessage
                       className={styles.regMailError}
                       name="email"
                       component="span"
-                      />
+                    />
                     <label htmlFor="email">
                       <span>*</span>Электронная почта:
                     </label>
-                    {this.state.additionalStyle === styles.inputFormOk ?
-                      (<Field
-                      className={`${styles.regMailForm} ${this.state.additionalStyle}`}
-                      type="email"
-                      name="email"
-                      value={this.props.user.email}
-                      // placeholder="your@email.com"
-                      disabled
-                      />  ) :
-                    (<Field
-                    className={`${styles.regMailForm} ${this.state.additionalStyle}`}
-                    type="email"
-                    name="email"
-                    placeholder="your@email.com" 
-                    />)
-                  }
+                    {this.state.additionalStyle === styles.inputFormOk ? (
+                      <Field
+                        className={`${styles.regMailForm} ${this.state.additionalStyle}`}
+                        type="email"
+                        name="email"
+                        value={this.props.user.email}
+                        disabled
+                      />
+                    ) : (
+                      <Field
+                        className={`${styles.regMailForm} ${this.state.additionalStyle}`}
+                        type="email"
+                        name="email"
+                        placeholder="your@email.com"
+                      />
+                    )}
                   </div>
 
-
-
-
                   <div className={styles.regPass}>
-                    {this.state.spinner ? (<div className={styles.modalFormIcon}><span className={'_Spinner'}></span></div>) : ''}
+                    {this.state.spinner ? (
+                      <div className={styles.modalFormIcon}>
+                        <span className={"_Spinner"}></span>
+                      </div>
+                    ) : (
+                      ""
+                    )}
                     <ErrorMessage
                       className={styles.regPassError}
                       name="password"
                       component="span"
                     />
-                    <label htmlFor="password" >
+                    <label htmlFor="password">
                       <span>*</span>Пароль:
                     </label>
-                    <Field
-                      className={`${styles.regPassForm} ${this.state.additionalStyle}`}
-                      type="password"
-                      name="password"
-                      placeholder="Пароль"
-                      // placeholder="*********"
-                    />
+                    {this.state.additionalStyle === styles.inputFormOk ? (
+                      <Field
+                        className={`${styles.regPassForm} ${this.state.additionalStyle}`}
+                        type="password"
+                        name="password"
+                        placeholder="*********"
+                        disabled
+                      />
+                    ) : (
+                      <Field
+                        className={`${styles.regPassForm} ${this.state.additionalStyle}`}
+                        type="password"
+                        name="password"
+                        placeholder="Пароль"
+                      />
+                    )}
                   </div>
-
-                  
-
-
                 </div>
 
-
                 <div className={styles.btnWrapper}>
-                  <button
-                    type="submit"
-                    className={styles.loginBtn}
-                    onClick={this.login}
-                  >
-                    ВОЙТИ
-                  </button>
-                  <button
-                    type="submit"
-                    className={styles.regisrBtn}
-                    onClick={this.register}
-                  >
-                    РЕГИСТРАЦИЯ
-                  </button>
+                  {this.state.additionalStyle === styles.inputFormOk &&
+                  this.state.isLogin === true ? (
+                    <button
+                      type="submit"
+                      className={styles.loginBtn}
+                      onClick={this.login}
+                      disabled
+                    >
+                      ВОЙТИ
+                    </button>
+                  ) : (
+                    <button
+                      type="submit"
+                      className={styles.loginBtn}
+                      onClick={this.login}
+                    >
+                      ВОЙТИ
+                    </button>
+                  )}
+
+                  {(() => {
+                    if (
+                      this.state.additionalStyle === styles.inputFormOk &&
+                      this.state.isLogin === true
+                    ) {
+                      return (
+                        <button
+                          type="submit"
+                          className={styles.regisrBtn}
+                          onClick={this.register}
+                          disabled
+                        >
+                          РЕГИСТРАЦИЯ
+                        </button>
+                      );
+                    } else if (
+                      this.state.additionalStyle === styles.inputFormOk &&
+                      this.state.isLogin === false
+                    ) {
+                      return (
+                        <button
+                          type="submit"
+                          className={styles.outBtn}
+                          onClick={this.logout}
+                        >
+                          Выйти
+                        </button>
+                      );
+                    } else {
+                      return (
+                        <button
+                          type="submit"
+                          className={styles.regisrBtn}
+                          onClick={this.register}
+                        >
+                          РЕГИСТРАЦИЯ
+                        </button>
+                      );
+                    }
+                  })()}
                 </div>
               </Form>
             )}
           </Formik>
         </div>
-        {/* </div> */}
       </div>
     );
   }
@@ -324,7 +376,12 @@ const mapDispatchToProps = (dispatch) => {
     action_register: (obj) => {
       dispatch(action.register(obj));
     },
-    action_clearErrorMessage: ()=>{dispatch({type: 'clearErrorMessage'})}
+    action_clearErrorMessage: () => {
+      dispatch({ type: "clearErrorMessage" });
+    },
+    action_logout: () => {
+      dispatch({ type: "logout" });
+    },
   };
 };
 

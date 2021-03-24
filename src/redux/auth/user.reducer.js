@@ -29,6 +29,8 @@ const userReducer = (state = initState.user, { type, payload }) => {
       return { ...state, email: payload.email, jwt: payload.jwt };
     case "clearErrorMessage":
       return {...state, message: ''}
+    case "logout":
+      return {...state, email: "", jwt: "" }
     default:
       return state;
   }
