@@ -52,7 +52,7 @@ const register = obj =>
         // "db": data.db
       },
     });
-    window.location.pathname = routes.costs;
+    // window.location.pathname = routes.costs;
   };
 
 export default { login, register };
