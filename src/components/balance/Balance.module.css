@@ -1,4 +1,13 @@
 .container {
+  /* position: absolute;
+  top: 46px;
+  text-align: center;
+  width: 320px;
+  padding-top: 35px;
+  padding-left: 19px;
+  padding-right: 19px;
+  margin: 0 auto; */
+  
   position: absolute;
   top: 46px;
   text-align: center;
@@ -6,6 +15,9 @@
   padding-top: 35px;
   padding-left: 19px;
   padding-right: 19px;
+  margin: 0 auto;
+}
+.tabletBox{
   margin: 0 auto;
 }
 .reportsLink {

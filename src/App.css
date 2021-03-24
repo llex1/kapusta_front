@@ -57,9 +57,14 @@ button.back {
 
 @media screen and (min-width: 768px) {
   .container {
+    /* position: relative; */
     width: 768px;
     padding: 0 20px;
     margin: 0 auto;
+  }
+  .tablet_contaier{
+    position: relative;
+    z-index: 1;
   }
   button.go {
     width: 125px;
@@ -85,6 +90,7 @@ button.back {
 
 @media screen and (min-width: 1280px) {
   .container {
+    position: relative;
     width: 1280px;
     padding: 0 26px;
     margin: 0 auto;

@@ -39,7 +39,7 @@ class Modal extends Component {
       }
       if (this.props.user.message) {
         this.addAdditionalStyle(styles.inputFormEmpty);
-        this.props.action_clearErrorMessage();
+        // this.props.action_clearErrorMessage();
         this.setState(() => {
           return {
             isLogin: false,
@@ -123,6 +123,7 @@ class Modal extends Component {
 
   login = async (e) => {
     e.preventDefault();
+    this.props.action_clearErrorMessage();
     if (this.props.user.jwt) {
       window.location.pathname = routes.costs;
     } else {
@@ -156,6 +157,7 @@ class Modal extends Component {
 
   register = async (e) => {
     e.preventDefault();
+    this.props.action_clearErrorMessage();
     this.setState(() => {
       return {
         isLogin: true,

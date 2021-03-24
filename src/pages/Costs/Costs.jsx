@@ -30,9 +30,9 @@ function Costs(props) {
             matches.small ? (
               <IncomeAndCostsMob title="costs" />
             ) : (<>
-              <BackgroundAuth />
               <Balance />
               <IncomeAndCosts title="costs" />
+              <BackgroundAuth />
                 </>)
           }
         </Media>
