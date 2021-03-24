@@ -39,7 +39,7 @@ class Modal extends Component {
       }
       if (this.props.user.message) {
         this.addAdditionalStyle(styles.inputFormEmpty);
-        this.props.action_clearErrorMessage();
+        // this.props.action_clearErrorMessage();
         this.setState(() => {
           return {
             isLogin: false,
@@ -376,9 +376,9 @@ const mapDispatchToProps = (dispatch) => {
     action_register: (obj) => {
       dispatch(action.register(obj));
     },
-    action_clearErrorMessage: () => {
-      dispatch({ type: "clearErrorMessage" });
-    },
+    // action_clearErrorMessage: () => {
+    //   dispatch({ type: "clearErrorMessage" });
+    // },
     action_logout: () => {
       dispatch({ type: "logout" });
     },

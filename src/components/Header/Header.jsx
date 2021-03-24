@@ -32,7 +32,7 @@ class Header extends Component {
     return (
       <div className="container">
         <header className={styles.header}>
-          <Link to="/costs" alt=" " className={styles.logoLink}>
+          <Link to="/" alt=" " className={styles.logoLink}>
             <div className={styles.logo}>
               <span className={styles.logoImg}></span>
               <span className={styles.logoText}>Kapusta</span>
