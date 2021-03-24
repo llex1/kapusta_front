@@ -23,7 +23,7 @@ class IncomeAndCostsMob extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <BackgroundAuth />
+        {this.state.isOpened === true ? (<BackgroundAuth size={257} />) : (<BackgroundAuth size={286} />)}
         <div className={styles.positionWrapper}>
           {this.state.isOpened === true ?
             (<div className={styles.formWrapper}>
