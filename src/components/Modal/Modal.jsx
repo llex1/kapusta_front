@@ -39,7 +39,7 @@ class Modal extends Component {
       }
       if (this.props.user.message) {
         this.addAdditionalStyle(styles.inputFormEmpty);
-        // this.props.action_clearErrorMessage();
+        this.props.action_clearErrorMessage();
         this.setState(() => {
           return {
             isLogin: false,
@@ -54,7 +54,10 @@ class Modal extends Component {
         setTimeout(() => {
           window.location.pathname = routes.costs;
         }, 500);
-      } else if (!this.props.user.jwt) {
+      } else if (this.props.user.email && this.props.user.isGoogle && this.props.user.jwt) {
+        this.props.action_isGoogleFalse()
+        window.location.pathname = routes.costs;
+      }else if (!this.props.user.jwt) {
         this.clearAdditionalStyle();
       }
     }
@@ -376,11 +379,14 @@ const mapDispatchToProps = (dispatch) => {
     action_register: (obj) => {
       dispatch(action.register(obj));
     },
-    // action_clearErrorMessage: () => {
-    //   dispatch({ type: "clearErrorMessage" });
-    // },
+    action_clearErrorMessage: () => {
+      dispatch({ type: "clearErrorMessage" });
+    },
     action_logout: () => {
       dispatch({ type: "logout" });
+    },
+    action_isGoogleFalse: () => {
+      dispatch({ type: "isGoogle/false" });
     },
   };
 };

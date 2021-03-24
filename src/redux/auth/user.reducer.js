@@ -13,6 +13,18 @@ const userReducer = (state = initState.user, { type, payload }) => {
         jwt: payload.jwt,
         email: payload.email,
       };
+    case "loginGoogle/ok":
+      return {
+        ...state,
+        email: payload.email,
+        jwt: payload.jwt,
+        isGoogle: true
+      };
+    case "isGoogle/false":
+      return {
+        ...state,
+        isGoogle: false
+      };
     case "login/Error":
     return {
       ...state,

@@ -10,10 +10,11 @@ function Main({location: {search}}) {
   useEffect(()=>{
     if(search.includes('?token=') && search.includes('&user=')){
       const params = search.replace('?token=', '').split('&user=')
-      dispatch({type: "login/ok", payload: {
+      dispatch({type: "loginGoogle/ok", payload: {
         jwt: params[0],
         email: params[1]
       } })
+      window.history.pushState('', '/', window.location.pathname)
     }
   })
 
