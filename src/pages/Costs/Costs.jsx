@@ -15,6 +15,7 @@ import IncomeAndCostsMob from "../../components/IncomeAndCostsMob";
 
 
 function Costs(props) {
+  window.history.pushState('', '/', window.location.pathname)
   const user = useSelector(state => state.user);
   if (user.email && user.jwt) {
     return (

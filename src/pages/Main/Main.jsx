@@ -14,9 +14,6 @@ function Main({location: {search}}) {
         jwt: params[0],
         email: params[1]
       } })
-      setTimeout(()=>{
-        window.history.pushState('', '/', window.location.pathname)
-      }, 700)
     }
   })
 
