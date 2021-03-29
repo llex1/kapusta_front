@@ -18,6 +18,8 @@ class Header extends Component {
   };
 
   userName = this.props.state.user.email;
+  avatarUrl = this.props.state.user.avatar;
+
   indexR = this.userName.search('@');
   name = () => {
     if (this.indexR < 10) {
@@ -27,23 +29,25 @@ class Header extends Component {
     }
   };
 
-  // componentDidMount = () => {};
-
   render() {
     return (
       <div className="container">
         <header className={styles.header}>
-          <Link to="/costs" alt=" " className={styles.logoLink}>
+          <Link to="/" alt=" " className={styles.logoLink}>
             <div className={styles.logo}>
               <span className={styles.logoImg}></span>
               <span className={styles.logoText}>Kapusta</span>
             </div>
           </Link>
 
-          {this.props.state.user.jwt && (
+          {this.props.state.user.jwt && !this.props.userFalse && (
             <div className={styles.logoInfo}>
               <div className={styles.bgr}>
-                <p className={styles.userName}>U</p>
+                <img
+                  src={this.avatarUrl}
+                  alt=""
+                  className={styles.userAvatar}
+                />
               </div>
 
               <p className={styles.logout}>{this.name()}</p>

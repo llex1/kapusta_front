@@ -6,7 +6,7 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
-  outline: 1px dotted dodgerblue;
+  /* outline: 1px dotted dodgerblue; */
 }
 #root {
   margin: 0;
@@ -21,7 +21,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
 
 .container {
@@ -57,9 +57,14 @@ button.back {
 
 @media screen and (min-width: 768px) {
   .container {
+    /* position: relative; */
     width: 768px;
     padding: 0 20px;
     margin: 0 auto;
+  }
+  .tablet_contaier{
+    position: relative;
+    z-index: 1;
   }
   button.go {
     width: 125px;
@@ -85,8 +90,28 @@ button.back {
 
 @media screen and (min-width: 1280px) {
   .container {
+    position: relative;
     width: 1280px;
     padding: 0 26px;
     margin: 0 auto;
+  }
+}
+
+._Spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: text-bottom;
+  border: 0.18em solid #FF751D;
+  border-right-color: #ffdcc6;;
+  border-left-color: #ffdcc6;;
+  border-radius: 50%;
+  -webkit-animation: spinner-border 0.75s linear infinite;
+  animation: spinner-border 0.75s linear infinite;
+}
+@keyframes spinner-border {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
   }
 }

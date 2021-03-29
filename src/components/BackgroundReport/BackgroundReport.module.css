@@ -1,0 +1,67 @@
+@media screen and (max-width: 767px) {
+  .backgroundFon {
+    /* position: relative; */
+    background-image: url(../../assets/img/bgDiagramMob.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% 275px;
+    padding-bottom: 50px;
+  }
+
+  .svgKapusta {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .backgroundFon {
+    position: relative;
+    /* background-color: #d2d2d20f; */
+    background-image: url(../../assets/img/bgDiagramMob.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% 530px;
+    padding-top: 40px;
+    padding-bottom: 75px;
+    overflow: hidden;
+  }
+
+  .backgroundFooter {
+    position: absolute;
+    bottom: -39px;
+    right: 50%;
+    transform: translateX(150%);
+    display: block;
+    width: 183px;
+    height: 142px;
+    background-image: url(../../assets/img/BgReportTablet.png);
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .backgroundPage {
+    display: none;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .backgroundFon {
+    position: relative;
+    background-image: url(../../assets/img/BgReport.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 100% 527px;
+  }
+
+  .backgroundFooter {
+    right: 0;
+    transform: translateX(0);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 231px;
+    background-image: url(../../assets/img/BgReportDesktop.png);
+    background-repeat: repeat;
+  }
+}

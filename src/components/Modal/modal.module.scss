@@ -1,18 +1,18 @@
 .overlay {
   background-color: #f5f6fb;
 }
-.modalWrapper {
-  position: absolute;
-  background-color: white;
-  top: 230px;
-  left: 8%;
-  width: 300px;
-  height: 525px;
-  border: 1px solid transparent;
-  border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 40px 18px 0px;
-}
+// .modalWrapper {
+//   position: absolute;
+//   background-color: white;
+//   top: 230px;
+//   left: 8%;
+//   width: 300px;
+//   height: 525px;
+//   border: 1px solid transparent;
+//   border-radius: 30px;
+//   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+//   padding: 40px 18px 0px;
+// }
 .modalText {
   font-weight: normal;
   font-size: 12px;
@@ -34,6 +34,7 @@
   height: 40px;
   border-radius: 30px;
   background-color: #f6f7fb;
+  box-shadow: 1px 3px 5px rgba(82, 85, 95, 0.15);
   margin-bottom: 30px;
 }
 .googleBtnSvg {
@@ -69,7 +70,7 @@
     font-size: 10px;
     line-height: 1.2;
     letter-spacing: 0.04em;
-    color: #EB5757;
+    color: #eb5757;
   }
   label {
     display: inline-block;
@@ -89,6 +90,8 @@
     display: inline;
   }
   .regMailForm {
+    position: relative;
+    // box-sizing:border-box;
     width: 100%;
     height: 52px;
     font-family: Roboto;
@@ -96,11 +99,51 @@
     font-size: 14px;
     line-height: 1.143;
     letter-spacing: 0.04em;
-    
+
     border: none;
     border-radius: 30px;
     color: #a6abb9;
     background-color: #f6f7fb;
+    // &::placeholder{
+    //   color: #a6abb9;
+    // }
+  }
+  .inputFormOk {
+    background-color: #b7fccf;
+    color: #435580;
+    box-shadow: 0 0  1px 1px #00B83F;
+  }
+}
+.inputFormEmpty {
+  animation: alertForm;
+  animation-duration: 0.8s;
+  animation-iteration-count:2;
+}
+@keyframes alertForm {
+  0% {
+    background: #f6f7fb;
+    color: #a6abb9;
+  }
+  50% {
+    background: #FFBEC2;
+    color: #a6abb9;
+    box-shadow: 0 0  1px 1px #F05F75;
+  }
+  100% {
+    background: #f6f7fb;
+    color: #a6abb9;
+  }
+  
+}
+.modalFormIcon{
+  position: absolute;
+  z-index: 3;
+  right: 1.5em;
+  top: 2.6em;
+  @media screen and (min-width: 768px){
+      position: absolute;
+      left: -2em;
+      top: 2.6em;
   }
 }
 
@@ -121,7 +164,7 @@
     font-size: 10px;
     line-height: 1.2;
     letter-spacing: 0.04em;
-    color: #EB5757;
+    color: #eb5757;
   }
   label {
     display: inline-block;
@@ -135,12 +178,13 @@
   }
   label span {
     display: none;
-    color: red;
+    color: #eb5757;
   }
   .regPassError ~ label span {
     display: inline;
   }
   .regPassForm {
+    position: relative;
     width: 100%;
     height: 52px;
     font-family: Roboto;
@@ -148,23 +192,18 @@
     font-size: 14px;
     line-height: 1.143;
     letter-spacing: 0.04em;
-    
+  
     border: none;
     border-radius: 30px;
     color: #a6abb9;
     background-color: #f6f7fb;
   }
+  .inputFormOk {
+    background-color: #b7fccf;
+    color: #5a5a5a;
+    box-shadow: 0 0  1px 1px #00B83F;
+  }
 }
-
-
-
-
-
-
-
-
-
-
 
 /*! =============== FORM FIELD ================= */
 // .formFields {
@@ -186,10 +225,12 @@
 /*! =============== FORM FIELD END ================= */
 
 .loginBtn {
+  position: relative;
   width: 125px;
   height: 44px;
   background: #ff751d;
-  border: 1px solid transparent;
+  box-shadow: 1px 3px 5px rgba(255, 107, 8, 0.35);
+  border: none;
   border-radius: 16px;
 
   color: #fff;
@@ -198,12 +239,18 @@
   line-height: 1.166;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+
+  &:active {
+    top: 0.1em;
+  }
 }
 .regisrBtn {
+  position: relative;
   width: 125px;
   height: 44px;
   background: #f5f6fb;
-  border: 1px solid transparent;
+  box-shadow: 1px 3px 5px rgba(82, 85, 95, 0.15);
+  border: none;
   border-radius: 16px;
 
   color: #52555f;
@@ -212,21 +259,67 @@
   line-height: 1.1666;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  &:active {
+    background-color: #f5f6fb;
+    color: #52555f;
+    top: 0.1em;
+  }
 }
+.outBtn {
+  position: relative;
+  width: 125px;
+  height: 44px;
+  background: #f5f6fb;
+  box-shadow: 1px 3px 5px rgba(67, 85, 128, 0.25);
+  border: none;
+  border: 1px solid #435580;
+  border-radius: 16px;
+
+  color: #435580;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.1666;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  &:active {
+    background-color: #f5f6fb;
+    color: #52555f;
+    top: 0.1em;
+  }
+}
+
+// #435580
+
+
 .btnWrapper {
   display: flex;
   justify-content: space-between;
 }
 
-@media screen and (min-width: 768px) {
-  .modalWrapper {
-    width: 436px;
-    height: 535px;
-    left: 25%;
-    top: 305px;
-    text-align: left;
-    padding: 50px 85px 0px;
+.modalWrapper {
+  position: absolute;
+  background-color: white;
+  top: 230px;
+  left: 8%;
+  width: 300px;
+  height: 525px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 40px 18px 0px;
+  z-index: 1;
+  @media screen and (min-width: 768px) {
+      width: 436px;
+      height: 535px;
+      left: 25%;
+      top: 305px;
+      text-align: left;
+      padding: 50px 85px 0px;
   }
+}
+
+
+
 
   .modalText {
     font-weight: normal;
@@ -252,7 +345,7 @@
     display: flex;
     justify-content: center;
   }
-}
+
 @media screen and (min-width: 1280px) {
   .modalWrapper {
     left: 57%;

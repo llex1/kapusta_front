@@ -5,6 +5,7 @@
   background-color: #f5f6fb;
   border-bottom-left-radius: 110px;
 }
+
 @media screen and (max-width: 767px) {
   .svgKapusta {
     display: none;

@@ -76,15 +76,15 @@ const initialState = {
 };
 
 function DiagramsContainer(props) {
-  const [data, setData] = useState(initialState);
+  const selector = useSelector(getReport);
+
+  const [data, setData] = useState(selector);
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [pageIncome, setPageIncome] = useState(false);
   const [currentCategory, setCurrentCategory] = useState("Продукты");
   const [dataForRender, setDataForRender] = useState([]);
-  const [dataForRenderProfit, setDataForRenderProfit] = useState([]);
 
   const dispatch = useDispatch();
-  const selector = useSelector(getReport);
   const selectedMonth = useSelector(getCurrentMonth);
 
   useEffect(() => {
@@ -95,6 +95,7 @@ function DiagramsContainer(props) {
 
   useEffect(() => {
     console.log("zapros na poluchenie dannix");
+    console.log(`selectedMonth`, selectedMonth);
     dispatch(reportOperation.report(selectedMonth));
   }, [dispatch, selectedMonth]);
 

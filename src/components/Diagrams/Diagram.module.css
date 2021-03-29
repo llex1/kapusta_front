@@ -4,6 +4,9 @@
   margin: 0 auto;
   overflow: hidden;
   z-index: 5;
+  background-color: #ffffff;
+  border-top-left-radius: 26px;
+  border-top-right-radius: 26px;
 }
 
 .count {
@@ -27,14 +30,14 @@
 }
 
 .expenditure:after {
-  content: "";
+  content: " ";
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
   display: block;
   width: 0px;
-  height: 70.5px;
+  height: 90%;
   border: 1px solid #e0e5eb;
 }
 
