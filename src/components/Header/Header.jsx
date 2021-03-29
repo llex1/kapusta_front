@@ -7,6 +7,7 @@ import sprite from '../../assets/img/sprite.svg';
 
 class Header extends Component {
   modalOpen = e => {
+    console.log("e.target exit", e.target);
     if (
       e.target.nodeName === 'U' ||
       e.target.nodeName === 'svg' ||
