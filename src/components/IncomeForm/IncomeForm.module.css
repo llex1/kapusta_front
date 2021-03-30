@@ -46,11 +46,13 @@
 }
 
 .selectArrow {
-  z-index: 9999;
+  z-index: 1;
   border: 8px solid transparent;
   border-bottom: 0;
   right: 6px;
 }
+
+
 .selectArrow:nth-child(1) {
   top: 11px;
   border-top-color: #c7ccdc;
