@@ -43,9 +43,11 @@
 }
 
 .description {
-  width: 168px;
+  width: 162px;
   height: 20px;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .date {
@@ -68,20 +70,22 @@
 }
 
 .sum {
-  width: 90px;
+  min-width: 80px;
   height: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin: 0;
-  margin-left: 14px;
+  /* margin-left: 14px; */
   color: #e7192e;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .delete {
   width: 18px;
   height: 18px;
-  margin-left: 22px;
+  margin-left: 20px;
 }
 
 .deleteBtn {
